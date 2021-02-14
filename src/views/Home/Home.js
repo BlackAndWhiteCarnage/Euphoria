@@ -59,7 +59,6 @@ const Home = () => {
           </SocialMedia>
         </ImagesWrapper>
       </ImageWrapper>
-      <Line />
     </Wrapper>
   );
 };

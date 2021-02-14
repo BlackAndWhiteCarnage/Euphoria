@@ -1,6 +1,7 @@
 import { GlobalStyle } from 'components/GlobalStyles/GlobalStyles';
 import Home from 'views/Home/Home';
 import WhyMe from 'views/WhyMe/WhyMe';
+import Opinions from 'views/Opinions/Opinions';
 import { ISlideConfig, PageSlides, SlideParallaxType } from 'react-page-slides';
 import { Switch, Route } from 'react-router-dom';
 import Hamburger from 'components/Hamburger/Hamburger';
@@ -13,6 +14,9 @@ const Root = () => {
     },
     {
       content: <WhyMe />,
+    },
+    {
+      content: <Opinions />,
     },
   ];
   return (

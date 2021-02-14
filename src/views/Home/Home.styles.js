@@ -106,9 +106,13 @@ export const List = styled.ul`
 `;
 
 export const ListItem = styled.li`
+  font-size: ${({ theme }) => theme.fontSize.s};
   span {
     color: ${({ theme }) => theme.colors.primaryRed};
     font-weight: bold;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: ${({ theme }) => theme.fontSize.m};
   }
 `;
 
@@ -142,13 +146,4 @@ export const LogoIconDesktop = styled.img`
     width: 45%;
     height: 90%;
   }
-`;
-
-export const Line = styled.div`
-  @media screen and (max-width: 1500px) {
-    display: none;
-  }
-  width: 0.5rem;
-  height: 80%;
-  background: #252525;
 `;
