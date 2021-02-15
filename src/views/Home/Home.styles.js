@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 export const Wrapper = styled.section`
   display: flex;
@@ -24,9 +24,19 @@ export const LogoIcon = styled.img`
 `;
 
 export const Image = styled.img`
+  object-fit: contain;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  position: absolute;
+  &.show {
+    transition: 1s ease;
+    opacity: 1;
+  }
+  &.hide {
+    transition: 0.5s ease;
+    transform: translate(-3rem, -3rem);
+    opacity: 0;
+  }
 `;
 
 export const ImageWrapper = styled.div`
@@ -77,12 +87,18 @@ export const DarkModeIcon = styled.img`
   position: absolute;
   left: -4rem;
   width: 2.5rem;
+  cursor: pointer;
   @media screen and (min-width: 680px) {
     width: 4rem;
     left: -5rem;
   }
   @media screen and (min-width: 1200px) {
     left: -7rem;
+    transition: 0.5s ease;
+    &:hover {
+      transform: scale(1.2);
+      transition: 0.5s ease;
+    }
   }
 `;
 
@@ -135,8 +151,14 @@ export const SocialMedia = styled.ul`
 
 export const Icon = styled.img`
   width: 2.5rem;
+  cursor: pointer;
   @media screen and (min-width: 680px) {
     width: 3rem;
+    transition: 0.5s ease;
+    &:hover {
+      transform: scale(1.3);
+      transition: 0.5s ease;
+    }
   }
 `;
 

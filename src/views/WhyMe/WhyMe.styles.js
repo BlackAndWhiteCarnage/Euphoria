@@ -77,7 +77,7 @@ export const Info = styled.div`
 export const InfoContent = styled.p`
   position: relative;
   width: 70%;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
   font-size: ${({ theme }) => theme.fontSize.s};
   color: ${({ theme }) => theme.colors.primaryLight};
   font-family: 'Montserrat', sans-serif;
@@ -89,8 +89,9 @@ export const InfoContent = styled.p`
     font-size: ${({ theme }) => theme.fontSize.xs};
   }
   @media screen and (min-width: 1200px) {
+    margin-right: 0;
     width: 70%;
-    margin-top: 20%;
+    margin-top: 25%;
     font-size: ${({ theme }) => theme.fontSize.l};
     line-height: 3.5rem;
   }

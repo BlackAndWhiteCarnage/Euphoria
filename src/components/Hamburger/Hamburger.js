@@ -10,7 +10,9 @@ const Hamburger = () => {
   );
 };
 
-const HamburgerIcon = styled.img``;
+const HamburgerIcon = styled.img`
+  width: 4rem;
+`;
 const HamburgerWrapper = styled.div`
   -webkit-box-shadow: inset 0px 10px 10px 5px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0px 10px 10px 5px rgba(0, 0, 0, 0.2);
@@ -20,8 +22,8 @@ const HamburgerWrapper = styled.div`
   justify-content: center;
   bottom: 0;
   left: 50%;
-  width: 8rem;
-  height: 7rem;
+  width: 10rem;
+  height: 5rem;
   background: #252525;
   border-radius: 50px 50px 0 0;
   transform: translate(-50%);

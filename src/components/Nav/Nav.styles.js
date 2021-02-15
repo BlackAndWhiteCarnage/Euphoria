@@ -24,4 +24,12 @@ export const Wrapper = styled.ul`
   }
 `;
 
-export const NavItem = styled.li``;
+export const NavItem = styled.li`
+  transition: 0.5s ease;
+  padding: 2rem;
+  cursor: pointer;
+  &:hover {
+    letter-spacing: 0.2rem;
+    transition: 0.5s ease;
+  }
+`;
