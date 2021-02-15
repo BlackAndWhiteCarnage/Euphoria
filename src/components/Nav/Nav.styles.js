@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const Wrapper = styled.ul`
   display: none;
   @media screen and (min-width: 1200px) {
+    -webkit-box-shadow: inset 10px 0px 20px -10px #000000;
+    box-shadow: inset 10px 0px 20px -10px #000000;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     display: flex;
@@ -18,7 +20,7 @@ export const Wrapper = styled.ul`
     bottom: 0;
     right: 0;
     height: 100%;
-    width: 12rem;
+    width: 14rem;
   }
 `;
 

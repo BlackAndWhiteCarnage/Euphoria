@@ -5,7 +5,7 @@ export const theme = {
     primaryRed: '#B80202',
   },
   fontSize: {
-    xs: '1.1rem',
+    xs: '1rem',
     s: '1.2rem',
     m: '1.8rem',
     l: '2.4rem',

@@ -12,7 +12,6 @@ import {
   ListItem,
   SocialMedia,
   Icon,
-  Line,
 } from './Home.styles';
 import Logo from 'assets/icons/Logo.svg';
 import LogoDesktop from 'assets/icons/LogoDesktop.svg';

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const Wrapper = styled.section`
   display: flex;
@@ -75,11 +75,11 @@ export const Square = styled.div`
 
 export const DarkModeIcon = styled.img`
   position: absolute;
-  left: -3.5rem;
+  left: -4rem;
   width: 2.5rem;
   @media screen and (min-width: 680px) {
+    width: 4rem;
     left: -5rem;
-    width: 3.5rem;
   }
   @media screen and (min-width: 1200px) {
     left: -7rem;
@@ -97,6 +97,7 @@ export const List = styled.ul`
   color: ${({ theme }) => theme.colors.primaryLight};
   max-width: 5rem;
   height: 100%;
+  font-family: 'Montserrat', sans-serif;
   @media screen and (min-width: 680px) {
     font-size: ${({ theme }) => theme.fontSize.s};
   }
@@ -121,7 +122,7 @@ export const SocialMedia = styled.ul`
   flex-direction: column;
   justify-content: space-between;
   position: absolute;
-  left: -3.5rem;
+  left: -4rem;
   height: 40%;
   bottom: 0;
   @media screen and (min-width: 680px) {
@@ -133,7 +134,7 @@ export const SocialMedia = styled.ul`
 `;
 
 export const Icon = styled.img`
-  width: 2rem;
+  width: 2.5rem;
   @media screen and (min-width: 680px) {
     width: 3rem;
   }

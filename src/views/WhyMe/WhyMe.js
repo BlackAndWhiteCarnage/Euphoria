@@ -6,7 +6,6 @@ import {
   InfoContent,
   ImageWrapper,
   Image,
-  Line,
 } from './WhyMe.styles';
 import WhyMeIcon from 'assets/icons/WhyMe.svg';
 import Image2 from 'assets/images/Image2.jpg';
@@ -16,7 +15,6 @@ const WhyMe = () => {
     <Wrapper>
       <SectionTitle src={WhyMeIcon} />
       <Info>
-        <Line />
         <InfoContent>
           Zacznę od tego że do każdego klienta podchodzę indywidualnie. Kupując
           majteczki lub inny produkt masz gwarancję dyskrecji oraz tego że

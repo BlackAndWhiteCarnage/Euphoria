@@ -14,6 +14,7 @@ export const Wrapper = styled.section`
 
 export const SectionTitle = styled.img`
   width: 90%;
+  height: 20%;
   @media screen and (min-width: 680px) {
     width: 70%;
     top: 1rem;
@@ -21,12 +22,13 @@ export const SectionTitle = styled.img`
   @media screen and (min-width: 1200px) {
     position: absolute;
     margin: 2.5rem;
+    height: 50%;
   }
 `;
 
 export const ImageWrapper = styled.div`
   position: relative;
-  width: 45%;
+  width: 50%;
   height: 80%;
   object-fit: cover;
   @media screen and (min-width: 680px) {
@@ -40,14 +42,13 @@ export const ImageWrapper = styled.div`
   }
   &::before {
     position: absolute;
-    top: 1rem;
-    left: 1rem;
+    top: 0.5rem;
+    left: 0.5rem;
     content: '';
     width: 100%;
     height: 100%;
-    border: 3px solid #b80202;
+    border: 2px solid #b80202;
     z-index: -1;
-    margin-left: 2rem;
   }
 `;
 
@@ -61,9 +62,9 @@ export const Image = styled.img`
 `;
 
 export const Info = styled.div`
-  width: 90%;
+  width: 95%;
   height: 80%;
-  margin-top: 1rem;
+  margin-top: 2.5rem;
   display: flex;
   justify-content: center;
   @media screen and (min-width: 1200px) {
@@ -74,30 +75,23 @@ export const Info = styled.div`
 `;
 
 export const InfoContent = styled.p`
-  width: 50%;
-  margin-left: 1rem;
+  position: relative;
+  width: 70%;
+  margin-right: 1rem;
   font-size: ${({ theme }) => theme.fontSize.s};
   color: ${({ theme }) => theme.colors.primaryLight};
+  font-family: 'Montserrat', sans-serif;
   @media screen and (min-width: 680px) {
     width: 40%;
     font-size: ${({ theme }) => theme.fontSize.m};
+  }
+  @media screen and (max-height: 570px) {
+    font-size: ${({ theme }) => theme.fontSize.xs};
   }
   @media screen and (min-width: 1200px) {
     width: 70%;
     margin-top: 20%;
     font-size: ${({ theme }) => theme.fontSize.l};
     line-height: 3.5rem;
-  }
-`;
-
-export const Line = styled.div`
-  width: 2%;
-  height: 80%;
-  background: ${({ theme }) => theme.colors.primaryRed};
-  @media screen and (min-width: 680px) {
-    height: 90%;
-  }
-  @media screen and (min-width: 1200px) {
-    display: none;
   }
 `;
