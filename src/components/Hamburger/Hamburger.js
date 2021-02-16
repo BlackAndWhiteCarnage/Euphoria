@@ -14,19 +14,21 @@ const HamburgerIcon = styled.img`
   width: 4rem;
 `;
 const HamburgerWrapper = styled.div`
-  -webkit-box-shadow: inset 0px 10px 10px 5px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0px 10px 10px 5px rgba(0, 0, 0, 0.2);
   position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
   bottom: 0;
-  left: 50%;
-  width: 10rem;
-  height: 5rem;
-  background: #252525;
-  border-radius: 50px 50px 0 0;
-  transform: translate(-50%);
+  right: 0;
+  width: 100%;
+  height: 4rem;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  @media screen and (max-height: 570px) {
+    width: 5rem;
+    border-radius: 10px 0 0 0;
+  }
   @media screen and (min-width: 1200px) {
     display: none;
   }
