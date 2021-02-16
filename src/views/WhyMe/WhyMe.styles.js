@@ -6,6 +6,7 @@ export const Wrapper = styled.section`
   justify-content: center;
   flex-direction: column;
   width: 100%;
+  background: #101010;
   height: 100vh;
   @media screen and (min-width: 1200px) {
     align-items: flex-start;
@@ -48,7 +49,6 @@ export const ImageWrapper = styled.div`
     width: 100%;
     height: 100%;
     border: 2px solid #b80202;
-    z-index: -1;
   }
 `;
 

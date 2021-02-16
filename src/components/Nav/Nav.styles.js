@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const Wrapper = styled.ul`
   display: none;
   @media screen and (min-width: 1200px) {
-    -webkit-box-shadow: inset 10px 0px 20px -10px #000000;
-    box-shadow: inset 10px 0px 20px -10px #000000;
+    /* -webkit-box-shadow: inset 10px 0px 20px -10px #000000;
+    box-shadow: inset 10px 0px 20px -10px #000000; */
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     display: flex;

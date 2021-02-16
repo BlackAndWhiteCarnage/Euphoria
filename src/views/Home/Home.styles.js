@@ -24,22 +24,32 @@ export const LogoIcon = styled.img`
 `;
 
 export const Image = styled.img`
-  object-fit: contain;
-  width: 100%;
   height: 100%;
-  position: absolute;
   &.show {
-    transition: 1s ease;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 1s ease-in-out;
     opacity: 1;
+    transform: scale(1.2) translate(-10%, 0);
   }
   &.hide {
-    transition: 0.5s ease;
-    transform: translate(-3rem, -3rem);
+    left: 0;
+    top: 0;
     opacity: 0;
   }
 `;
 
+export const ImgWrapper = styled.div`
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+`;
+
 export const ImageWrapper = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   height: 60%;
@@ -85,6 +95,7 @@ export const Square = styled.div`
 
 export const DarkModeIcon = styled.img`
   position: absolute;
+  top: 0;
   left: -4rem;
   width: 2.5rem;
   cursor: pointer;

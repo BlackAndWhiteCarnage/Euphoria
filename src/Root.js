@@ -1,7 +1,6 @@
 import { GlobalStyle } from 'components/GlobalStyles/GlobalStyles';
 import Home from 'views/Home/Home';
 import WhyMe from 'views/WhyMe/WhyMe';
-import AreWeBuying from 'views/AreWeBuying/AreWeBuying';
 import Contact from 'views/Contact/Contact';
 import { ISlideConfig, PageSlides, SlideParallaxType } from 'react-page-slides';
 import { Switch, Route } from 'react-router-dom';
@@ -15,9 +14,6 @@ const Root = () => {
     },
     {
       content: <WhyMe />,
-    },
-    {
-      content: <AreWeBuying />,
     },
     {
       content: <Contact />,

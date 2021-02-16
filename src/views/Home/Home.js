@@ -12,6 +12,7 @@ import {
   ListItem,
   SocialMedia,
   Icon,
+  ImgWrapper,
 } from './Home.styles';
 import Logo from 'assets/icons/Logo.svg';
 import LogoDesktop from 'assets/icons/LogoDesktop.svg';
@@ -19,17 +20,22 @@ import DarkMode from 'assets/icons/DarkMode.svg';
 import Email from 'assets/icons/Email.svg';
 import Instagram from 'assets/icons/Instagram.svg';
 import WhatsApp from 'assets/icons/WhatsApp.svg';
-import Image1 from 'assets/images/Image1.jpg';
-import { images } from 'data/Images';
+import HomeImg1 from 'assets/images/HomeImg1.jpg';
+import HomeImg2 from 'assets/images/HomeImg2.jpg';
+import HomeImg3 from 'assets/images/HomeImg3.jpg';
+
+const images = [HomeImg1, HomeImg2, HomeImg3];
 
 const Home = () => {
-  const [current, setCurrent] = useState(1);
+  const [current, setCurrent] = useState(0);
 
   let length = images.length;
 
+  let imageToRender = images[current];
+
   setTimeout(() => {
     setCurrent(current === length - 1 ? 0 : current + 1);
-  }, 2000);
+  }, 4000);
 
   return (
     <Wrapper>
@@ -37,12 +43,14 @@ const Home = () => {
       <LogoIconDesktop src={LogoDesktop} />
       <ImageWrapper>
         <ImagesWrapper>
-          {images.map((item, index) => (
-            <Image
-              className={index === current ? 'show' : 'hide'}
-              src={images[current]}
-            />
-          ))}
+          <ImgWrapper>
+            {images.map((item, index) => (
+              <Image
+                className={index === current ? 'show' : 'hide'}
+                src={imageToRender}
+              />
+            ))}
+          </ImgWrapper>
           <Square />
           <DarkModeIcon src={DarkMode} />
           <List>
