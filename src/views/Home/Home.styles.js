@@ -6,15 +6,14 @@ export const Wrapper = styled.section`
   align-items: center;
   width: 100%;
   height: 100vh;
+  background: #202020;
   @media screen and (max-width: 680px) {
     flex-direction: column;
   }
 `;
 
 export const LogoIcon = styled.img`
-  @media screen and (max-width: 680px) {
-    height: 40%;
-  }
+  height: 35%;
   @media screen and (min-width: 680px) {
     width: 70%;
   }

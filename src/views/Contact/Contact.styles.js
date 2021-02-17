@@ -5,6 +5,7 @@ export const Wrapper = styled.section`
   height: 100vh;
   display: flex;
   flex-direction: column;
+  background: #202020;
   @media screen and (min-width: 1200px) {
     flex-direction: row;
   }
@@ -12,21 +13,24 @@ export const Wrapper = styled.section`
 
 export const SectionTitle = styled.img`
   width: 90%;
+  height: 6rem;
   margin: auto;
   margin-top: 1rem;
   @media screen and (min-width: 1200px) {
     position: absolute;
-    width: 60%;
+    width: auto;
+    height: 20%;
   }
 `;
 
 export const HowToBuy = styled.div`
   width: 90%;
-  height: 50%;
+  height: 45%;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   @media screen and (min-width: 1200px) {
     height: 100%;
     justify-content: center;
@@ -98,23 +102,25 @@ export const Step = styled.li`
 
 export const ContactWrapper = styled.div`
   width: 100%;
-  min-height: 35rem;
+  height: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background: ${({ theme }) => theme.colors.primaryRed};
+  @media screen and (min-height: 640px) {
+    justify-content: center;
+  }
   @media screen and (min-width: 1200px) {
     height: 100%;
     width: 40%;
     justify-content: space-around;
-    margin-right: 14rem;
+    margin-right: 12rem;
   }
 `;
 
 export const Form = styled.form`
-  width: 65%;
-  height: 100%;
+  width: 90%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;

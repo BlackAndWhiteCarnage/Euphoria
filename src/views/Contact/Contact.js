@@ -67,7 +67,7 @@ const Contact = () => {
             <Circle>
               <Icon src={Send} />
             </Circle>
-            <p>Paczuszka zostaje do Ciebie wysłana! </p>
+            <p>Paczuszka zostaje do Ciebie wysłana!</p>
           </Step>
         </Steps>
       </HowToBuy>

@@ -20,6 +20,7 @@ import DarkMode from 'assets/icons/DarkMode.svg';
 import Email from 'assets/icons/Email.svg';
 import Instagram from 'assets/icons/Instagram.svg';
 import WhatsApp from 'assets/icons/WhatsApp.svg';
+import TikTok from 'assets/icons/TikTok.svg';
 import HomeImg1 from 'assets/images/HomeImg1.jpg';
 import HomeImg2 from 'assets/images/HomeImg2.jpg';
 import HomeImg3 from 'assets/images/HomeImg3.jpg';
@@ -74,6 +75,7 @@ const Home = () => {
             </ListItem>
           </List>
           <SocialMedia>
+            <Icon src={TikTok} />
             <Icon src={Email} />
             <Icon src={Instagram} />
             <Icon src={WhatsApp} />

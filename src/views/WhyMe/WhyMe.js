@@ -13,8 +13,8 @@ import Image2 from 'assets/images/Image2.jpg';
 const WhyMe = () => {
   return (
     <Wrapper>
-      <SectionTitle src={WhyMeIcon} />
       <Info>
+        <SectionTitle src={WhyMeIcon} />
         <InfoContent>
           Zacznę od tego że do każdego klienta podchodzę indywidualnie. Kupując
           majteczki lub inny produkt masz gwarancję dyskrecji oraz tego że
@@ -29,10 +29,10 @@ const WhyMe = () => {
           więc jestem młodziutka, seksowna i cholernie zboczona. O więcej
           szczegółów będziesz musiał spytać sam.
         </InfoContent>
-        <ImageWrapper>
-          <Image src={Image2} />
-        </ImageWrapper>
       </Info>
+      <ImageWrapper>
+        <Image src={Image2} />
+      </ImageWrapper>
     </Wrapper>
   );
 };

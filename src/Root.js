@@ -6,6 +6,7 @@ import { ISlideConfig, PageSlides, SlideParallaxType } from 'react-page-slides';
 import { Switch, Route } from 'react-router-dom';
 import Hamburger from 'components/Hamburger/Hamburger';
 import Nav from 'components/Nav/Nav';
+import IMG1 from 'assets/images/HomeImg3.jpg';
 
 const Root = () => {
   const slides: ISlideConfig[] = [
@@ -29,7 +30,7 @@ const Root = () => {
             transitionSpeed={1000}
             slides={slides}
             parallax={{
-              offset: 0.6,
+              offset: 0.1,
               type: SlideParallaxType.reveal,
             }}
           />

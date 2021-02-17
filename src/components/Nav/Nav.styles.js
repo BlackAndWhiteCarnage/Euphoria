@@ -11,14 +11,14 @@ export const Wrapper = styled.ul`
     align-items: center;
     list-style: none;
     color: ${({ theme }) => theme.colors.primaryLight};
-    background: #252525;
+    background: #282828;
     font-size: ${({ theme }) => theme.fontSize.m};
     position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
     height: 100%;
-    width: 14rem;
+    width: 12rem;
   }
 `;
 
