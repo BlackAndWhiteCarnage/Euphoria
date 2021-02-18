@@ -4,17 +4,22 @@ import WhyMe from 'views/WhyMe/WhyMe';
 import Contact from 'views/Contact/Contact';
 import { ISlideConfig, PageSlides, SlideParallaxType } from 'react-page-slides';
 import { Switch, Route } from 'react-router-dom';
-import Hamburger from 'components/Hamburger/Hamburger';
-import Nav from 'components/Nav/Nav';
-import IMG1 from 'assets/images/HomeImg3.jpg';
+import HamburgerMenu from 'assets/icons/HamburgerMenu.svg';
+import styled from 'styled-components';
 
 const Root = () => {
   const slides: ISlideConfig[] = [
     {
       content: <Home />,
+      style: {
+        background: 'linear-gradient(#505050, #000000, #1d1d1d)',
+      },
     },
     {
       content: <WhyMe />,
+      style: {
+        background: 'linear-gradient(#505050, #000000, #1d1d1d)',
+      },
     },
     {
       content: <Contact />,
@@ -30,16 +35,25 @@ const Root = () => {
             transitionSpeed={1000}
             slides={slides}
             parallax={{
-              offset: 0.1,
+              offset: 0.5,
               type: SlideParallaxType.reveal,
             }}
           />
-          <Hamburger />
-          <Nav />
+          <Hamburger src={HamburgerMenu} />
         </Route>
       </Switch>
     </>
   );
 };
+
+const Hamburger = styled.img`
+  width: 2.5rem;
+  height: 2.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  margin-bottom: 2rem;
+`;
 
 export default Root;

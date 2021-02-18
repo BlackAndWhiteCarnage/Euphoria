@@ -13,6 +13,7 @@ import {
   Textarea,
   Form,
   Button,
+  ContactShape,
 } from './Contact.styles';
 import AreWeBuyingIcon from 'assets/icons/AreWeBuying.svg';
 import AddToCart from 'assets/icons/AddToCart.svg';
@@ -20,12 +21,13 @@ import SendEmail from 'assets/icons/SendEmail.svg';
 import Payment from 'assets/icons/Payment.svg';
 import InProgress from 'assets/icons/InProgress.svg';
 import Send from 'assets/icons/Send.svg';
+import Shape from 'assets/icons/Shape.svg';
 
 const Contact = () => {
   return (
     <Wrapper>
-      <SectionTitle src={AreWeBuyingIcon} />
       <HowToBuy>
+        <SectionTitle src={AreWeBuyingIcon} />
         <Steps>
           <Step>
             <Circle>
@@ -72,6 +74,7 @@ const Contact = () => {
         </Steps>
       </HowToBuy>
       <ContactWrapper>
+        <ContactShape src={Shape} />
         <Form>
           <Label>Adres e-mail</Label>
           <Input />

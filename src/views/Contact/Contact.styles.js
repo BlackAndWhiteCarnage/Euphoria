@@ -8,24 +8,21 @@ export const Wrapper = styled.section`
   background: #202020;
   @media screen and (min-width: 1200px) {
     flex-direction: row;
+    align-items: flex-end;
   }
 `;
 
 export const SectionTitle = styled.img`
-  width: 90%;
-  height: 6rem;
-  margin: auto;
-  margin-top: 1rem;
+  width: 100%;
   @media screen and (min-width: 1200px) {
-    position: absolute;
-    width: auto;
-    height: 20%;
+    width: 90%;
+    height: 30%;
   }
 `;
 
 export const HowToBuy = styled.div`
   width: 90%;
-  height: 45%;
+  height: 55%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -39,9 +36,9 @@ export const HowToBuy = styled.div`
 
 export const Circle = styled.div`
   position: relative;
-  min-width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
+  min-width: 3rem;
+  height: 3rem;
+  /* border-radius: 50%; */
   border: 2px solid ${({ theme }) => theme.colors.primaryRed};
   @media screen and (min-width: 680px) {
     min-width: 3rem;
@@ -58,8 +55,8 @@ export const Icon = styled.img`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   @media screen and (min-width: 1200px) {
     width: 10rem;
     height: 10rem;
@@ -70,9 +67,9 @@ export const Steps = styled.ul`
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   @media screen and (min-width: 1200px) {
-    margin-top: 30rem;
+    width: 95%;
     height: 100%;
     justify-content: space-around;
   }
@@ -86,7 +83,7 @@ export const Step = styled.li`
   align-items: center;
   color: ${({ theme }) => theme.colors.primaryLight};
   font-size: ${({ theme }) => theme.fontSize.s};
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   font-family: 'Montserrat', sans-serif;
   @media screen and (max-height: 570px) {
     font-size: ${({ theme }) => theme.fontSize.xs};
@@ -101,12 +98,12 @@ export const Step = styled.li`
 `;
 
 export const ContactWrapper = styled.div`
+  position: relative;
   width: 100%;
-  height: 50%;
+  height: 45%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: ${({ theme }) => theme.colors.primaryRed};
   @media screen and (min-height: 640px) {
     justify-content: center;
   }
@@ -118,13 +115,22 @@ export const ContactWrapper = styled.div`
   }
 `;
 
+export const ContactShape = styled.img`
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+`;
+
 export const Form = styled.form`
+  position: relative;
   width: 90%;
-  height: auto;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 4rem;
   @media screen and (max-height: 640px) {
     justify-content: flex-start;
   }

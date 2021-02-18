@@ -10,6 +10,6 @@ html{
     font-size: 62.5%;
 }
 body{
-    background: #2D2D2D;
+    background: #202020;
 }
 `;
