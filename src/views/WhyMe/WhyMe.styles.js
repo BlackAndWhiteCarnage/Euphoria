@@ -1,90 +1,63 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.section`
-  display: flex;
-  /* align-items: center; */
-  justify-content: center;
   width: 100%;
   height: 100vh;
-  @media screen and (min-width: 1200px) {
-    align-items: center;
-    flex-direction: row;
-  }
-`;
-
-export const SectionTitle = styled.img`
-  width: 90%;
-  height: 20%;
-  @media screen and (min-width: 1200px) {
-    height: auto;
-    width: 90%;
-  }
-`;
-
-export const ImageWrapper = styled.div`
-  position: relative;
-  width: 45%;
-  height: 90%;
-  object-fit: cover;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  @media screen and (min-width: 1200px) {
-    margin-right: 12rem;
-    width: 40%;
-    height: 85%;
+  justify-content: flex-start;
+  @media screen and (min-width: 680px) {
+    justify-content: center;
   }
 `;
 
-export const Image = styled.img`
-  width: 90%;
-  height: 90%;
-  object-fit: cover;
-  @media screen and (min-width: 1200px) {
-    width: 60%;
-    height: 100%;
-  }
-`;
-
-export const Shape = styled.img`
-  position: absolute;
-  top: -20%;
-  left: 0;
-  width: 100%;
-  z-index: -1;
-`;
-
-export const Info = styled.div`
+export const SectionContentWrapper = styled.div`
   width: 80%;
   height: 100%;
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
-  @media screen and (min-width: 1200px) {
-    width: 60%;
+  justify-content: flex-start;
+  @media screen and (min-width: 680px) {
+    height: 50%;
   }
 `;
 
-export const InfoContent = styled.p`
-  position: relative;
-  width: 90%;
-  height: 100%;
-  margin-right: 0.5rem;
-  font-size: ${({ theme }) => theme.fontSize.s};
+export const SectionHeader = styled.h1`
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat';
+  font-weight: lighter;
   color: ${({ theme }) => theme.colors.primaryLight};
-  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(4rem, 6vw, 5rem);
   @media screen and (min-width: 680px) {
-    margin-top: 5rem;
-    font-size: ${({ theme }) => theme.fontSize.m};
+    width: 80%;
+    justify-content: flex-start;
   }
-  @media screen and (max-height: 570px) {
-    font-size: ${({ theme }) => theme.fontSize.xs};
+  @media screen and (min-width: 1020px) {
+    justify-content: flex-start;
+    width: 50%;
   }
-  @media screen and (min-width: 1200px) {
-    width: 90%;
-    height: 50%;
+`;
+
+export const SectionContent = styled.p`
+  width: 100%;
+  height: 70%;
+  display: flex;
+  font-family: 'Montserrat';
+  font-weight: lighter;
+  color: ${({ theme }) => theme.colors.primaryLight};
+  font-size: ${({ theme }) => theme.fontSize.s};
+  @media screen and (min-width: 680px) {
     font-size: ${({ theme }) => theme.fontSize.m};
-    line-height: 3rem;
+    width: 80%;
+  }
+  @media screen and (min-width: 1020px) {
+    font-size: ${({ theme }) => theme.fontSize.m};
+    width: 50%;
   }
 `;

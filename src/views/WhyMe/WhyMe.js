@@ -1,21 +1,17 @@
 import React from 'react';
 import {
   Wrapper,
-  SectionTitle,
-  Info,
-  InfoContent,
-  ImageWrapper,
-  Image,
+  SectionContentWrapper,
+  SectionHeader,
+  SectionContent,
 } from './WhyMe.styles';
-import WhyMeIcon from 'assets/icons/WhyMe.svg';
-import Image2 from 'assets/images/Image2.jpg';
 
 const WhyMe = () => {
   return (
     <Wrapper>
-      <Info>
-        <SectionTitle src={WhyMeIcon} />
-        <InfoContent>
+      <SectionContentWrapper>
+        <SectionHeader>DLACZEGO U MNIE?</SectionHeader>
+        <SectionContent>
           Zacznę od tego że do każdego klienta podchodzę indywidualnie. Kupując
           majteczki lub inny produkt masz gwarancję dyskrecji oraz tego że
           pozostaniesz anonimowy a ja będę mogła zaangażować się w Twoje
@@ -28,11 +24,8 @@ const WhyMe = () => {
           jest w woreczek strunowy. A tak o sobie samej powiem że mam 20 lat
           więc jestem młodziutka, seksowna i cholernie zboczona. O więcej
           szczegółów będziesz musiał spytać sam.
-        </InfoContent>
-      </Info>
-      <ImageWrapper>
-        <Image src={Image2} />
-      </ImageWrapper>
+        </SectionContent>
+      </SectionContentWrapper>
     </Wrapper>
   );
 };
