@@ -5,6 +5,7 @@ import Contact from 'views/Contact/Contact';
 import { ISlideConfig, PageSlides, SlideParallaxType } from 'react-page-slides';
 import { Switch, Route } from 'react-router-dom';
 import HamburgerMenu from 'assets/icons/HamburgerMenu.svg';
+import SectionsWrapper from 'components/SectionsWrapper/SectionsWrapper';
 import styled from 'styled-components';
 
 const Root = () => {
@@ -40,6 +41,7 @@ const Root = () => {
             }}
           />
           <Hamburger src={HamburgerMenu} />
+          <SectionsWrapper />
         </Route>
       </Switch>
     </>
@@ -54,6 +56,9 @@ const Hamburger = styled.img`
   left: 50%;
   transform: translate(-50%);
   margin-bottom: 2rem;
+  @media screen and (min-width: 680px) {
+    display: none;
+  }
 `;
 
 export default Root;

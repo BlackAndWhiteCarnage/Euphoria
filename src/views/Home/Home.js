@@ -52,6 +52,9 @@ const Wrapper = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  @media screen and (min-width: 680px) {
+    justify-content: center;
+  }
 `;
 
 const ImageWrapper = styled.div`
@@ -68,6 +71,13 @@ const ImageWrapper = styled.div`
     height: 100%;
     position: absolute;
     border: 1px solid #e7e7e7;
+  }
+  @media screen and (min-width: 680px) {
+    margin-top: 0;
+    width: 25rem;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 30rem;
   }
 `;
 
@@ -99,12 +109,15 @@ const AllIconsWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media screen and (min-width: 680px) {
+    display: none;
+  }
 `;
 
 const DarkModeIcon = styled.img`
   width: 2.5rem;
   height: 2.5rem;
-  margin-top: 10rem;
+  margin-top: 5rem;
   flex-basis: 25%;
 `;
 
