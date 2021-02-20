@@ -14,7 +14,7 @@ import Payment from 'assets/icons/Payment.svg';
 import InProgress from 'assets/icons/InProgress.svg';
 import Send from 'assets/icons/Send.svg';
 
-const Contact = () => {
+const AreWeBuying = () => {
   return (
     <Wrapper>
       <SectionHeader>KUPUJEMY?</SectionHeader>
@@ -66,4 +66,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default AreWeBuying;

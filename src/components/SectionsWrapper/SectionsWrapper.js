@@ -37,6 +37,8 @@ const Wrapper = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
   }
 `;
 
@@ -46,6 +48,7 @@ const DarkModeIcon = styled.img`
   top: 0;
   width: 2.5rem;
   height: 2.5rem;
+  pointer-events: all;
 `;
 
 const SquareIcon = styled.img`
@@ -68,6 +71,7 @@ const SocialMediaIconsWrapper = styled.div`
 const SocialMediaIcon = styled.img`
   width: 2.5rem;
   height: 2.5rem;
+  pointer-events: all;
 `;
 
 const NavWrapper = styled.ul`
@@ -85,6 +89,7 @@ const NavItem = styled.li`
   list-style: none;
   color: ${({ theme }) => theme.colors.primaryLight};
   font-size: ${({ theme }) => theme.fontSize.m};
+  pointer-events: all;
 `;
 
 export default SectionsWrapper;

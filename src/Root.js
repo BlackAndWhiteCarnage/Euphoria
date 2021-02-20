@@ -1,7 +1,8 @@
 import { GlobalStyle } from 'components/GlobalStyles/GlobalStyles';
 import Home from 'views/Home/Home';
 import WhyMe from 'views/WhyMe/WhyMe';
-import Contact from 'views/AreWeBuying/AreWeBuying';
+import AreWeBuying from 'views/AreWeBuying/AreWeBuying';
+import Contact from 'views/Contact/Contact';
 import { ISlideConfig, PageSlides, SlideParallaxType } from 'react-page-slides';
 import { Switch, Route } from 'react-router-dom';
 import HamburgerMenu from 'assets/icons/HamburgerMenu.svg';
@@ -19,13 +20,19 @@ const Root = () => {
     {
       content: <WhyMe />,
       style: {
+        background: 'linear-gradient(#000000, #1d1d1d, #505050)',
+      },
+    },
+    {
+      content: <AreWeBuying />,
+      style: {
         background: 'linear-gradient(#1d1d1d, #000000, #505050)',
       },
     },
     {
       content: <Contact />,
       style: {
-        background: 'linear-gradient(#505050, #000000, #1d1d1d)',
+        background: 'linear-gradient(#000000, #1d1d1d, #505050)',
       },
     },
   ];
@@ -39,7 +46,7 @@ const Root = () => {
             transitionSpeed={1000}
             slides={slides}
             parallax={{
-              offset: 0.5,
+              offset: 1,
               type: SlideParallaxType.cover,
             }}
           />
