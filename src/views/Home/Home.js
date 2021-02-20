@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import DarkMode from 'assets/icons/DarkMode.svg';
+import DarkDarkMode from 'assets/icons/DarkDarkMode.svg';
 import Email from 'assets/icons/Email.svg';
+import DarkEmail from 'assets/icons/DarkEmail.svg';
 import Instagram from 'assets/icons/Instagram.svg';
+import DarkInstagram from 'assets/icons/DarkInstagram.svg';
 import WhatsApp from 'assets/icons/WhatsApp.svg';
+import DarkWhatsApp from 'assets/icons/DarkWhatsApp.svg';
 import LogoForMobile from 'assets/icons/LogoForMobile.svg';
+import DarkLogoForMobile from 'assets/icons/DarkLogoForMobile.svg';
 import HomeImg1 from 'assets/images/HomeImg1.jpg';
 import HomeImg2 from 'assets/images/HomeImg2.jpg';
 import HomeImg3 from 'assets/images/HomeImg3.jpg';
@@ -35,21 +40,24 @@ const Home = ({ darkMode, setDarkMode }) => {
   return (
     <Wrapper>
       <ButtonWrapper>
-        <ImageWrapper>
+        <ImageWrapper className={darkMode && 'darkMode'}>
           {images.map((item, index) => (
             <Image
               className={index === current ? 'show' : 'hide'}
               src={imageToRender}
             />
           ))}
-          <Logo src={LogoForMobile} />
+          <Logo src={darkMode ? DarkLogoForMobile : LogoForMobile} />
         </ImageWrapper>
         <AllIconsWrapper>
-          <DarkModeIcon src={DarkMode} onClick={() => setDarkMode(!darkMode)} />
+          <DarkModeIcon
+            src={darkMode ? DarkDarkMode : DarkMode}
+            onClick={() => setDarkMode(!darkMode)}
+          />
           <IconsWrapper>
-            <Icon src={Instagram} />
-            <Icon src={WhatsApp} />
-            <Icon src={Email} />
+            <Icon src={darkMode ? DarkInstagram : Instagram} />
+            <Icon src={darkMode ? DarkWhatsApp : WhatsApp} />
+            <Icon src={darkMode ? DarkEmail : Email} />
           </IconsWrapper>
         </AllIconsWrapper>
       </ButtonWrapper>

@@ -22,7 +22,7 @@ const Root = () => {
       },
     },
     {
-      content: <WhyMe />,
+      content: <WhyMe darkMode={darkMode} />,
       style: {
         background: darkMode
           ? 'linear-gradient(#E7E7E7, #ffffff, #B9B9B9)'
@@ -30,7 +30,7 @@ const Root = () => {
       },
     },
     {
-      content: <AreWeBuying />,
+      content: <AreWeBuying darkMode={darkMode} />,
       style: {
         background: darkMode
           ? 'linear-gradient(#E7E7E7, #ffffff, #B9B9B9)'
@@ -38,7 +38,7 @@ const Root = () => {
       },
     },
     {
-      content: <Contact />,
+      content: <Contact darkMode={darkMode} />,
       style: {
         background: darkMode
           ? 'linear-gradient(#E7E7E7, #ffffff, #B9B9B9)'
@@ -60,7 +60,7 @@ const Root = () => {
               type: SlideParallaxType.cover,
             }}
           />
-          <Hamburger />
+          <Hamburger darkMode={darkMode} />
           <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} />
         </Route>
       </Switch>

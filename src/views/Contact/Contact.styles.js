@@ -23,6 +23,9 @@ export const SectionHeader = styled.h1`
   font-weight: lighter;
   color: ${({ theme }) => theme.colors.primaryLight};
   font-size: clamp(4rem, 6vw, 5rem);
+  &.darkMode {
+    color: ${({ theme }) => theme.colors.primaryDark};
+  }
   @media screen and (min-width: 680px) {
     width: 50%;
     height: 20%;
@@ -42,6 +45,10 @@ export const Form = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  color: ${({ theme }) => theme.colors.primaryLight};
+  &.darkMode {
+    color: ${({ theme }) => theme.colors.primaryDark};
+  }
   @media screen and (min-width: 680px) {
     width: 50%;
   }
@@ -52,7 +59,6 @@ export const Form = styled.form`
 
 export const Label = styled.label`
   width: 100%;
-  color: ${({ theme }) => theme.colors.primaryLight};
   font-size: ${({ theme }) => theme.fontSize.m};
   font-family: 'Montserrat';
 `;
@@ -65,6 +71,10 @@ export const Input = styled.input`
   font-family: 'Montserrat';
   border: 1px solid #e7e7e7;
   background: none;
+  &.darkMode {
+    color: ${({ theme }) => theme.colors.primaryDark};
+    border: 1px solid #2d2d2d;
+  }
   @media screen and (min-width: 680px) {
     height: 3.5rem;
   }
@@ -79,6 +89,10 @@ export const TextArea = styled.textarea`
   border: 1px solid #e7e7e7;
   background: none;
   resize: none;
+  &.darkMode {
+    color: ${({ theme }) => theme.colors.primaryDark};
+    border: 1px solid #2d2d2d;
+  }
   @media screen and (min-width: 680px) {
     height: 15rem;
   }
@@ -97,6 +111,9 @@ export const Info = styled.p`
   color: ${({ theme }) => theme.colors.primaryLight};
   font-size: ${({ theme }) => theme.fontSize.s};
   font-family: 'Montserrat';
+  &.darkMode {
+    color: ${({ theme }) => theme.colors.primaryDark};
+  }
 `;
 
 export const Button = styled.button`
@@ -109,6 +126,10 @@ export const Button = styled.button`
   color: ${({ theme }) => theme.colors.primaryLight};
   font-size: ${({ theme }) => theme.fontSize.m};
   cursor: pointer;
+  &.darkMode {
+    color: ${({ theme }) => theme.colors.primaryDark};
+    border: 1px solid #2d2d2d;
+  }
   &::before {
     position: absolute;
     left: 0;
@@ -153,6 +174,9 @@ export const SocialMediaInfo = styled.p`
   font-size: ${({ theme }) => theme.fontSize.m};
   font-family: 'Montserrat';
   text-align: center;
+  &.darkMode {
+    color: ${({ theme }) => theme.colors.primaryDark};
+  }
 `;
 
 export const SocialMediaIconsWrapper = styled.div`

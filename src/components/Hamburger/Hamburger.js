@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import HamburgerMenu from 'assets/icons/HamburgerMenu.svg';
+import DarkHamburgerMenu from 'assets/icons/DarkHamburgerMenu.svg';
 
-const Hamburger = () => {
-  return <HamburgerImg src={HamburgerMenu} />;
+const Hamburger = ({ darkMode }) => {
+  return <HamburgerImg src={darkMode ? DarkHamburgerMenu : HamburgerMenu} />;
 };
 
 const HamburgerImg = styled.img`

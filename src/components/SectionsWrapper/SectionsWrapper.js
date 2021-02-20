@@ -1,42 +1,48 @@
 import React from 'react';
 import styled from 'styled-components';
 import DarkMode from 'assets/icons/DarkMode.svg';
+import DarkDarkMode from 'assets/icons/DarkDarkMode.svg';
 import Instagram from 'assets/icons/Instagram.svg';
+import DarkInstagram from 'assets/icons/DarkInstagram.svg';
 import Email from 'assets/icons/Email.svg';
+import DarkEmail from 'assets/icons/DarkEmail.svg';
 import WhatsApp from 'assets/icons/WhatsApp.svg';
+import DarkWhatsApp from 'assets/icons/DarkWhatsApp.svg';
 import Square from 'assets/icons/Square.svg';
+import DarkSquare from 'assets/icons/DarkSquare.svg';
 
 const SectionsWrapper = ({ darkMode, setDarkMode }) => {
-  console.log(darkMode);
   return (
     <Wrapper>
       <DarkModeButton onClick={() => setDarkMode(!darkMode)}>
-        <DarkModeIcon src={DarkMode} />
+        <DarkModeIcon src={darkMode ? DarkDarkMode : DarkMode} />
       </DarkModeButton>
-      <SquareIcon src={Square} />
+      <SquareIcon src={darkMode ? DarkSquare : Square} />
       <SocialMediaIconsWrapper>
         <NavItemButton>
-          <SocialMediaIcon src={Instagram} />
+          <SocialMediaIcon src={darkMode ? DarkInstagram : Instagram} />
         </NavItemButton>
         <NavItemButton>
-          <SocialMediaIcon src={Email} />
+          <SocialMediaIcon src={darkMode ? DarkEmail : Email} />
         </NavItemButton>
         <NavItemButton>
-          <SocialMediaIcon src={WhatsApp} />
+          <SocialMediaIcon src={darkMode ? DarkWhatsApp : WhatsApp} />
         </NavItemButton>
       </SocialMediaIconsWrapper>
       <NavWrapper>
         <NavItemButton>
-          <NavItem>majteczki</NavItem>
+          <NavItem className={darkMode && 'darkMode'}>majteczki</NavItem>
         </NavItemButton>
         <NavItemButton>
-          <NavItem>skarpetki</NavItem>
+          <NavItem className={darkMode && 'darkMode'}>skarpetki</NavItem>
         </NavItemButton>
         <NavItemButton>
-          <NavItem>rajstopy i pończoszki</NavItem>
+          <NavItem className={darkMode && 'darkMode'}>
+            rajstopy i pończoszki
+          </NavItem>
         </NavItemButton>
         <NavItemButton>
-          <NavItem>inne</NavItem>
+          <NavItem className={darkMode && 'darkMode'}>inne</NavItem>
         </NavItemButton>
       </NavWrapper>
     </Wrapper>
@@ -100,9 +106,12 @@ const NavWrapper = styled.ul`
 
 const NavItem = styled.li`
   list-style: none;
-  color: ${({ theme }) => theme.colors.primaryLight};
   font-size: ${({ theme }) => theme.fontSize.m};
+  color: ${({ theme }) => theme.colors.primaryLight};
   pointer-events: all;
+  &.darkMode {
+    color: ${({ theme }) => theme.colors.primaryDark};
+  }
 `;
 
 const NavItemButton = styled.button`

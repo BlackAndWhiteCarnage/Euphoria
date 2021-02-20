@@ -24,6 +24,11 @@ export const ImageWrapper = styled.div`
   width: 50%;
   height: 50%;
   margin-top: 5rem;
+  &.darkMode {
+    &::before {
+      border: 1px solid #2d2d2d;
+    }
+  }
   &::before {
     top: -1rem;
     left: -1rem;

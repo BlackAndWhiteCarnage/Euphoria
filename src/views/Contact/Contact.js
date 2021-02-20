@@ -15,34 +15,37 @@ import {
   Icon,
 } from './Contact.styles';
 import Instagram from 'assets/icons/Instagram.svg';
+import DarkInstagram from 'assets/icons/DarkInstagram.svg';
 import Email from 'assets/icons/Email.svg';
+import DarkEmail from 'assets/icons/DarkEmail.svg';
 import WhatsApp from 'assets/icons/WhatsApp.svg';
+import DarkWhatsApp from 'assets/icons/DarkWhatsApp.svg';
 
-const Contact = () => {
+const Contact = ({ darkMode }) => {
   return (
     <Wrapper>
-      <SectionHeader>KONTAKT</SectionHeader>
-      <Form>
+      <SectionHeader className={darkMode && 'darkMode'}>KONTAKT</SectionHeader>
+      <Form className={darkMode && 'darkMode'}>
         <Label>Adres E-Mail</Label>
-        <Input />
+        <Input className={darkMode && 'darkMode'} />
         <Label>Wiadomość</Label>
-        <TextArea />
+        <TextArea className={darkMode && 'darkMode'} />
         <InfoAndButton>
-          <Info>
+          <Info className={darkMode && 'darkMode'}>
             Informacje podane w polach służą jedynie do kontaktu z potencjalnym
             klientem
           </Info>
-          <Button>Wyślij</Button>
+          <Button className={darkMode && 'darkMode'}>Wyślij</Button>
         </InfoAndButton>
       </Form>
       <SocialMediaWrapper>
-        <SocialMediaInfo>
+        <SocialMediaInfo className={darkMode && 'darkMode'}>
           Lub skontatkuj się ze mną poprzez social media
         </SocialMediaInfo>
         <SocialMediaIconsWrapper>
-          <Icon src={Instagram} />
-          <Icon src={Email} />
-          <Icon src={WhatsApp} />
+          <Icon src={darkMode ? DarkInstagram : Instagram} />
+          <Icon src={darkMode ? DarkEmail : Email} />
+          <Icon src={darkMode ? DarkWhatsApp : WhatsApp} />
         </SocialMediaIconsWrapper>
       </SocialMediaWrapper>
     </Wrapper>

@@ -7,13 +7,15 @@ import {
   SectionContent,
 } from './WhyMe.styles';
 
-const WhyMe = () => {
+const WhyMe = ({ darkMode }) => {
   return (
     <Wrapper>
       <ButtonWrapper>
         <SectionContentWrapper>
-          <SectionHeader>DLACZEGO U MNIE?</SectionHeader>
-          <SectionContent>
+          <SectionHeader className={darkMode && 'darkMode'}>
+            DLACZEGO U MNIE?
+          </SectionHeader>
+          <SectionContent className={darkMode && 'darkMode'}>
             Zacznę od tego że do każdego klienta podchodzę indywidualnie.
             Kupując majteczki lub inny produkt masz gwarancję dyskrecji oraz
             tego że pozostaniesz anonimowy a ja będę mogła zaangażować się w
