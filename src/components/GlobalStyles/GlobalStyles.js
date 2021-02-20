@@ -7,7 +7,14 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
 }
 *:focus{
-    outline: 3px solid #B80202;
+    ${(props) => {
+      if (props.darkMode) {
+        return '-webkit-box-shadow: 0px 0px 20px 5px rgba(0,0,0,1); box-shadow: 0px 0px 20px 5px rgba(0,0,0,1);';
+      } else {
+        return '-webkit-box-shadow: 0px 0px 20px 5px rgba(255,255,255,1); box-shadow: 0px 0px 20px 5px rgba(255,255,255,1);';
+      }
+    }}
+    outline: none;
 }
 html{
     font-size: 62.5%;

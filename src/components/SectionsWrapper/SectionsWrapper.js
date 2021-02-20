@@ -102,6 +102,7 @@ const Wrapper = styled.nav`
 const DarkModeIcon = styled.img`
   width: 2.5rem;
   height: 2.5rem;
+  cursor: pointer;
 `;
 
 const SquareIcon = styled.img`
@@ -125,6 +126,7 @@ const SocialMediaIcon = styled.img`
   width: 2.5rem;
   height: 2.5rem;
   pointer-events: all;
+  cursor: pointer;
 `;
 
 const NavWrapper = styled.ul`
@@ -144,6 +146,7 @@ const NavItem = styled.li`
   color: ${({ theme }) => theme.colors.primaryLight};
   pointer-events: all;
   transition: 1.5s ease;
+  cursor: pointer;
   &.darkMode {
     transition: 1.5s ease;
     color: ${({ theme }) => theme.colors.primaryDark};
@@ -159,8 +162,6 @@ const DarkModeButton = styled.button`
   position: absolute;
   right: 0;
   top: 0;
-  width: 2.5rem;
-  height: 2.5rem;
   background: none;
   border: none;
   pointer-events: all;

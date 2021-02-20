@@ -57,9 +57,16 @@ const Root = () => {
   ];
   return (
     <>
-      <GlobalStyle />
+      <GlobalStyle darkMode={darkMode} />
       <Switch>
         <Route path="/" exact>
+          <Hamburger darkMode={darkMode} />
+          <SectionsWrapper
+            darkMode={darkMode}
+            setDarkMode={setDarkMode}
+            slide={slide}
+            setSlide={setSlide}
+          />
           <PageSlides
             enableAutoScroll={true}
             transitionSpeed={1000}
@@ -70,19 +77,10 @@ const Root = () => {
               type: SlideParallaxType.cover,
             }}
           />
-          <Hamburger darkMode={darkMode} />
-          <SectionsWrapper
-            darkMode={darkMode}
-            setDarkMode={setDarkMode}
-            slide={slide}
-            setSlide={setSlide}
-          />
         </Route>
       </Switch>
     </>
   );
 };
-
-//If in view komponent zmień slide na numer slidu
 
 export default Root;

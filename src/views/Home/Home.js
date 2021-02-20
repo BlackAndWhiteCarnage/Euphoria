@@ -22,7 +22,6 @@ import {
   IconsWrapper,
   Icon,
   DarkModeIcon,
-  ButtonWrapper,
 } from './Home.styles';
 
 const images = [HomeImg1, HomeImg2, HomeImg3];
@@ -47,28 +46,26 @@ const Home = ({ darkMode, setDarkMode, setSlide }) => {
 
   return (
     <Wrapper ref={element}>
-      <ButtonWrapper>
-        <ImageWrapper className={darkMode && 'darkMode'}>
-          {images.map((item, index) => (
-            <Image
-              className={index === current ? 'show' : 'hide'}
-              src={imageToRender}
-            />
-          ))}
-          <Logo src={darkMode ? DarkLogoForMobile : LogoForMobile} />
-        </ImageWrapper>
-        <AllIconsWrapper>
-          <DarkModeIcon
-            src={darkMode ? DarkDarkMode : DarkMode}
-            onClick={() => setDarkMode(!darkMode)}
+      <ImageWrapper className={darkMode && 'darkMode'}>
+        {images.map((item, index) => (
+          <Image
+            className={index === current ? 'show' : 'hide'}
+            src={imageToRender}
           />
-          <IconsWrapper>
-            <Icon src={darkMode ? DarkInstagram : Instagram} />
-            <Icon src={darkMode ? DarkWhatsApp : WhatsApp} />
-            <Icon src={darkMode ? DarkEmail : Email} />
-          </IconsWrapper>
-        </AllIconsWrapper>
-      </ButtonWrapper>
+        ))}
+        <Logo src={darkMode ? DarkLogoForMobile : LogoForMobile} />
+      </ImageWrapper>
+      <AllIconsWrapper>
+        <DarkModeIcon
+          src={darkMode ? DarkDarkMode : DarkMode}
+          onClick={() => setDarkMode(!darkMode)}
+        />
+        <IconsWrapper>
+          <Icon src={darkMode ? DarkInstagram : Instagram} />
+          <Icon src={darkMode ? DarkWhatsApp : WhatsApp} />
+          <Icon src={darkMode ? DarkEmail : Email} />
+        </IconsWrapper>
+      </AllIconsWrapper>
     </Wrapper>
   );
 };
