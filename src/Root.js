@@ -1,38 +1,48 @@
-import { GlobalStyle } from 'components/GlobalStyles/GlobalStyles';
+import React, { useState } from 'react';
+import Hamburger from 'components/Hamburger/Hamburger';
+import SectionsWrapper from 'components/SectionsWrapper/SectionsWrapper';
 import Home from 'views/Home/Home';
 import WhyMe from 'views/WhyMe/WhyMe';
 import AreWeBuying from 'views/AreWeBuying/AreWeBuying';
 import Contact from 'views/Contact/Contact';
+import { GlobalStyle } from 'components/GlobalStyles/GlobalStyles';
 import { ISlideConfig, PageSlides, SlideParallaxType } from 'react-page-slides';
 import { Switch, Route } from 'react-router-dom';
-import HamburgerMenu from 'assets/icons/HamburgerMenu.svg';
-import SectionsWrapper from 'components/SectionsWrapper/SectionsWrapper';
-import styled from 'styled-components';
 
 const Root = () => {
+  const [darkMode, setDarkMode] = useState(false);
+
   const slides: ISlideConfig[] = [
     {
-      content: <Home />,
+      content: <Home darkMode={darkMode} setDarkMode={setDarkMode} />,
       style: {
-        background: 'linear-gradient(#505050, #000000, #1d1d1d)',
+        background: darkMode
+          ? 'linear-gradient(#E7E7E7, #ffffff, #B9B9B9)'
+          : 'linear-gradient(#505050, #000000, #1d1d1d)',
       },
     },
     {
       content: <WhyMe />,
       style: {
-        background: 'linear-gradient(#000000, #1d1d1d, #505050)',
+        background: darkMode
+          ? 'linear-gradient(#E7E7E7, #ffffff, #B9B9B9)'
+          : 'linear-gradient(#000000, #1d1d1d, #505050)',
       },
     },
     {
       content: <AreWeBuying />,
       style: {
-        background: 'linear-gradient(#1d1d1d, #000000, #505050)',
+        background: darkMode
+          ? 'linear-gradient(#E7E7E7, #ffffff, #B9B9B9)'
+          : 'linear-gradient(#1d1d1d, #000000, #505050)',
       },
     },
     {
       content: <Contact />,
       style: {
-        background: 'linear-gradient(#000000, #1d1d1d, #505050)',
+        background: darkMode
+          ? 'linear-gradient(#E7E7E7, #ffffff, #B9B9B9)'
+          : 'linear-gradient(#000000, #1d1d1d, #505050)',
       },
     },
   ];
@@ -50,25 +60,12 @@ const Root = () => {
               type: SlideParallaxType.cover,
             }}
           />
-          <Hamburger src={HamburgerMenu} />
-          <SectionsWrapper />
+          <Hamburger />
+          <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} />
         </Route>
       </Switch>
     </>
   );
 };
-
-const Hamburger = styled.img`
-  width: 2.5rem;
-  height: 2.5rem;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%);
-  margin-bottom: 2rem;
-  @media screen and (min-width: 680px) {
-    display: none;
-  }
-`;
 
 export default Root;

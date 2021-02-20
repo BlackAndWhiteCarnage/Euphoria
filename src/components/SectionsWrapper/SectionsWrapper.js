@@ -6,27 +6,44 @@ import Email from 'assets/icons/Email.svg';
 import WhatsApp from 'assets/icons/WhatsApp.svg';
 import Square from 'assets/icons/Square.svg';
 
-const SectionsWrapper = () => {
+const SectionsWrapper = ({ darkMode, setDarkMode }) => {
+  console.log(darkMode);
   return (
     <Wrapper>
-      <DarkModeIcon src={DarkMode} />
+      <DarkModeButton onClick={() => setDarkMode(!darkMode)}>
+        <DarkModeIcon src={DarkMode} />
+      </DarkModeButton>
       <SquareIcon src={Square} />
       <SocialMediaIconsWrapper>
-        <SocialMediaIcon src={Instagram} />
-        <SocialMediaIcon src={Email} />
-        <SocialMediaIcon src={WhatsApp} />
+        <NavItemButton>
+          <SocialMediaIcon src={Instagram} />
+        </NavItemButton>
+        <NavItemButton>
+          <SocialMediaIcon src={Email} />
+        </NavItemButton>
+        <NavItemButton>
+          <SocialMediaIcon src={WhatsApp} />
+        </NavItemButton>
       </SocialMediaIconsWrapper>
       <NavWrapper>
-        <NavItem>majteczki</NavItem>
-        <NavItem>skarpetki</NavItem>
-        <NavItem>rajstopy i pończoszki</NavItem>
-        <NavItem>inne</NavItem>
+        <NavItemButton>
+          <NavItem>majteczki</NavItem>
+        </NavItemButton>
+        <NavItemButton>
+          <NavItem>skarpetki</NavItem>
+        </NavItemButton>
+        <NavItemButton>
+          <NavItem>rajstopy i pończoszki</NavItem>
+        </NavItemButton>
+        <NavItemButton>
+          <NavItem>inne</NavItem>
+        </NavItemButton>
       </NavWrapper>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.nav`
   display: none;
   @media screen and (min-width: 680px) {
     display: block;
@@ -43,12 +60,8 @@ const Wrapper = styled.div`
 `;
 
 const DarkModeIcon = styled.img`
-  position: absolute;
-  right: 0;
-  top: 0;
   width: 2.5rem;
   height: 2.5rem;
-  pointer-events: all;
 `;
 
 const SquareIcon = styled.img`
@@ -89,6 +102,22 @@ const NavItem = styled.li`
   list-style: none;
   color: ${({ theme }) => theme.colors.primaryLight};
   font-size: ${({ theme }) => theme.fontSize.m};
+  pointer-events: all;
+`;
+
+const NavItemButton = styled.button`
+  background: none;
+  border: none;
+`;
+
+const DarkModeButton = styled.button`
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: none;
+  border: none;
   pointer-events: all;
 `;
 

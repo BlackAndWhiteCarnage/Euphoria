@@ -16,11 +16,12 @@ import {
   IconsWrapper,
   Icon,
   DarkModeIcon,
+  ButtonWrapper,
 } from './Home.styles';
 
 const images = [HomeImg1, HomeImg2, HomeImg3];
 
-const Home = () => {
+const Home = ({ darkMode, setDarkMode }) => {
   const [current, setCurrent] = useState(0);
 
   let length = images.length;
@@ -33,23 +34,25 @@ const Home = () => {
 
   return (
     <Wrapper>
-      <ImageWrapper>
-        {images.map((item, index) => (
-          <Image
-            className={index === current ? 'show' : 'hide'}
-            src={imageToRender}
-          />
-        ))}
-        <Logo src={LogoForMobile} />
-      </ImageWrapper>
-      <AllIconsWrapper>
-        <DarkModeIcon src={DarkMode} />
-        <IconsWrapper>
-          <Icon src={Instagram} />
-          <Icon src={WhatsApp} />
-          <Icon src={Email} />
-        </IconsWrapper>
-      </AllIconsWrapper>
+      <ButtonWrapper>
+        <ImageWrapper>
+          {images.map((item, index) => (
+            <Image
+              className={index === current ? 'show' : 'hide'}
+              src={imageToRender}
+            />
+          ))}
+          <Logo src={LogoForMobile} />
+        </ImageWrapper>
+        <AllIconsWrapper>
+          <DarkModeIcon src={DarkMode} onClick={() => setDarkMode(!darkMode)} />
+          <IconsWrapper>
+            <Icon src={Instagram} />
+            <Icon src={WhatsApp} />
+            <Icon src={Email} />
+          </IconsWrapper>
+        </AllIconsWrapper>
+      </ButtonWrapper>
     </Wrapper>
   );
 };

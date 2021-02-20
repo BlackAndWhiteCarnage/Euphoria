@@ -9,7 +9,7 @@ export const Wrapper = styled.section`
   justify-content: flex-start;
   z-index: 5;
   @media screen and (min-width: 680px) {
-    justify-content: center;
+    justify-content: flex-end;
   }
 `;
 
@@ -31,6 +31,7 @@ export const SectionHeader = styled.h1`
   @media screen and (min-width: 1020px) {
     justify-content: center;
     width: 30%;
+    height: 10%;
   }
 `;
 

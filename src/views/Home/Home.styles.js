@@ -3,10 +3,17 @@ import styled from 'styled-components';
 export const Wrapper = styled.section`
   width: 100%;
   height: 100vh;
+`;
+
+export const ButtonWrapper = styled.button`
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  background: none;
+  border: none;
   @media screen and (min-width: 680px) {
     justify-content: center;
   }
