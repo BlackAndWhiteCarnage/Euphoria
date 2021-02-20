@@ -11,18 +11,27 @@ import { Switch, Route } from 'react-router-dom';
 
 const Root = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const [slide, setSlide] = useState(0);
+
+  console.log(slide);
 
   const slides: ISlideConfig[] = [
     {
-      content: <Home darkMode={darkMode} setDarkMode={setDarkMode} />,
+      content: (
+        <Home
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+          setSlide={setSlide}
+        />
+      ),
       style: {
         background: darkMode
-          ? 'linear-gradient(#E7E7E7, #ffffff, #B9B9B9)'
+          ? 'linear-gradient(#E0E0E0, #B8B8B8, #E0E0E0)'
           : 'linear-gradient(#505050, #000000, #1d1d1d)',
       },
     },
     {
-      content: <WhyMe darkMode={darkMode} />,
+      content: <WhyMe darkMode={darkMode} setSlide={setSlide} />,
       style: {
         background: darkMode
           ? 'linear-gradient(#E7E7E7, #ffffff, #B9B9B9)'
@@ -30,18 +39,18 @@ const Root = () => {
       },
     },
     {
-      content: <AreWeBuying darkMode={darkMode} />,
+      content: <AreWeBuying darkMode={darkMode} setSlide={setSlide} />,
       style: {
         background: darkMode
-          ? 'linear-gradient(#E7E7E7, #ffffff, #B9B9B9)'
+          ? 'linear-gradient(#D3D3D3, #ECECEC, #F3F3F3)'
           : 'linear-gradient(#1d1d1d, #000000, #505050)',
       },
     },
     {
-      content: <Contact darkMode={darkMode} />,
+      content: <Contact darkMode={darkMode} setSlide={setSlide} />,
       style: {
         background: darkMode
-          ? 'linear-gradient(#E7E7E7, #ffffff, #B9B9B9)'
+          ? 'linear-gradient(#CDCDCD, #B7B7B7, #FFFFFF)'
           : 'linear-gradient(#000000, #1d1d1d, #505050)',
       },
     },
@@ -55,17 +64,25 @@ const Root = () => {
             enableAutoScroll={true}
             transitionSpeed={1000}
             slides={slides}
+            currentSlideIndex={slide}
             parallax={{
               offset: 1,
               type: SlideParallaxType.cover,
             }}
           />
           <Hamburger darkMode={darkMode} />
-          <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} />
+          <SectionsWrapper
+            darkMode={darkMode}
+            setDarkMode={setDarkMode}
+            slide={slide}
+            setSlide={setSlide}
+          />
         </Route>
       </Switch>
     </>
   );
 };
+
+//If in view komponent zmień slide na numer slidu
 
 export default Root;

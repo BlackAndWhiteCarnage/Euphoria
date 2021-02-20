@@ -7,10 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
 }
 *:focus{
-    -webkit-box-shadow: 0px 0px 20px 5px rgba(227,227,227,0.65);
-    box-shadow: 0px 0px 20px 5px rgba(227,227,227,0.65);
-    transition: .5s ease;
-    outline: none;
+    outline: 3px solid #B80202;
 }
 html{
     font-size: 62.5%;

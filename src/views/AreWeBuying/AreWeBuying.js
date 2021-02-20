@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 import {
   Wrapper,
   ButtonWrapper,
@@ -20,9 +21,17 @@ import DarkInProgress from 'assets/icons/DarkInProgress.svg';
 import Send from 'assets/icons/Send.svg';
 import DarkSend from 'assets/icons/DarkSend.svg';
 
-const AreWeBuying = ({ darkMode }) => {
+const AreWeBuying = ({ darkMode, setSlide }) => {
+  const [element, view] = useInView({ threshold: 1 });
+
+  useEffect(() => {
+    if (view) {
+      setSlide(2);
+    }
+  }, [view]);
+
   return (
-    <Wrapper>
+    <Wrapper ref={element}>
       <ButtonWrapper>
         <SectionHeader className={darkMode && 'darkMode'}>
           KUPUJEMY?

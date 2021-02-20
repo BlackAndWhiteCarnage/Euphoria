@@ -42,8 +42,10 @@ export const SectionHeader = styled.h1`
   font-weight: lighter;
   color: ${({ theme }) => theme.colors.primaryLight};
   font-size: clamp(4rem, 6vw, 5rem);
+  transition: 1.5s ease;
   &.darkMode {
     color: ${({ theme }) => theme.colors.primaryDark};
+    transition: 1.5s ease;
   }
   @media screen and (min-width: 680px) {
     width: 80%;
@@ -63,7 +65,9 @@ export const SectionContent = styled.p`
   font-weight: lighter;
   color: ${({ theme }) => theme.colors.primaryLight};
   font-size: ${({ theme }) => theme.fontSize.s};
+  transition: 1.5s ease;
   &.darkMode {
+    transition: 1.5s ease;
     color: ${({ theme }) => theme.colors.primaryDark};
   }
   @media screen and (min-width: 680px) {

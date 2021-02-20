@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 import {
   Wrapper,
   SectionHeader,
@@ -21,9 +22,17 @@ import DarkEmail from 'assets/icons/DarkEmail.svg';
 import WhatsApp from 'assets/icons/WhatsApp.svg';
 import DarkWhatsApp from 'assets/icons/DarkWhatsApp.svg';
 
-const Contact = ({ darkMode }) => {
+const Contact = ({ darkMode, setSlide }) => {
+  const [element, view] = useInView({ threshold: 1 });
+
+  useEffect(() => {
+    if (view) {
+      setSlide(3);
+    }
+  }, [view]);
+
   return (
-    <Wrapper>
+    <Wrapper ref={element}>
       <SectionHeader className={darkMode && 'darkMode'}>KONTAKT</SectionHeader>
       <Form className={darkMode && 'darkMode'}>
         <Label>Adres E-Mail</Label>

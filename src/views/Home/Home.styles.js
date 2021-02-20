@@ -26,10 +26,12 @@ export const ImageWrapper = styled.div`
   margin-top: 5rem;
   &.darkMode {
     &::before {
+      transition: 1.5s ease;
       border: 1px solid #2d2d2d;
     }
   }
   &::before {
+    transition: 1.5s ease;
     top: -1rem;
     left: -1rem;
     z-index: -1;

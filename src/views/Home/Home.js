@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 import DarkMode from 'assets/icons/DarkMode.svg';
 import DarkDarkMode from 'assets/icons/DarkDarkMode.svg';
 import Email from 'assets/icons/Email.svg';
@@ -26,19 +27,26 @@ import {
 
 const images = [HomeImg1, HomeImg2, HomeImg3];
 
-const Home = ({ darkMode, setDarkMode }) => {
+const Home = ({ darkMode, setDarkMode, setSlide }) => {
+  const [element, view] = useInView({ threshold: 1 });
   const [current, setCurrent] = useState(0);
 
   let length = images.length;
 
   let imageToRender = images[current];
 
+  useEffect(() => {
+    if (view) {
+      setSlide(0);
+    }
+  }, [view]);
+
   setTimeout(() => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   }, 4000);
 
   return (
-    <Wrapper>
+    <Wrapper ref={element}>
       <ButtonWrapper>
         <ImageWrapper className={darkMode && 'darkMode'}>
           {images.map((item, index) => (

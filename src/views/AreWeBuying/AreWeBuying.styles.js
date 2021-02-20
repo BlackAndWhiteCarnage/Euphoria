@@ -30,7 +30,9 @@ export const SectionHeader = styled.h1`
   font-weight: lighter;
   color: ${({ theme }) => theme.colors.primaryLight};
   font-size: clamp(4rem, 6vw, 5rem);
+  transition: 1.5s ease;
   &.darkMode {
+    transition: 1.5s ease;
     color: ${({ theme }) => theme.colors.primaryDark};
   }
   @media screen and (min-width: 680px) {
@@ -69,7 +71,9 @@ export const Step = styled.li`
   align-items: center;
   color: ${({ theme }) => theme.colors.primaryLight};
   font-family: 'Montserrat';
+  transition: 1.5s ease;
   &.darkMode {
+    transition: 1.5s ease;
     color: ${({ theme }) => theme.colors.primaryDark};
   }
 `;
@@ -87,7 +91,9 @@ export const IconWrapper = styled.div`
   min-width: 3rem;
   height: 3rem;
   border: 1px solid #e7e7e7;
+  transition: 1.5s ease;
   &.darkMode {
+    transition: 1.5s ease;
     border: 1px solid #2d2d2d;
   }
   @media screen and (min-width: 680px) {

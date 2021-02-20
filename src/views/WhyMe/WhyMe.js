@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 import {
   Wrapper,
   ButtonWrapper,
@@ -7,9 +8,17 @@ import {
   SectionContent,
 } from './WhyMe.styles';
 
-const WhyMe = ({ darkMode }) => {
+const WhyMe = ({ darkMode, setSlide }) => {
+  const [element, view] = useInView({ threshold: 1 });
+
+  useEffect(() => {
+    if (view) {
+      setSlide(1);
+    }
+  }, [view]);
+
   return (
-    <Wrapper>
+    <Wrapper ref={element}>
       <ButtonWrapper>
         <SectionContentWrapper>
           <SectionHeader className={darkMode && 'darkMode'}>

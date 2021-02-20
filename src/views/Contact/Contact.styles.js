@@ -23,8 +23,10 @@ export const SectionHeader = styled.h1`
   font-weight: lighter;
   color: ${({ theme }) => theme.colors.primaryLight};
   font-size: clamp(4rem, 6vw, 5rem);
+  transition: 1.5s ease;
   &.darkMode {
     color: ${({ theme }) => theme.colors.primaryDark};
+    transition: 1.5s ease;
   }
   @media screen and (min-width: 680px) {
     width: 50%;
@@ -46,8 +48,10 @@ export const Form = styled.form`
   align-items: center;
   justify-content: space-between;
   color: ${({ theme }) => theme.colors.primaryLight};
+  transition: 1.5s ease;
   &.darkMode {
     color: ${({ theme }) => theme.colors.primaryDark};
+    transition: 1.5s ease;
   }
   @media screen and (min-width: 680px) {
     width: 50%;
@@ -71,9 +75,11 @@ export const Input = styled.input`
   font-family: 'Montserrat';
   border: 1px solid #e7e7e7;
   background: none;
+  transition: 1.5s ease;
   &.darkMode {
     color: ${({ theme }) => theme.colors.primaryDark};
     border: 1px solid #2d2d2d;
+    transition: 1.5s ease;
   }
   @media screen and (min-width: 680px) {
     height: 3.5rem;
@@ -89,9 +95,11 @@ export const TextArea = styled.textarea`
   border: 1px solid #e7e7e7;
   background: none;
   resize: none;
+  transition: 1.5s ease;
   &.darkMode {
     color: ${({ theme }) => theme.colors.primaryDark};
     border: 1px solid #2d2d2d;
+    transition: 1.5s ease;
   }
   @media screen and (min-width: 680px) {
     height: 15rem;
@@ -111,7 +119,9 @@ export const Info = styled.p`
   color: ${({ theme }) => theme.colors.primaryLight};
   font-size: ${({ theme }) => theme.fontSize.s};
   font-family: 'Montserrat';
+  transition: 1.5s ease;
   &.darkMode {
+    transition: 1.5s ease;
     color: ${({ theme }) => theme.colors.primaryDark};
   }
 `;
@@ -126,9 +136,37 @@ export const Button = styled.button`
   color: ${({ theme }) => theme.colors.primaryLight};
   font-size: ${({ theme }) => theme.fontSize.m};
   cursor: pointer;
+  transition: 1.5s ease;
   &.darkMode {
     color: ${({ theme }) => theme.colors.primaryDark};
     border: 1px solid #2d2d2d;
+    transition: 1.5s ease;
+    &::before {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      content: '';
+      width: 100%;
+      height: 0%;
+      background: #2d2d2d;
+      z-index: -1;
+      transition: 0.5s ease;
+    }
+    &:hover {
+      color: ${({ theme }) => theme.colors.primaryLight};
+      transition: 1.5s ease;
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: #2d2d2d;
+        z-index: -1;
+        transition: 0.5s ease;
+      }
+    }
   }
   &::before {
     position: absolute;
@@ -143,6 +181,7 @@ export const Button = styled.button`
   }
   &:hover {
     color: ${({ theme }) => theme.colors.primaryDark};
+    transition: 1.5s ease;
     &::before {
       position: absolute;
       left: 0;
@@ -174,7 +213,9 @@ export const SocialMediaInfo = styled.p`
   font-size: ${({ theme }) => theme.fontSize.m};
   font-family: 'Montserrat';
   text-align: center;
+  transition: 1.5s ease;
   &.darkMode {
+    transition: 1.5s ease;
     color: ${({ theme }) => theme.colors.primaryDark};
   }
 `;
