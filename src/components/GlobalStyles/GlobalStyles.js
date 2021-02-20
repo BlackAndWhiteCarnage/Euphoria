@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
 }
-*:focus{
+*:focus-visible{
     ${(props) => {
       if (props.darkMode) {
         return '-webkit-box-shadow: 0px 0px 20px 5px rgba(0,0,0,1); box-shadow: 0px 0px 20px 5px rgba(0,0,0,1);';
@@ -15,6 +15,9 @@ export const GlobalStyle = createGlobalStyle`
       }
     }}
     outline: none;
+}
+*:focus{
+  outline: none;
 }
 html{
     font-size: 62.5%;
