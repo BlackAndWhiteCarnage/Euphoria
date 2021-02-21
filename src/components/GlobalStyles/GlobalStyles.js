@@ -19,10 +19,31 @@ export const GlobalStyle = createGlobalStyle`
 *:focus{
   outline: none;
 }
+*::-moz-selection{
+  ${(props) => {
+    if (props.darkMode) {
+      return 'background: rgba(0, 0, 0, 1); color: #E7E7E7';
+    } else {
+      return 'background: rgba(255, 255, 255, 1); color: #2D2D2D';
+    }
+  }}
+}
+*::selection{
+  ${(props) => {
+    if (props.darkMode) {
+      return 'background: rgba(0, 0, 0, 1); color: #E7E7E7';
+    } else {
+      return 'background: rgba(255, 255, 255, 1); color: #2D2D2D';
+    }
+  }}
+}
 html{
     font-size: 62.5%;
+    ${
+      navigator.userAgent.toLowerCase().indexOf('firefox') > -1 &&
+      'overflow-x: hidden'
+    }
 }
 body{
-    background: #202020;
-}
+    background: #202020;}
 `;

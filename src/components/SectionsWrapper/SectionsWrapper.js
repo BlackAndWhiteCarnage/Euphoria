@@ -103,6 +103,11 @@ const DarkModeIcon = styled.img`
   width: 2.5rem;
   height: 2.5rem;
   cursor: pointer;
+  transition: 0.3s ease;
+  &:hover {
+    transform: scale(1.3);
+    transition: 0.3s ease;
+  }
 `;
 
 const SquareIcon = styled.img`
@@ -127,6 +132,11 @@ const SocialMediaIcon = styled.img`
   height: 2.5rem;
   pointer-events: all;
   cursor: pointer;
+  transition: 0.3s ease;
+  &:hover {
+    transform: scale(1.3);
+    transition: 0.3s ease;
+  }
 `;
 
 const NavWrapper = styled.ul`
@@ -150,6 +160,11 @@ const NavItem = styled.li`
   &.darkMode {
     transition: 1.5s ease;
     color: ${({ theme }) => theme.colors.primaryDark};
+  }
+  &:hover {
+    transition: 0.5s ease;
+    letter-spacing: 0.1rem;
+    color: ${({ theme }) => theme.colors.primaryRed};
   }
 `;
 
@@ -178,6 +193,8 @@ const DotsWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   pointer-events: all;
+  ${navigator.userAgent.toLowerCase().indexOf('firefox') > -1 &&
+  'display: none'}
 `;
 
 const Dot = styled.button`

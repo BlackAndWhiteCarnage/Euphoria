@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import Hamburger from 'components/Hamburger/Hamburger';
 import SectionsWrapper from 'components/SectionsWrapper/SectionsWrapper';
 import Home from 'views/Home/Home';
@@ -13,7 +14,7 @@ const Root = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [slide, setSlide] = useState(0);
 
-  console.log(slide);
+  console.log(window.matchMedia('(min-width: 1200px)').matches);
 
   const slides: ISlideConfig[] = [
     {
@@ -58,7 +59,7 @@ const Root = () => {
   return (
     <>
       <GlobalStyle darkMode={darkMode} />
-      <Switch>
+      <Wrapper>
         <Route path="/" exact>
           <Hamburger darkMode={darkMode} />
           <SectionsWrapper
@@ -68,7 +69,13 @@ const Root = () => {
             setSlide={setSlide}
           />
           <PageSlides
-            enableAutoScroll={true}
+            // Fix bug cause firefox blocking scrolling after first scroll only on desktop browser
+            enableAutoScroll={
+              navigator.userAgent.toLowerCase().indexOf('firefox') > -1 &&
+              window.matchMedia('(min-width: 680px)').matches
+                ? false
+                : true
+            }
             transitionSpeed={1000}
             slides={slides}
             currentSlideIndex={slide}
@@ -78,9 +85,13 @@ const Root = () => {
             }}
           />
         </Route>
-      </Switch>
+      </Wrapper>
     </>
   );
 };
+
+const Wrapper = styled(Switch)`
+  overflow: hidden;
+`;
 
 export default Root;
