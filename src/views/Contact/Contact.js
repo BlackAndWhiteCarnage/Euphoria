@@ -35,26 +35,21 @@ const Contact = ({ darkMode, setSlide }) => {
     <Wrapper ref={element}>
       <SectionHeader className={darkMode && 'darkMode'}>KONTAKT</SectionHeader>
       <Form className={darkMode && 'darkMode'}>
-        <Label>Adres E-Mail</Label>
-        <Input className={darkMode && 'darkMode'} />
-        <Label>Wiadomość</Label>
-        <TextArea className={darkMode && 'darkMode'} />
+        <Label htmlFor="Email">Adres E-Mail</Label>
+        <Input id="Email" className={darkMode && 'darkMode'} />
+        <Label htmlFor="Message">Wiadomość</Label>
+        <TextArea id="Message" className={darkMode && 'darkMode'} />
         <InfoAndButton>
-          <Info className={darkMode && 'darkMode'}>
-            Informacje podane w polach służą jedynie do kontaktu z potencjalnym
-            klientem
-          </Info>
+          <Info className={darkMode && 'darkMode'}>Informacje podane w polach służą jedynie do kontaktu z potencjalnym klientem</Info>
           <Button className={darkMode && 'darkMode'}>Wyślij</Button>
         </InfoAndButton>
       </Form>
       <SocialMediaWrapper>
-        <SocialMediaInfo className={darkMode && 'darkMode'}>
-          Lub skontatkuj się ze mną poprzez social media
-        </SocialMediaInfo>
+        <SocialMediaInfo className={darkMode && 'darkMode'}>Lub skontatkuj się ze mną poprzez social media</SocialMediaInfo>
         <SocialMediaIconsWrapper>
-          <Icon src={darkMode ? DarkInstagram : Instagram} />
-          <Icon src={darkMode ? DarkEmail : Email} />
-          <Icon src={darkMode ? DarkWhatsApp : WhatsApp} />
+          <Icon src={darkMode ? DarkInstagram : Instagram} alt="Instagram Icon" />
+          <Icon src={darkMode ? DarkEmail : Email} alt="Email Icon" />
+          <Icon src={darkMode ? DarkWhatsApp : WhatsApp} alt="What's App Icon" />
         </SocialMediaIconsWrapper>
       </SocialMediaWrapper>
     </Wrapper>

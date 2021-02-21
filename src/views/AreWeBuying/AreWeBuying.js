@@ -1,14 +1,6 @@
 import React, { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import {
-  Wrapper,
-  SectionHeader,
-  StepsWrapper,
-  Step,
-  IconWrapper,
-  Icon,
-  StepContent,
-} from './AreWeBuying.styles';
+import { Wrapper, SectionHeader, StepsWrapper, Step, IconWrapper, Icon, StepContent } from './AreWeBuying.styles';
 import AddToCart from 'assets/icons/AddToCart.svg';
 import DarkAddToCart from 'assets/icons/DarkAddToCart.svg';
 import SendEmail from 'assets/icons/SendEmail.svg';
@@ -31,45 +23,33 @@ const AreWeBuying = ({ darkMode, setSlide }) => {
 
   return (
     <Wrapper ref={element}>
-      <SectionHeader className={darkMode && 'darkMode'}>
-        KUPUJEMY?
-      </SectionHeader>
+      <SectionHeader className={darkMode && 'darkMode'}>KUPUJEMY?</SectionHeader>
       <StepsWrapper>
         <Step className={darkMode && 'darkMode'}>
           <IconWrapper className={darkMode && 'darkMode'}>
             <Icon src={darkMode ? DarkAddToCart : AddToCart} />
           </IconWrapper>
           <StepContent>
-            Aby złożyć zamówienie wejdź w interesującą Cię kategorię, dodaj
-            produkt do koszyka po czym wypełnij formularz kontaktowy
+            Aby złożyć zamówienie wejdź w interesującą Cię kategorię, dodaj produkt do koszyka po czym wypełnij formularz kontaktowy
           </StepContent>
         </Step>
         <Step className={darkMode && 'darkMode'}>
           <IconWrapper className={darkMode && 'darkMode'}>
             <Icon src={darkMode ? DarkSendEmail : SendEmail} />
           </IconWrapper>
-          <StepContent>
-            Następnie zamówienie trafia do mnie gdzie ustalamy szczegóły oraz
-            koszta
-          </StepContent>
+          <StepContent>Następnie zamówienie trafia do mnie gdzie ustalamy szczegóły oraz koszta</StepContent>
         </Step>
         <Step className={darkMode && 'darkMode'}>
           <IconWrapper className={darkMode && 'darkMode'}>
             <Icon src={darkMode ? DarkPayment : Payment} />
           </IconWrapper>
-          <StepContent>
-            Po tym otrzymasz ode mnie numer konta bankowego na które przelejesz
-            ustaloną kwotę
-          </StepContent>
+          <StepContent>Po tym otrzymasz ode mnie numer konta bankowego na które przelejesz ustaloną kwotę</StepContent>
         </Step>
         <Step className={darkMode && 'darkMode'}>
           <IconWrapper className={darkMode && 'darkMode'}>
             <Icon src={darkMode ? DarkInProgress : InProgress} />
           </IconWrapper>
-          <StepContent>
-            Zaczynam przygotowywać Twoje majteczki, skarpetki lub inną wybraną
-            rzecz według naszych ustaleń
-          </StepContent>
+          <StepContent>Zaczynam przygotowywać Twoje majteczki, skarpetki lub inną wybraną rzecz według naszych ustaleń</StepContent>
         </Step>
         <Step className={darkMode && 'darkMode'}>
           <IconWrapper className={darkMode && 'darkMode'}>

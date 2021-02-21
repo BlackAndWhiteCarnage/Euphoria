@@ -48,8 +48,11 @@ export const StepsWrapper = styled.ul`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  @media screen and (min-width: 680px) {
+  font-size: ${({ theme }) => theme.fontSize.s};
+  @media screen and (min-width: 400px) {
     font-size: ${({ theme }) => theme.fontSize.m};
+  }
+  @media screen and (min-width: 680px) {
     width: 80%;
     height: 40%;
   }
@@ -76,6 +79,7 @@ export const Step = styled.li`
 export const StepContent = styled.p`
   width: 80%;
   height: auto;
+  transition: 1s ease;
   @media screen and (min-width: 680px) {
     width: 90%;
   }

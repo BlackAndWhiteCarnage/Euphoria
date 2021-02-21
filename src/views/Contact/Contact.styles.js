@@ -68,6 +68,7 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
+  font-weight: bold;
   width: 100%;
   height: 2.5rem;
   color: ${({ theme }) => theme.colors.primaryLight};
@@ -76,6 +77,7 @@ export const Input = styled.input`
   border: 1px solid #e7e7e7;
   background: none;
   transition: 1.5s ease;
+  padding: 1rem;
   &.darkMode {
     color: ${({ theme }) => theme.colors.primaryDark};
     border: 1px solid #2d2d2d;
@@ -87,6 +89,7 @@ export const Input = styled.input`
 `;
 
 export const TextArea = styled.textarea`
+  font-weight: bold;
   width: 100%;
   height: 10rem;
   color: ${({ theme }) => theme.colors.primaryLight};
@@ -96,6 +99,7 @@ export const TextArea = styled.textarea`
   background: none;
   resize: none;
   transition: 1.5s ease;
+  padding: 1rem;
   &.darkMode {
     color: ${({ theme }) => theme.colors.primaryDark};
     border: 1px solid #2d2d2d;
@@ -120,6 +124,7 @@ export const Info = styled.p`
   font-size: ${({ theme }) => theme.fontSize.s};
   font-family: 'Montserrat';
   transition: 1.5s ease;
+  text-decoration: underline;
   &.darkMode {
     transition: 1.5s ease;
     color: ${({ theme }) => theme.colors.primaryDark};
@@ -214,6 +219,7 @@ export const SocialMediaInfo = styled.p`
   font-family: 'Montserrat';
   text-align: center;
   transition: 1.5s ease;
+  text-transform: uppercase;
   &.darkMode {
     transition: 1.5s ease;
     color: ${({ theme }) => theme.colors.primaryDark};

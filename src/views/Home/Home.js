@@ -13,16 +13,7 @@ import DarkLogoForMobile from 'assets/icons/DarkLogoForMobile.svg';
 import HomeImg1 from 'assets/images/HomeImg1.jpg';
 import HomeImg2 from 'assets/images/HomeImg2.jpg';
 import HomeImg3 from 'assets/images/HomeImg3.jpg';
-import {
-  Wrapper,
-  ImageWrapper,
-  Image,
-  Logo,
-  AllIconsWrapper,
-  IconsWrapper,
-  Icon,
-  DarkModeIcon,
-} from './Home.styles';
+import { Wrapper, ImageWrapper, Image, Logo, AllIconsWrapper, IconsWrapper, Icon, DarkModeIcon } from './Home.styles';
 
 const images = [HomeImg1, HomeImg2, HomeImg3];
 
@@ -48,22 +39,16 @@ const Home = ({ darkMode, setDarkMode, setSlide }) => {
     <Wrapper ref={element}>
       <ImageWrapper className={darkMode && 'darkMode'}>
         {images.map((item, index) => (
-          <Image
-            className={index === current ? 'show' : 'hide'}
-            src={imageToRender}
-          />
+          <Image className={index === current ? 'show' : 'hide'} src={imageToRender} />
         ))}
-        <Logo src={darkMode ? DarkLogoForMobile : LogoForMobile} />
+        <Logo src={darkMode ? DarkLogoForMobile : LogoForMobile} alt="Euphoria Logo Image" />
       </ImageWrapper>
       <AllIconsWrapper>
-        <DarkModeIcon
-          src={darkMode ? DarkDarkMode : DarkMode}
-          onClick={() => setDarkMode(!darkMode)}
-        />
+        <DarkModeIcon src={darkMode ? DarkDarkMode : DarkMode} onClick={() => setDarkMode(!darkMode)} alt="Dark Mode Icon" />
         <IconsWrapper>
-          <Icon src={darkMode ? DarkInstagram : Instagram} />
-          <Icon src={darkMode ? DarkWhatsApp : WhatsApp} />
-          <Icon src={darkMode ? DarkEmail : Email} />
+          <Icon src={darkMode ? DarkInstagram : Instagram} alt="Instagram Icon" />
+          <Icon src={darkMode ? DarkWhatsApp : WhatsApp} alt="What's App Icon" />
+          <Icon src={darkMode ? DarkEmail : Email} alt="Email Icon" />
         </IconsWrapper>
       </AllIconsWrapper>
     </Wrapper>

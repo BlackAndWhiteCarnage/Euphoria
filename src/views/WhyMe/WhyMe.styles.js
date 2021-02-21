@@ -65,11 +65,13 @@ export const SectionContent = styled.p`
     transition: 1.5s ease;
     color: ${({ theme }) => theme.colors.primaryDark};
   }
-  @media screen and (min-width: 680px) {
+  @media screen and (min-width: 400px) {
     font-size: ${({ theme }) => theme.fontSize.m};
+  }
+  @media screen and (min-width: 680px) {
     width: 80%;
   }
-  @media screen and (min-width: 1020px) {
+  @media screen and (min-width: 1200px) {
     font-size: ${({ theme }) => theme.fontSize.m};
     width: 50%;
   }

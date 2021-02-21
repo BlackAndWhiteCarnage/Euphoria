@@ -14,67 +14,43 @@ const Root = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [slide, setSlide] = useState(0);
 
-  console.log(window.matchMedia('(min-width: 1200px)').matches);
-
   const slides: ISlideConfig[] = [
     {
-      content: (
-        <Home
-          darkMode={darkMode}
-          setDarkMode={setDarkMode}
-          setSlide={setSlide}
-        />
-      ),
+      content: <Home darkMode={darkMode} setDarkMode={setDarkMode} setSlide={setSlide} />,
       style: {
-        background: darkMode
-          ? 'linear-gradient(#E0E0E0, #B8B8B8, #E0E0E0)'
-          : 'linear-gradient(#505050, #000000, #1d1d1d)',
+        background: darkMode ? 'linear-gradient(#E0E0E0, #B8B8B8, #E0E0E0)' : 'linear-gradient(#505050, #000000, #1d1d1d)',
       },
     },
     {
       content: <WhyMe darkMode={darkMode} setSlide={setSlide} />,
       style: {
-        background: darkMode
-          ? 'linear-gradient(#E7E7E7, #ffffff, #B9B9B9)'
-          : 'linear-gradient(#000000, #1d1d1d, #505050)',
+        background: darkMode ? 'linear-gradient(#E7E7E7, #ffffff, #B9B9B9)' : 'linear-gradient(#000000, #1d1d1d, #505050)',
       },
     },
     {
       content: <AreWeBuying darkMode={darkMode} setSlide={setSlide} />,
       style: {
-        background: darkMode
-          ? 'linear-gradient(#D3D3D3, #ECECEC, #F3F3F3)'
-          : 'linear-gradient(#1d1d1d, #000000, #505050)',
+        background: darkMode ? 'linear-gradient(#D3D3D3, #ECECEC, #F3F3F3)' : 'linear-gradient(#1d1d1d, #000000, #505050)',
       },
     },
     {
       content: <Contact darkMode={darkMode} setSlide={setSlide} />,
       style: {
-        background: darkMode
-          ? 'linear-gradient(#CDCDCD, #B7B7B7, #FFFFFF)'
-          : 'linear-gradient(#000000, #1d1d1d, #505050)',
+        background: darkMode ? 'linear-gradient(#CDCDCD, #B7B7B7, #FFFFFF)' : 'linear-gradient(#000000, #1d1d1d, #505050)',
       },
     },
   ];
   return (
     <>
       <GlobalStyle darkMode={darkMode} />
-      <Wrapper>
+      <Switch>
         <Route path="/" exact>
           <Hamburger darkMode={darkMode} />
-          <SectionsWrapper
-            darkMode={darkMode}
-            setDarkMode={setDarkMode}
-            slide={slide}
-            setSlide={setSlide}
-          />
+          <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} slide={slide} setSlide={setSlide} />
           <PageSlides
             // Fix bug cause firefox blocking scrolling after first scroll only on desktop browser
             enableAutoScroll={
-              navigator.userAgent.toLowerCase().indexOf('firefox') > -1 &&
-              window.matchMedia('(min-width: 680px)').matches
-                ? false
-                : true
+              navigator.userAgent.toLowerCase().indexOf('firefox') > -1 && window.matchMedia('(min-width: 680px)').matches ? false : true
             }
             transitionSpeed={1000}
             slides={slides}
@@ -85,13 +61,12 @@ const Root = () => {
             }}
           />
         </Route>
-      </Wrapper>
+        <Route path="/sklep">
+          <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} path="shop" />
+        </Route>
+      </Switch>
     </>
   );
 };
-
-const Wrapper = styled(Switch)`
-  overflow: hidden;
-`;
 
 export default Root;

@@ -39,11 +39,15 @@ export const GlobalStyle = createGlobalStyle`
 }
 html{
     font-size: 62.5%;
-    ${
-      navigator.userAgent.toLowerCase().indexOf('firefox') > -1 &&
-      'overflow-x: hidden'
-    }
 }
 body{
-    background: #202020;}
+    background: #202020;
+    h1{
+      line-height: normal;
+    }
+    line-height: 2.2rem;
+    @media screen and (max-width: 680px){
+      line-height: 1.5rem;
+    }
+}
 `;
