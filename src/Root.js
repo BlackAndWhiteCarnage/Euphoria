@@ -6,6 +6,7 @@ import Home from 'views/Home/Home';
 import WhyMe from 'views/WhyMe/WhyMe';
 import AreWeBuying from 'views/AreWeBuying/AreWeBuying';
 import Contact from 'views/Contact/Contact';
+import Shop from 'views/Shop/Shop';
 import { GlobalStyle } from 'components/GlobalStyles/GlobalStyles';
 import { ISlideConfig, PageSlides, SlideParallaxType } from 'react-page-slides';
 import { Switch, Route } from 'react-router-dom';
@@ -62,7 +63,9 @@ const Root = () => {
           />
         </Route>
         <Route path="/sklep">
+          <Hamburger darkMode={darkMode} />
           <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} path="shop" />
+          <Shop darkMode={darkMode} />
         </Route>
       </Switch>
     </>

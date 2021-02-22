@@ -17,14 +17,17 @@ export const Wrapper = styled.nav`
 `;
 
 export const CartAndDarkModeButtonWrapper = styled.div`
+  width: 5rem;
   position: absolute;
   display: flex;
-  width: 8rem;
   right: 0;
   top: 0;
   background: none;
   border: none;
   pointer-events: all;
+  @media screen and (min-width: 860px) {
+    width: 8rem;
+  }
 `;
 
 export const DarkModeIcon = styled.img`

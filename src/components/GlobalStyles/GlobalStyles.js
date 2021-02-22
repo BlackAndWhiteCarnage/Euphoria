@@ -49,5 +49,28 @@ body{
     @media screen and (max-width: 680px){
       line-height: 1.5rem;
     }
+
 }
+    @media screen and (min-width: 1200px){
+    ::-webkit-scrollbar {
+    width: .5rem;
+    background: none;
+    }
+    ::-webkit-scrollbar-track {
+    width: .5rem;
+    }
+    ::-webkit-scrollbar-thumb {
+    ${(props) => {
+      if (props.darkMode) {
+        return 'background: #2D2D2D;';
+      } else {
+        return 'background: #E7E7E7;';
+      }
+    }}
+    }
+    ::-webkit-scrollbar-thumb:hover {
+    background: #B80202;
+    }
+    }
+
 `;

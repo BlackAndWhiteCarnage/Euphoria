@@ -28,6 +28,7 @@ import DarkWhatsApp from 'assets/icons/DarkWhatsApp.svg';
 import Square from 'assets/icons/Square.svg';
 import DarkSquare from 'assets/icons/DarkSquare.svg';
 import Cart from 'assets/icons/Cart.svg';
+import DarkCart from 'assets/icons/DarkCart.svg';
 
 const SectionsWrapper = ({ darkMode, setDarkMode, slide, setSlide, path }) => {
   return (
@@ -37,7 +38,7 @@ const SectionsWrapper = ({ darkMode, setDarkMode, slide, setSlide, path }) => {
           <DarkModeButton onClick={() => setDarkMode(!darkMode)}>
             <DarkModeIcon src={darkMode ? DarkDarkMode : DarkMode} />
           </DarkModeButton>
-          {path && <CartIcon src={Cart} />}
+          {path && <CartIcon src={darkMode ? DarkCart : Cart} />}
         </CartAndDarkModeButtonWrapper>
         <SquareIcon src={darkMode ? DarkSquare : Square} />
         {!path && (
