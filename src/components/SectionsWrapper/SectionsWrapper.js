@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Link } from 'react-router-dom';
 import {
   Wrapper,
   DarkModeButton,
@@ -16,6 +16,7 @@ import {
   ShopSquareIcon,
   CartIcon,
   CartAndDarkModeButtonWrapper,
+  BackIcon,
 } from './SectionsWrapper.styles';
 import DarkMode from 'assets/icons/DarkMode.svg';
 import DarkDarkMode from 'assets/icons/DarkDarkMode.svg';
@@ -29,16 +30,23 @@ import Square from 'assets/icons/Square.svg';
 import DarkSquare from 'assets/icons/DarkSquare.svg';
 import Cart from 'assets/icons/Cart.svg';
 import DarkCart from 'assets/icons/DarkCart.svg';
+import Back from 'assets/icons/Back.svg';
+import DarkBack from 'assets/icons/DarkBack.svg';
 
 const SectionsWrapper = ({ darkMode, setDarkMode, slide, setSlide, path }) => {
   return (
     <Switch>
       <Wrapper>
         <CartAndDarkModeButtonWrapper>
-          <DarkModeButton onClick={() => setDarkMode(!darkMode)}>
+          {path && <CartIcon src={darkMode ? DarkCart : Cart} />}
+          <DarkModeButton onClick={() => setDarkMode(!darkMode)} className={path && 'path'}>
             <DarkModeIcon src={darkMode ? DarkDarkMode : DarkMode} />
           </DarkModeButton>
-          {path && <CartIcon src={darkMode ? DarkCart : Cart} />}
+          {path && (
+            <Link to="/">
+              <BackIcon src={darkMode ? DarkBack : Back} />
+            </Link>
+          )}
         </CartAndDarkModeButtonWrapper>
         <SquareIcon src={darkMode ? DarkSquare : Square} />
         {!path && (
@@ -57,14 +65,13 @@ const SectionsWrapper = ({ darkMode, setDarkMode, slide, setSlide, path }) => {
           </>
         )}
         {path && <ShopSquareIcon src={darkMode ? DarkSquare : Square} />}
-
         <NavWrapper>
-          <Link to="/sklep">
+          <Link to="/sklep/majteczki">
             <NavItemButton>
               <NavItem className={darkMode && 'darkMode'}>majteczki</NavItem>
             </NavItemButton>
           </Link>
-          <Link to="/sklep">
+          <Link to="/sklep/skarpetki">
             <NavItemButton>
               <NavItem className={darkMode && 'darkMode'}>skarpetki</NavItem>
             </NavItemButton>

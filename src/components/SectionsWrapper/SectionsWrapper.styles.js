@@ -26,7 +26,8 @@ export const CartAndDarkModeButtonWrapper = styled.div`
   border: none;
   pointer-events: all;
   @media screen and (min-width: 860px) {
-    width: 8rem;
+    width: 10rem;
+    justify-content: space-around;
   }
 `;
 
@@ -42,6 +43,17 @@ export const DarkModeIcon = styled.img`
 `;
 
 export const CartIcon = styled.img`
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  &:hover {
+    transform: scale(1.3);
+    transition: 0.3s ease;
+  }
+`;
+
+export const BackIcon = styled.img`
   width: 2.5rem;
   height: 2.5rem;
   cursor: pointer;
@@ -131,6 +143,9 @@ export const DarkModeButton = styled.button`
   background: none;
   border: none;
   pointer-events: all;
+  &.path {
+    position: static;
+  }
 `;
 
 export const DotsWrapper = styled.div`

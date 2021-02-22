@@ -6,7 +6,7 @@ import Home from 'views/Home/Home';
 import WhyMe from 'views/WhyMe/WhyMe';
 import AreWeBuying from 'views/AreWeBuying/AreWeBuying';
 import Contact from 'views/Contact/Contact';
-import Shop from 'views/Shop/Shop';
+import ShopPanties from 'views/ShopPanties/ShopPanties';
 import { GlobalStyle } from 'components/GlobalStyles/GlobalStyles';
 import { ISlideConfig, PageSlides, SlideParallaxType } from 'react-page-slides';
 import { Switch, Route } from 'react-router-dom';
@@ -46,8 +46,8 @@ const Root = () => {
       <GlobalStyle darkMode={darkMode} />
       <Switch>
         <Route path="/" exact>
-          <Hamburger darkMode={darkMode} />
           <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} slide={slide} setSlide={setSlide} />
+          <Hamburger darkMode={darkMode} />
           <PageSlides
             // Fix bug cause firefox blocking scrolling after first scroll only on desktop browser
             enableAutoScroll={
@@ -62,10 +62,13 @@ const Root = () => {
             }}
           />
         </Route>
-        <Route path="/sklep">
-          <Hamburger darkMode={darkMode} />
+        <Route path="/sklep/majteczki">
           <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} path="shop" />
-          <Shop darkMode={darkMode} />
+          <ShopPanties darkMode={darkMode} />
+        </Route>
+        <Route path="/sklep/skarpetki">
+          <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} path="shop" />
+          <ShopPanties darkMode={darkMode} />
         </Route>
       </Switch>
     </>
