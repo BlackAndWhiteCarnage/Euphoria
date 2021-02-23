@@ -7,9 +7,15 @@ import WhyMe from 'views/WhyMe/WhyMe';
 import AreWeBuying from 'views/AreWeBuying/AreWeBuying';
 import Contact from 'views/Contact/Contact';
 import ShopPanties from 'views/ShopPanties/ShopPanties';
+import ShopSocks from 'views/ShopSocks/ShopSocks';
+import ShopTightsAndStockings from 'views/ShopTightsAndStockings/ShopTightsAndStockings';
 import { GlobalStyle } from 'components/GlobalStyles/GlobalStyles';
 import { ISlideConfig, PageSlides, SlideParallaxType } from 'react-page-slides';
 import { Switch, Route } from 'react-router-dom';
+
+fetch('http://localhost:4000/products')
+  .then((response) => response.json())
+  .then((data) => console.log(data));
 
 const Root = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -62,14 +68,18 @@ const Root = () => {
             }}
           />
         </Route>
-        <Route path="/sklep/majteczki">
+        <>
           <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} path="shop" />
-          <ShopPanties darkMode={darkMode} />
-        </Route>
-        <Route path="/sklep/skarpetki">
-          <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} path="shop" />
-          <ShopPanties darkMode={darkMode} />
-        </Route>
+          <Route path="/sklep/majteczki">
+            <ShopPanties darkMode={darkMode} />
+          </Route>
+          <Route path="/sklep/skarpetki">
+            <ShopSocks darkMode={darkMode} />
+          </Route>
+          <Route path="/sklep/rajstopyipończochy">
+            <ShopTightsAndStockings darkMode={darkMode} />
+          </Route>
+        </>
       </Switch>
     </>
   );

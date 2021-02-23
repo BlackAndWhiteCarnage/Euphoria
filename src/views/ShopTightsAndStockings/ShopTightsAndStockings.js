@@ -14,14 +14,14 @@ import {
   SquareTopRight,
   SquareBottomLeft,
   SquareBottomRight,
-} from './ShopSocks.styles';
-import { socks } from 'data/Socks';
+} from './ShopTightsAndStockings.styles';
+import { tights } from 'data/TightsAndStockings';
 
-const ShopSocks = ({ darkMode }) => {
+const ShopTightsAndStockings = ({ darkMode }) => {
   return (
     <Wrapper className={darkMode && 'darkMode'}>
       <ProductsWrapper>
-        {socks.map((item) => (
+        {tights.map((item) => (
           <ProductWrapper>
             <Product>
               <ProductImg src={item.mainImages[1]} />
@@ -42,4 +42,4 @@ const ShopSocks = ({ darkMode }) => {
   );
 };
 
-export default ShopSocks;
+export default ShopTightsAndStockings;
