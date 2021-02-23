@@ -13,10 +13,6 @@ import { GlobalStyle } from 'components/GlobalStyles/GlobalStyles';
 import { ISlideConfig, PageSlides, SlideParallaxType } from 'react-page-slides';
 import { Switch, Route } from 'react-router-dom';
 
-fetch('http://localhost:4000/products')
-  .then((response) => response.json())
-  .then((data) => console.log(data));
-
 const Root = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [slide, setSlide] = useState(0);
