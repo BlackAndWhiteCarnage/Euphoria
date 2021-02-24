@@ -24,9 +24,11 @@ const ShopSocks = ({ darkMode }) => {
   }, []);
 
   const loadData = async () => {
-    await fetch('http://localhost:4000/categories/2')
+    await fetch('https://euphoriaapp.herokuapp.com/categories/60366f5cf7e94d001572108c')
       .then((response) => response.json())
-      .then((res) => setData(res.products));
+      .then((res) => {
+        setData(res.products);
+      });
   };
 
   return (
@@ -36,8 +38,8 @@ const ShopSocks = ({ darkMode }) => {
           return (
             <ProductWrapper>
               <Product>
-                <ProductImg src={`http://localhost:4000${item.image[0].url}`} />
-                <ProductName className={darkMode && 'darkMode'}>{item.name}</ProductName>
+                <ProductImg src={`https://euphoriaapp.herokuapp.com${item.Image[0].url}`} />
+                <ProductName className={darkMode && 'darkMode'}>{item.Name}</ProductName>
                 <ButtonsWrapper>
                   <Button className={darkMode && 'darkMode'}>Dodaj do koszyka</Button>
                   <Button className={darkMode && 'darkMode'}>Przejdź</Button>
