@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Hamburger from 'components/Hamburger/Hamburger';
 import SectionsWrapper from 'components/SectionsWrapper/SectionsWrapper';
@@ -9,12 +9,26 @@ import Contact from 'views/Contact/Contact';
 import Shop from 'views/Shop/Shop';
 import { GlobalStyle } from 'components/GlobalStyles/GlobalStyles';
 import { ISlideConfig, PageSlides, SlideParallaxType } from 'react-page-slides';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
+import { panties } from 'data/Panties';
+import { socks } from 'data/Socks';
+import { tights } from 'data/TightsAndStockings';
 
 const Root = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [slide, setSlide] = useState(0);
-  const [URL, setURL] = useState();
+  const [URL, setURL] = useState(window.location.href);
+  const [data, setData] = useState();
+
+  const location = useLocation();
+
+  useEffect(() => {
+    setURL(window.location.href);
+  }, [location]);
+
+  useEffect(() => {
+    setData(URL.indexOf('majteczki') > -1 ? panties : URL.indexOf('skarpetki') > -1 ? socks : URL.indexOf('rajstopy') > -1 ? tights : null);
+  }, [URL]);
 
   const slides: ISlideConfig[] = [
     {
@@ -65,8 +79,8 @@ const Root = () => {
         </Route>
         <>
           <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} path="shop" setURL={setURL} />
-          <Route path="/sklep">
-            <Shop darkMode={darkMode} URL={URL} setURL={setURL} />
+          <Route path="/sklep" component={() => <Shop URL={URL} setURL={setURL} data={data} />}>
+            {/* <Shop darkMode={darkMode} URL={URL} setURL={setURL} /> */}
           </Route>
         </>
       </Switch>

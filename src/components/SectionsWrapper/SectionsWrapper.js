@@ -83,23 +83,17 @@ const SectionsWrapper = ({ darkMode, setDarkMode, slide, setSlide, path, setURL 
         <NavWrapper>
           <Link to="/sklep/majteczki">
             <NavItemButton>
-              <NavItem className={darkMode && 'darkMode'} onClick={() => setURL('majteczki')}>
-                majteczki
-              </NavItem>
+              <NavItem className={darkMode && 'darkMode'}>majteczki</NavItem>
             </NavItemButton>
           </Link>
           <Link to="/sklep/skarpetki">
             <NavItemButton>
-              <NavItem className={darkMode && 'darkMode'} onClick={() => setURL('skarpetki')}>
-                skarpetki
-              </NavItem>
+              <NavItem className={darkMode && 'darkMode'}>skarpetki</NavItem>
             </NavItemButton>
           </Link>
-          <Link to="/sklep/rajstopyipończochy">
+          <Link to="/sklep/rajstopy">
             <NavItemButton>
-              <NavItem className={darkMode && 'darkMode'} onClick={() => setURL('rajstopy')}>
-                rajstopy i pończoszki
-              </NavItem>
+              <NavItem className={darkMode && 'darkMode'}>rajstopy i pończoszki</NavItem>
             </NavItemButton>
           </Link>
           <Link to="/sklep">

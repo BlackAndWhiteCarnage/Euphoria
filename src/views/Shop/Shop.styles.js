@@ -52,7 +52,34 @@ export const Product = styled.div`
 export const ProductImg = styled.img`
   object-fit: cover;
   width: 100%;
+  height: 100%;
+  transition: 0.5s ease;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.2);
+    transition: 1s ease;
+  }
+`;
+
+export const ProductImgWrapper = styled.div`
+  width: 100%;
   height: 70%;
+  overflow: hidden;
+`;
+
+export const NotSelectedInfo = styled.p`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: ${({ theme }) => theme.fontSize.m};
+  color: ${({ theme }) => theme.colors.primaryLight};
+  font-family: 'Montserrat';
+  &.darkMode {
+    text-align: center;
+    color: ${({ theme }) => theme.colors.primaryDark};
+  }
 `;
 
 export const ProductName = styled.h4`

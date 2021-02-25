@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Square from 'assets/icons/Square.svg';
 import darkSquare from 'assets/icons/DarkSquare.svg';
 import {
@@ -7,6 +7,7 @@ import {
   ProductWrapper,
   ProductName,
   ProductImg,
+  ProductImgWrapper,
   Product,
   ButtonsWrapper,
   Button,
@@ -14,27 +15,25 @@ import {
   SquareTopRight,
   SquareBottomLeft,
   SquareBottomRight,
+  NotSelectedInfo,
 } from './Shop.styles';
 import { panties } from 'data/Panties';
 import { socks } from 'data/Socks';
 import { tights } from 'data/TightsAndStockings';
 
-const Shop = ({ darkMode, URL, setURL }) => {
-  const [data, setData] = useState([]);
-  console.log(URL);
-  useEffect(() => {
-    setData(URL === 'majteczki' ? panties : URL === 'skarpetki' ? socks : URL === 'rajstopy' && tights);
-  }, [URL]);
+const Shop = ({ darkMode, URL, data }) => {
+  const container = useRef(null);
 
   return (
     <Wrapper className={darkMode && 'darkMode'}>
-      <ProductsWrapper>
-        {data.map((item) => {
-          console.log(item);
-          return (
+      <ProductsWrapper ref={container}>
+        {data ? (
+          data.map((item) => (
             <ProductWrapper>
               <Product>
-                <ProductImg src={item.mainImages[0]} />
+                <ProductImgWrapper>
+                  <ProductImg src={item.mainImages[0]} />
+                </ProductImgWrapper>
                 <ProductName className={darkMode && 'darkMode'}>{item.name}</ProductName>
                 <ButtonsWrapper>
                   <Button className={darkMode && 'darkMode'}>Dodaj do koszyka</Button>
@@ -46,8 +45,10 @@ const Shop = ({ darkMode, URL, setURL }) => {
               <SquareBottomLeft src={darkMode ? darkSquare : Square} />
               <SquareBottomRight src={darkMode ? darkSquare : Square} />
             </ProductWrapper>
-          );
-        })}
+          ))
+        ) : (
+          <NotSelectedInfo className={darkMode && 'darkMode'}>Hej, wybierz interesującą Cię kategorię :D</NotSelectedInfo>
+        )}
       </ProductsWrapper>
     </Wrapper>
   );
