@@ -6,9 +6,7 @@ import Home from 'views/Home/Home';
 import WhyMe from 'views/WhyMe/WhyMe';
 import AreWeBuying from 'views/AreWeBuying/AreWeBuying';
 import Contact from 'views/Contact/Contact';
-import ShopPanties from 'views/ShopPanties/ShopPanties';
-import ShopSocks from 'views/ShopSocks/ShopSocks';
-import ShopTightsAndStockings from 'views/ShopTightsAndStockings/ShopTightsAndStockings';
+import Shop from 'views/Shop/Shop';
 import { GlobalStyle } from 'components/GlobalStyles/GlobalStyles';
 import { ISlideConfig, PageSlides, SlideParallaxType } from 'react-page-slides';
 import { Switch, Route } from 'react-router-dom';
@@ -16,6 +14,7 @@ import { Switch, Route } from 'react-router-dom';
 const Root = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [slide, setSlide] = useState(0);
+  const [URL, setURL] = useState();
 
   const slides: ISlideConfig[] = [
     {
@@ -48,7 +47,7 @@ const Root = () => {
       <GlobalStyle darkMode={darkMode} />
       <Switch>
         <Route path="/" exact>
-          <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} slide={slide} setSlide={setSlide} />
+          <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} slide={slide} setSlide={setSlide} setURL={setURL} />
           <Hamburger darkMode={darkMode} />
           <PageSlides
             // Fix bug cause firefox blocking scrolling after first scroll only on desktop browser
@@ -65,15 +64,9 @@ const Root = () => {
           />
         </Route>
         <>
-          <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} path="shop" />
-          <Route path="/sklep/majteczki">
-            <ShopPanties darkMode={darkMode} />
-          </Route>
-          <Route path="/sklep/skarpetki">
-            <ShopSocks darkMode={darkMode} />
-          </Route>
-          <Route path="/sklep/rajstopyipończochy">
-            <ShopTightsAndStockings darkMode={darkMode} />
+          <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} path="shop" setURL={setURL} />
+          <Route path="/sklep">
+            <Shop darkMode={darkMode} URL={URL} setURL={setURL} />
           </Route>
         </>
       </Switch>

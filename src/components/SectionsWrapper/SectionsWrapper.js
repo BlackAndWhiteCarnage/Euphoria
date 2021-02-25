@@ -33,7 +33,7 @@ import DarkCart from 'assets/icons/DarkCart.svg';
 import Back from 'assets/icons/Back.svg';
 import DarkBack from 'assets/icons/DarkBack.svg';
 
-const SectionsWrapper = ({ darkMode, setDarkMode, slide, setSlide, path }) => {
+const SectionsWrapper = ({ darkMode, setDarkMode, slide, setSlide, path, setURL }) => {
   //Zrobić useEffect w Root.js na to
   //This shit is going to be usefull
   // const getURLHandler = (prop) => {
@@ -83,22 +83,30 @@ const SectionsWrapper = ({ darkMode, setDarkMode, slide, setSlide, path }) => {
         <NavWrapper>
           <Link to="/sklep/majteczki">
             <NavItemButton>
-              <NavItem className={darkMode && 'darkMode'}>majteczki</NavItem>
+              <NavItem className={darkMode && 'darkMode'} onClick={() => setURL('majteczki')}>
+                majteczki
+              </NavItem>
             </NavItemButton>
           </Link>
           <Link to="/sklep/skarpetki">
             <NavItemButton>
-              <NavItem className={darkMode && 'darkMode'}>skarpetki</NavItem>
+              <NavItem className={darkMode && 'darkMode'} onClick={() => setURL('skarpetki')}>
+                skarpetki
+              </NavItem>
             </NavItemButton>
           </Link>
           <Link to="/sklep/rajstopyipończochy">
             <NavItemButton>
-              <NavItem className={darkMode && 'darkMode'}>rajstopy i pończoszki</NavItem>
+              <NavItem className={darkMode && 'darkMode'} onClick={() => setURL('rajstopy')}>
+                rajstopy i pończoszki
+              </NavItem>
             </NavItemButton>
           </Link>
           <Link to="/sklep">
             <NavItemButton>
-              <NavItem className={darkMode && 'darkMode'}>inne</NavItem>
+              <NavItem className={darkMode && 'darkMode'} onClick={() => setURL('inne')}>
+                inne
+              </NavItem>
             </NavItemButton>
           </Link>
         </NavWrapper>

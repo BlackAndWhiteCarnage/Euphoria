@@ -5,41 +5,37 @@ import {
   Wrapper,
   ProductsWrapper,
   ProductWrapper,
-  Product,
-  ProductImg,
   ProductName,
+  ProductImg,
+  Product,
   ButtonsWrapper,
   Button,
   SquareTopLeft,
   SquareTopRight,
   SquareBottomLeft,
   SquareBottomRight,
-} from './ShopSocks.styles';
+} from './Shop.styles';
+import { panties } from 'data/Panties';
+import { socks } from 'data/Socks';
+import { tights } from 'data/TightsAndStockings';
 
-const ShopSocks = ({ darkMode }) => {
+const Shop = ({ darkMode, URL, setURL }) => {
   const [data, setData] = useState([]);
-
+  console.log(URL);
   useEffect(() => {
-    loadData();
-  }, []);
-
-  const loadData = async () => {
-    await fetch('https://euphoriaapp.herokuapp.com/categories/60366f5cf7e94d001572108c')
-      .then((response) => response.json())
-      .then((res) => {
-        setData(res.products);
-      });
-  };
+    setData(URL === 'majteczki' ? panties : URL === 'skarpetki' ? socks : URL === 'rajstopy' && tights);
+  }, [URL]);
 
   return (
     <Wrapper className={darkMode && 'darkMode'}>
       <ProductsWrapper>
         {data.map((item) => {
+          console.log(item);
           return (
             <ProductWrapper>
               <Product>
-                <ProductImg src={`https://euphoriaapp.herokuapp.com${item.Image[0].url}`} />
-                <ProductName className={darkMode && 'darkMode'}>{item.Name}</ProductName>
+                <ProductImg src={item.mainImages[0]} />
+                <ProductName className={darkMode && 'darkMode'}>{item.name}</ProductName>
                 <ButtonsWrapper>
                   <Button className={darkMode && 'darkMode'}>Dodaj do koszyka</Button>
                   <Button className={darkMode && 'darkMode'}>Przejdź</Button>
@@ -57,4 +53,4 @@ const ShopSocks = ({ darkMode }) => {
   );
 };
 
-export default ShopSocks;
+export default Shop;
