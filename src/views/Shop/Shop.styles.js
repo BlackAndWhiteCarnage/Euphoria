@@ -24,7 +24,7 @@ export const ProductsWrapper = styled.div`
   overflow-y: scroll;
   justify-content: center;
   @media screen and (min-width: 680px) {
-    width: 60%;
+    width: 80%;
     height: 70%;
   }
 `;
@@ -38,6 +38,22 @@ export const ProductWrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  transition: 1s ease;
+  &.darkMode {
+    background: rgba(0, 0, 0, 0.05);
+    transition: 1s ease;
+  }
+  @media screen and (min-width: 680px) {
+    width: 30rem;
+    height: 50rem;
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      &.darkMode {
+        background: rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
 `;
 
 export const Product = styled.div`
@@ -47,6 +63,10 @@ export const Product = styled.div`
   align-items: center;
   width: 80%;
   height: 35rem;
+  @media screen and (min-width: 680px) {
+    width: 80%;
+    height: 40rem;
+  }
 `;
 
 export const ProductImg = styled.img`
@@ -65,6 +85,7 @@ export const ProductImgWrapper = styled.div`
   width: 100%;
   height: 70%;
   overflow: hidden;
+  border-radius: 3px;
 `;
 
 export const NotSelectedInfo = styled.p`
@@ -106,6 +127,9 @@ export const ButtonsWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  @media screen and (min-width: 680px) {
+    height: 20%;
+  }
 `;
 
 export const Button = styled.button`
@@ -175,6 +199,9 @@ export const Button = styled.button`
       z-index: -1;
       transition: 0.5s ease;
     }
+  }
+  @media screen and (min-width: 680px) {
+    width: 100%;
   }
 `;
 

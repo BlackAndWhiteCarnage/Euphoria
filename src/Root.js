@@ -13,6 +13,7 @@ import { Switch, Route, useLocation } from 'react-router-dom';
 import { panties } from 'data/Panties';
 import { socks } from 'data/Socks';
 import { tights } from 'data/TightsAndStockings';
+import { other } from 'data/Other';
 
 const Root = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -27,7 +28,7 @@ const Root = () => {
   }, [location]);
 
   useEffect(() => {
-    setData(URL.indexOf('majteczki') > -1 ? panties : URL.indexOf('skarpetki') > -1 ? socks : URL.indexOf('rajstopy') > -1 ? tights : null);
+    setData(URL.indexOf('majteczki') > -1 ? panties : URL.indexOf('skarpetki') > -1 ? socks : URL.indexOf('rajstopy') > -1 ? tights : other);
   }, [URL]);
 
   const slides: ISlideConfig[] = [
@@ -79,9 +80,8 @@ const Root = () => {
         </Route>
         <>
           <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} path="shop" setURL={setURL} />
-          <Route path="/sklep" component={() => <Shop URL={URL} setURL={setURL} data={data} darkMode={darkMode} />}>
-            {/* <Shop darkMode={darkMode} URL={URL} setURL={setURL} /> */}
-          </Route>
+          <Hamburger darkMode={darkMode} />
+          <Route path="/sklep" component={() => <Shop setURL={setURL} data={data} darkMode={darkMode} />} />
         </>
       </Switch>
     </>

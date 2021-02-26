@@ -51,7 +51,7 @@ body{
     }
 
 }
-    @media screen and (min-width: 1200px){
+    @media screen and (min-width: 680px){
     ::-webkit-scrollbar {
     width: .5rem;
     background: none;
@@ -72,5 +72,9 @@ body{
     background: #B80202;
     }
     }
-
+    @media screen and (max-width: 680px){
+      ::-webkit-scrollbar{
+        display: none;
+      }
+    }
 `;

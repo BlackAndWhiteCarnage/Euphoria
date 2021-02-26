@@ -17,19 +17,14 @@ import {
   SquareBottomRight,
   NotSelectedInfo,
 } from './Shop.styles';
-import { panties } from 'data/Panties';
-import { socks } from 'data/Socks';
-import { tights } from 'data/TightsAndStockings';
 
-const Shop = ({ darkMode, URL, data }) => {
-  const container = useRef(null);
-
+const Shop = ({ darkMode, data }) => {
   return (
     <Wrapper className={darkMode && 'darkMode'}>
-      <ProductsWrapper ref={container}>
+      <ProductsWrapper>
         {data ? (
           data.map((item) => (
-            <ProductWrapper>
+            <ProductWrapper className={darkMode && 'darkMode'}>
               <Product>
                 <ProductImgWrapper>
                   <ProductImg src={item.mainImages[0]} />
@@ -40,10 +35,10 @@ const Shop = ({ darkMode, URL, data }) => {
                   <Button className={darkMode && 'darkMode'}>Przejdź</Button>
                 </ButtonsWrapper>
               </Product>
-              <SquareTopLeft src={darkMode ? darkSquare : Square} />
+              {/* <SquareTopLeft src={darkMode ? darkSquare : Square} /> */}
               <SquareTopRight src={darkMode ? darkSquare : Square} />
               <SquareBottomLeft src={darkMode ? darkSquare : Square} />
-              <SquareBottomRight src={darkMode ? darkSquare : Square} />
+              {/* <SquareBottomRight src={darkMode ? darkSquare : Square} /> */}
             </ProductWrapper>
           ))
         ) : (

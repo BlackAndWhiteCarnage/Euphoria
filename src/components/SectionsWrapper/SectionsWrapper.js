@@ -96,7 +96,7 @@ const SectionsWrapper = ({ darkMode, setDarkMode, slide, setSlide, path, setURL 
               <NavItem className={darkMode && 'darkMode'}>rajstopy i pończoszki</NavItem>
             </NavItemButton>
           </Link>
-          <Link to="/sklep">
+          <Link to="/sklep/inne">
             <NavItemButton>
               <NavItem className={darkMode && 'darkMode'} onClick={() => setURL('inne')}>
                 inne
