@@ -79,7 +79,7 @@ const Root = () => {
         </Route>
         <>
           <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} path="shop" setURL={setURL} />
-          <Route path="/sklep" component={() => <Shop URL={URL} setURL={setURL} data={data} />}>
+          <Route path="/sklep" component={() => <Shop URL={URL} setURL={setURL} data={data} darkMode={darkMode} />}>
             {/* <Shop darkMode={darkMode} URL={URL} setURL={setURL} /> */}
           </Route>
         </>
