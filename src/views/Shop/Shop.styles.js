@@ -25,7 +25,7 @@ export const ProductsWrapper = styled.div`
   justify-content: center;
   @media screen and (min-width: 680px) {
     width: 80%;
-    height: 70%;
+    height: 60rem;
   }
 `;
 

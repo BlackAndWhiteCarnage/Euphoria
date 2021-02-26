@@ -34,21 +34,6 @@ import Back from 'assets/icons/Back.svg';
 import DarkBack from 'assets/icons/DarkBack.svg';
 
 const SectionsWrapper = ({ darkMode, setDarkMode, slide, setSlide, path, setURL }) => {
-  //Zrobić useEffect w Root.js na to
-  //This shit is going to be usefull
-  // const getURLHandler = (prop) => {
-  //   if (!window.location.href.indexOf(prop) > -1) {
-  //     console.log('true');
-  //     return true;
-  //   } else {
-  //     console.log('false');
-  //     return false;
-  //   }
-  // };
-
-  //Paste onClick in nav items
-  // onClick={getURLHandler('majteczki')}
-
   return (
     <Switch>
       <Wrapper>
