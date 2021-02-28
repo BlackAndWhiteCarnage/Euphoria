@@ -13,9 +13,13 @@ import DarkDarkMode from 'assets/icons/DarkDarkMode.svg';
 const Hamburger = ({ darkMode, path, setDarkMode }) => {
   const [toggle, setToggle] = useState(false);
 
+  const toggleHandler = () => {
+    setToggle(!toggle);
+  };
+
   return (
     <>
-      <HamburgerImg src={darkMode ? DarkHamburgerMenu : HamburgerMenu} onClick={() => setToggle(!toggle)} />
+      <HamburgerImg src={darkMode ? DarkHamburgerMenu : HamburgerMenu} onClick={toggleHandler} />
       {path && (
         <>
           <CartImg src={darkMode ? DarkCart : Cart} />
@@ -27,16 +31,24 @@ const Hamburger = ({ darkMode, path, setDarkMode }) => {
       <Modal className={toggle && `showModal ${darkMode && 'darkMode'}`}>
         <List>
           <StyledLink to="/sklep/majteczki">
-            <ListItem className={darkMode && 'darkMode'}>majteczki</ListItem>
+            <ListItem className={darkMode && 'darkMode'} onClick={toggleHandler}>
+              majteczki
+            </ListItem>
           </StyledLink>
           <StyledLink to="/sklep/skarpetki">
-            <ListItem className={darkMode && 'darkMode'}>skarpetki</ListItem>
+            <ListItem className={darkMode && 'darkMode'} onClick={toggleHandler}>
+              skarpetki
+            </ListItem>
           </StyledLink>
           <StyledLink to="/sklep/rajstopy">
-            <ListItem className={darkMode && 'darkMode'}>rajstopy i pończochy</ListItem>
+            <ListItem className={darkMode && 'darkMode'} onClick={toggleHandler}>
+              rajstopy i pończochy
+            </ListItem>
           </StyledLink>
           <StyledLink to="/sklep/inne">
-            <ListItem className={darkMode && 'darkMode'}>inne</ListItem>
+            <ListItem className={darkMode && 'darkMode'} onClick={toggleHandler}>
+              inne
+            </ListItem>
           </StyledLink>
         </List>
         {path && <DarkModeImg src={darkMode ? DarkDarkMode : DarkMode} onClick={() => setDarkMode(!darkMode)} />}

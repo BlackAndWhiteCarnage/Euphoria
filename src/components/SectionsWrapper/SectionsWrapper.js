@@ -33,7 +33,7 @@ import DarkCart from 'assets/icons/DarkCart.svg';
 import Back from 'assets/icons/Back.svg';
 import DarkBack from 'assets/icons/DarkBack.svg';
 
-const SectionsWrapper = ({ darkMode, setDarkMode, slide, setSlide, path, setURL }) => {
+const SectionsWrapper = ({ darkMode, setDarkMode, slide, setSlide, path }) => {
   return (
     <Switch>
       <Wrapper>
@@ -83,9 +83,7 @@ const SectionsWrapper = ({ darkMode, setDarkMode, slide, setSlide, path, setURL 
           </Link>
           <Link to="/sklep/inne">
             <NavItemButton>
-              <NavItem className={darkMode && 'darkMode'} onClick={() => setURL('inne')}>
-                inne
-              </NavItem>
+              <NavItem className={darkMode && 'darkMode'}>inne</NavItem>
             </NavItemButton>
           </Link>
         </NavWrapper>

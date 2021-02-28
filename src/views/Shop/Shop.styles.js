@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.section`
   width: 100%;
@@ -230,4 +231,8 @@ export const SquareBottomRight = styled.img`
   position: absolute;
   right: 0;
   bottom: 0;
+`;
+
+export const StyledLink = styled(Link)`
+  width: 100%;
 `;

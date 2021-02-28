@@ -7,9 +7,10 @@ import WhyMe from 'views/WhyMe/WhyMe';
 import AreWeBuying from 'views/AreWeBuying/AreWeBuying';
 import Contact from 'views/Contact/Contact';
 import Shop from 'views/Shop/Shop';
+import ShopItem from 'views/Shop/ShopItem/ShopItem';
 import { GlobalStyle } from 'components/GlobalStyles/GlobalStyles';
 import { ISlideConfig, PageSlides, SlideParallaxType } from 'react-page-slides';
-import { Switch, Route, useLocation } from 'react-router-dom';
+import { Switch, Route, useLocation, useRouteMatch } from 'react-router-dom';
 import { panties } from 'data/Panties';
 import { socks } from 'data/Socks';
 import { tights } from 'data/TightsAndStockings';
@@ -20,16 +21,40 @@ const Root = () => {
   const [slide, setSlide] = useState(0);
   const [URL, setURL] = useState(window.location.href);
   const [data, setData] = useState();
+  const [item, setItem] = useState();
 
   const location = useLocation();
+
+  console.log('URL', URL);
+  console.log('data', data);
 
   useEffect(() => {
     setURL(window.location.href);
   }, [location]);
 
   useEffect(() => {
-    setData(URL.indexOf('majteczki') > -1 ? panties : URL.indexOf('skarpetki') > -1 ? socks : URL.indexOf('rajstopy') > -1 ? tights : other);
+    setData(
+      URL.indexOf('majteczki') > -1
+        ? panties
+        : URL.indexOf('skarpetki') > -1
+        ? socks
+        : URL.indexOf('rajstopy') > -1
+        ? tights
+        : URL.indexOf('inne') > -1 && other
+    );
   }, [URL]);
+
+  const getURL = () => {
+    if (URL.indexOf('majteczki') > -1) {
+      return 'majteczki';
+    } else if (URL.indexOf('skarpetki') > -1) {
+      return 'skarpetki';
+    } else if (URL.indexOf('rajstopy') > -1) {
+      return 'rajstopy';
+    } else {
+      return 'inne';
+    }
+  };
 
   const slides: ISlideConfig[] = [
     {
@@ -81,7 +106,16 @@ const Root = () => {
         <>
           <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} path="shop" setURL={setURL} />
           <Hamburger darkMode={darkMode} setDarkMode={setDarkMode} path="shop" />
-          <Route path="/sklep" component={() => <Shop setURL={setURL} data={data} darkMode={darkMode} />} />
+          <Route
+            path="/sklep"
+            component={() => <Shop setURL={setURL} data={data} darkMode={darkMode} location={location} setItem={setItem} URL={URL} getURL={getURL} />}
+          />
+          {/* Zrobić useEffect i znaleźć po item.id w data produkt i wyświetlić */}
+          {item && (
+            <Route path={`/${getURL()}/${item.id}`} exact>
+              <ShopItem item={item} />
+            </Route>
+          )}
         </>
       </Switch>
     </>

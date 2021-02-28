@@ -55,13 +55,13 @@ export const Modal = styled.div`
     bottom: 0%;
     width: 100%;
     height: 35rem;
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
     z-index: 5;
     transition: 0.5s ease;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     &.darkMode {
-      background: rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.3);
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
     }
@@ -90,10 +90,10 @@ export const List = styled.ul`
 export const ListItem = styled.li`
   list-style: none;
   text-decoration: none;
-  color: ${({ theme }) => theme.colors.primaryDark};
+  color: ${({ theme }) => theme.colors.primaryLight};
   font-size: ${({ theme }) => theme.fontSize.l};
   &.darkMode {
-    color: ${({ theme }) => theme.colors.primaryLight};
+    color: ${({ theme }) => theme.colors.primaryDark};
   }
 `;
 
