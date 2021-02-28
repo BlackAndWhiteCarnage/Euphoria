@@ -25,9 +25,6 @@ const Root = () => {
 
   const location = useLocation();
 
-  console.log('URL', URL);
-  console.log('data', data);
-
   useEffect(() => {
     setURL(window.location.href);
   }, [location]);
@@ -55,6 +52,34 @@ const Root = () => {
       return 'inne';
     }
   };
+
+  const readURL = () => {
+    if (URL.indexOf('majteczki') > -1) {
+      return '/majteczki/';
+    } else if (URL.indexOf('skarpetki') > -1) {
+      return '/skarpetki/';
+    } else if (URL.indexOf('rajstopy') > -1) {
+      return '/rajstopy/';
+    } else {
+      return '/inne/';
+    }
+  };
+
+  let findID = location.pathname.replace(readURL(), '');
+
+  useEffect(() => {
+    if (data) {
+      console.log('data', data);
+      console.log('item', item);
+      console.log('findID', findID);
+      console.log(
+        'searching',
+        data.find((item) => item.id === 1)
+      );
+      console.log(1 === findID);
+      setItem(data.find((item) => item.id === findID));
+    }
+  }, [data]);
 
   const slides: ISlideConfig[] = [
     {
@@ -113,7 +138,7 @@ const Root = () => {
           {/* Zrobić useEffect i znaleźć po item.id w data produkt i wyświetlić */}
           {item && (
             <Route path={`/${getURL()}/${item.id}`} exact>
-              <ShopItem item={item} />
+              <ShopItem item={item} URL={URL} data={data} setItem={setItem} />
             </Route>
           )}
         </>

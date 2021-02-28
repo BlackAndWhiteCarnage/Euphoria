@@ -18,8 +18,6 @@ import {
 } from './Shop.styles';
 
 const Shop = ({ darkMode, data, location, setItem, URL, getURL }) => {
-  const { url, path } = useRouteMatch();
-
   return (
     <>
       <Wrapper className={darkMode && 'darkMode'}>

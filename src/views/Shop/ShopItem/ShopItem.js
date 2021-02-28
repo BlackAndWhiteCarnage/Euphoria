@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import { useRouteMatch } from 'react-router-dom';
+import { panties } from 'data/Panties';
+import { socks } from 'data/Socks';
+import { tights } from 'data/TightsAndStockings';
+import { other } from 'data/Other';
 
-const ShopItem = ({ path, key, info, item }) => {
+const ShopItem = ({ path, key, info, item, URL, data, setItem }) => {
   return <Wrapper>{item && <h1>{item.id}</h1>}</Wrapper>;
 };
 
