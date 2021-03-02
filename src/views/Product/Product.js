@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Button,
   ButtonsWrapper,
@@ -18,11 +18,22 @@ import {
   Wrapper,
   ProductWrapper,
   ProductNameDesktop,
+  BackIcon,
 } from './Product.styles';
-const Product = ({ item, darkMode }) => {
+import Back from 'assets/icons/Back.svg';
+import DarkBack from 'assets/icons/DarkBack.svg';
+
+const Product = ({ item, darkMode, previousPathHandler }) => {
+  const [bigImage, setBigImage] = useState(false);
+
+  const setBigImageHandler = () => {
+    setBigImage(!bigImage);
+  };
+
   return (
     <Wrapper className={darkMode && 'darkMode'}>
       <ProductWrapper>
+        <BackIcon src={darkMode ? DarkBack : Back} onClick={previousPathHandler} />
         <ProductNameDesktop>{item.name}</ProductNameDesktop>
         <ButtonsWrapperDesktop>
           <Button className={darkMode && 'darkMode'}>Dodatki</Button>
@@ -42,10 +53,10 @@ const Product = ({ item, darkMode }) => {
         </CostsInfoWrapperDesktop>
         <ProductWrapper1>
           <ProductName>{item.name}</ProductName>
-          <ImageAndDescWrapper>
-            <ProductImage src={item.mainImages[0]} />
-            <ProductImage src={item.mainImages[1]} className="media" />
-            <Description>
+          <ImageAndDescWrapper className={bigImage && 'bigImage'}>
+            <ProductImage src={item.mainImages[0]} onClick={setBigImageHandler} className={bigImage && 'bigImage'} />
+            <ProductImage src={item.mainImages[1]} className={`${!bigImage && 'media'} ${bigImage && 'bigImage'}`} onClick={setBigImageHandler} />
+            <Description className={bigImage && 'bigImage'}>
               Liczy się dla mnie zadowolenie moich klientów majteczki będą noszone dzień przed wysyłką, aby pozostały świeże i pachnące zostaną
               zapakowane w woreczek strunowy. Uprzedzam iż czas wysyłki niestety może się troszeczkę wydłużyć. Kolejność noszenia majteczek ustalana
               jest adekwatnie do osób które zapłaciły pierwsze. Jeśli jesteś ciekaw, spytaj poprzez formularz kontaktowy o terminy wysyłek.

@@ -84,6 +84,23 @@ export const ImageAndDescWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: 0.5s ease;
+  &.bigImage {
+    position: fixed;
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    transition: 0.5s ease;
+  }
   @media screen and (min-width: 680px) {
     height: 100%;
     justify-content: space-between;
@@ -94,8 +111,21 @@ export const ProductImage = styled.img`
   object-fit: cover;
   width: 48%;
   height: 100%;
+  cursor: pointer;
+  transition: 1s ease;
   &.media {
     display: none;
+  }
+  &.bigImage {
+    width: 30%;
+    height: 90%;
+    margin: 5rem;
+    transition: 1s ease;
+    @media screen and (max-width: 680px) {
+      width: 45%;
+      height: 70%;
+      margin: 1rem;
+    }
   }
   @media screen and (min-width: 680px) {
     width: 28%;
@@ -129,6 +159,9 @@ export const Description = styled.p`
   }
   @media screen and (min-width: 1200px) {
     line-height: 2rem;
+  }
+  &.bigImage {
+    display: none;
   }
 `;
 
@@ -219,6 +252,17 @@ export const Cost = styled.p`
   font-weight: bold;
   @media screen and (min-width: 680px) {
     width: auto;
+  }
+`;
+
+export const BackIcon = styled.img`
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  z-index: 200;
+  @media screen and (min-width: 680px) {
+    top: 0;
+    right: 0;
   }
 `;
 

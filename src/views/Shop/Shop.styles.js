@@ -84,6 +84,11 @@ export const ProductImg = styled.img`
 
 export const ProductImgWrapper = styled.div`
   width: 100%;
+  height: 100%;
+`;
+
+export const ImageLink = styled(Link)`
+  width: 100%;
   height: 70%;
   overflow: hidden;
   border-radius: 3px;

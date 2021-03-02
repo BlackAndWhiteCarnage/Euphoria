@@ -9,7 +9,7 @@ import Shop from 'views/Shop/Shop';
 import Product from 'views/Product/Product';
 import { GlobalStyle } from 'components/GlobalStyles/GlobalStyles';
 import { ISlideConfig, PageSlides, SlideParallaxType } from 'react-page-slides';
-import { Switch, Route, useLocation, useRouteMatch } from 'react-router-dom';
+import { Switch, Route, useLocation, useHistory } from 'react-router-dom';
 import { panties } from 'data/Panties';
 import { socks } from 'data/Socks';
 import { tights } from 'data/TightsAndStockings';
@@ -23,6 +23,12 @@ const Root = () => {
   const [item, setItem] = useState();
 
   const location = useLocation();
+
+  let history = useHistory();
+
+  const previousPathHandler = () => {
+    history.goBack();
+  };
 
   useEffect(() => {
     setURL(window.location.href);
@@ -125,7 +131,7 @@ const Root = () => {
           <Route path="/sklep" component={() => <Shop data={data} darkMode={darkMode} setItem={setItem} getURL={getURL} />} />
           {item && (
             <Route path={`/${getURL()}/${item.id}`} exact>
-              <Product item={item} darkMode={darkMode} />
+              <Product item={item} darkMode={darkMode} previousPathHandler={previousPathHandler} />
             </Route>
           )}
         </>

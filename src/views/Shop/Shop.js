@@ -14,6 +14,7 @@ import {
   SquareTopRight,
   SquareBottomLeft,
   StyledLink,
+  ImageLink,
 } from './Shop.styles';
 
 const Shop = ({ darkMode, data, setItem, getURL }) => {
@@ -24,9 +25,11 @@ const Shop = ({ darkMode, data, setItem, getURL }) => {
           data.map((item) => (
             <ProductWrapper className={darkMode && 'darkMode'} key={item.id}>
               <Product>
-                <ProductImgWrapper>
-                  <ProductImg src={item.mainImages[0]} />
-                </ProductImgWrapper>
+                <ImageLink to={`/${getURL()}/${item.id}`} onClick={() => setItem(item)}>
+                  <ProductImgWrapper>
+                    <ProductImg src={item.mainImages[0]} />
+                  </ProductImgWrapper>
+                </ImageLink>
                 <ProductName className={darkMode && 'darkMode'}>{item.name}</ProductName>
                 <ButtonsWrapper>
                   <Button className={darkMode && 'darkMode'}>Dodaj do koszyka</Button>
