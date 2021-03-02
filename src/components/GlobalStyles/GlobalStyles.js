@@ -48,8 +48,8 @@ body{
     line-height: 2.2rem;
     @media screen and (max-width: 680px){
       line-height: 1.5rem;
+      overflow: hidden;
     }
-
 }
     @media screen and (min-width: 680px){
     ::-webkit-scrollbar {

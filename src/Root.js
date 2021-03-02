@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
 import Hamburger from 'components/Hamburger/Hamburger';
 import SectionsWrapper from 'components/SectionsWrapper/SectionsWrapper';
 import Home from 'views/Home/Home';
@@ -7,7 +6,7 @@ import WhyMe from 'views/WhyMe/WhyMe';
 import AreWeBuying from 'views/AreWeBuying/AreWeBuying';
 import Contact from 'views/Contact/Contact';
 import Shop from 'views/Shop/Shop';
-import ShopItem from 'views/Shop/ShopItem/ShopItem';
+import Product from 'views/Product/Product';
 import { GlobalStyle } from 'components/GlobalStyles/GlobalStyles';
 import { ISlideConfig, PageSlides, SlideParallaxType } from 'react-page-slides';
 import { Switch, Route, useLocation, useRouteMatch } from 'react-router-dom';
@@ -69,14 +68,6 @@ const Root = () => {
 
   useEffect(() => {
     if (data) {
-      console.log('data', data);
-      console.log('item', item);
-      console.log('findID', findID);
-      console.log(
-        'searching',
-        data.find((item) => item.id === 1)
-      );
-      console.log(1 === findID);
       setItem(data.find((item) => item.id === findID));
     }
   }, [data]);
@@ -131,14 +122,10 @@ const Root = () => {
         <>
           <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} path="shop" setURL={setURL} />
           <Hamburger darkMode={darkMode} setDarkMode={setDarkMode} path="shop" />
-          <Route
-            path="/sklep"
-            component={() => <Shop setURL={setURL} data={data} darkMode={darkMode} location={location} setItem={setItem} URL={URL} getURL={getURL} />}
-          />
-          {/* Zrobić useEffect i znaleźć po item.id w data produkt i wyświetlić */}
+          <Route path="/sklep" component={() => <Shop data={data} darkMode={darkMode} setItem={setItem} getURL={getURL} />} />
           {item && (
             <Route path={`/${getURL()}/${item.id}`} exact>
-              <ShopItem item={item} URL={URL} data={data} setItem={setItem} />
+              <Product item={item} darkMode={darkMode} />
             </Route>
           )}
         </>

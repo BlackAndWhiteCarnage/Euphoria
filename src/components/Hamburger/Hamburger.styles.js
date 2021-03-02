@@ -52,7 +52,7 @@ export const Modal = styled.div`
   justify-content: center;
   &.showModal {
     position: absolute;
-    bottom: 0%;
+    bottom: 0;
     width: 100%;
     height: 35rem;
     z-index: 5;
