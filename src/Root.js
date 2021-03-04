@@ -109,7 +109,7 @@ const Root = () => {
       <GlobalStyle darkMode={darkMode} />
       <Switch>
         <Route path="/" exact>
-          <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} slide={slide} setSlide={setSlide} setURL={setURL} />
+          <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} slide={slide} setSlide={setSlide} setURL={setURL} URL={URL} />
           <Hamburger darkMode={darkMode} />
           <PageSlides
             // Fix bug cause firefox blocking scrolling after first scroll only on desktop browser
@@ -126,7 +126,7 @@ const Root = () => {
           />
         </Route>
         <>
-          <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} path="shop" setURL={setURL} />
+          <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} path="shop" setURL={setURL} URL={URL} />
           <Hamburger darkMode={darkMode} setDarkMode={setDarkMode} path="shop" />
           <Route path="/sklep" component={() => <Shop data={data} darkMode={darkMode} setItem={setItem} getURL={getURL} />} />
           {item && (

@@ -53,10 +53,13 @@ export const ProductWrapper1 = styled.div`
 `;
 
 export const ProductName = styled.p`
-  width: 100%;
+  width: 90%;
   height: 5rem;
   display: flex;
   align-items: center;
+  line-height: normal;
+  margin-right: auto;
+  margin-top: 0.5rem;
   font-size: ${({ theme }) => theme.fontSize.l};
   font-family: 'Montserrat';
   font-weight: bold;
@@ -84,7 +87,7 @@ export const ImageAndDescWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: 0.5s ease;
+  overflow: hidden;
   &.bigImage {
     position: fixed;
     /* position: absolute; */
@@ -99,7 +102,9 @@ export const ImageAndDescWrapper = styled.div`
     align-items: center;
     justify-content: center;
     background: rgba(0, 0, 0, 0.5);
-    transition: 0.5s ease;
+    @media screen and (max-width: 680px) {
+      flex-direction: column;
+    }
   }
   @media screen and (min-width: 680px) {
     height: 100%;
@@ -122,8 +127,8 @@ export const ProductImage = styled.img`
     margin: 5rem;
     transition: 1s ease;
     @media screen and (max-width: 680px) {
-      width: 45%;
-      height: 70%;
+      width: 55%;
+      height: 46%;
       margin: 1rem;
     }
   }
@@ -131,6 +136,10 @@ export const ProductImage = styled.img`
     width: 28%;
     &.media {
       display: block;
+    }
+    &:hover {
+      transform: scale(1.05);
+      transition: 0.5s ease;
     }
   }
   @media screen and (min-width: 1200px) {
@@ -259,7 +268,13 @@ export const BackIcon = styled.img`
   position: absolute;
   right: 1.5rem;
   top: 1.5rem;
+  cursor: pointer;
   z-index: 200;
+  transition: 0.5s ease;
+  &:hover {
+    transform: scale(1.4);
+    transition: 0.5s ease;
+  }
   @media screen and (min-width: 680px) {
     top: 0;
     right: 0;

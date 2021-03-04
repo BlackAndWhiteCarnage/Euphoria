@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Switch, Link } from 'react-router-dom';
 import {
   Wrapper,
@@ -30,10 +30,29 @@ import Square from 'assets/icons/Square.svg';
 import DarkSquare from 'assets/icons/DarkSquare.svg';
 import Cart from 'assets/icons/Cart.svg';
 import DarkCart from 'assets/icons/DarkCart.svg';
-import Back from 'assets/icons/Back.svg';
-import DarkBack from 'assets/icons/DarkBack.svg';
+import Home from 'assets/icons/Home.svg';
 
-const SectionsWrapper = ({ darkMode, setDarkMode, slide, setSlide, path }) => {
+const SectionsWrapper = ({ darkMode, setDarkMode, slide, setSlide, path, URL }) => {
+  const [activeLink, setActiveLink] = useState();
+
+  useEffect(() => {
+    if (URL.indexOf('majteczki') > -1) {
+      setActiveLink('majteczki');
+    } else if (URL.indexOf('skarpetki') > -1) {
+      setActiveLink('skarpetki');
+    } else if (URL.indexOf('rajstopy') > -1) {
+      setActiveLink('rajstopy');
+    } else if (URL.indexOf('inne') > -1) {
+      setActiveLink('inne');
+    } else {
+      setActiveLink(null);
+    }
+  }, [URL]);
+
+  const resetSlidesHandler = () => {
+    setSlide(0);
+  };
+
   return (
     <Switch>
       <Wrapper>
@@ -44,7 +63,7 @@ const SectionsWrapper = ({ darkMode, setDarkMode, slide, setSlide, path }) => {
           </DarkModeButton>
           {path && (
             <Link to="/">
-              <BackIcon src={darkMode ? DarkBack : Back} />
+              <BackIcon src={Home} />
             </Link>
           )}
         </CartAndDarkModeButtonWrapper>
@@ -68,22 +87,30 @@ const SectionsWrapper = ({ darkMode, setDarkMode, slide, setSlide, path }) => {
         <NavWrapper>
           <Link to="/sklep/majteczki">
             <NavItemButton>
-              <NavItem className={darkMode && 'darkMode'}>majteczki</NavItem>
+              <NavItem className={`${darkMode && 'darkMode'} ${activeLink === 'majteczki' && 'active'}`} onClick={resetSlidesHandler}>
+                majteczki
+              </NavItem>
             </NavItemButton>
           </Link>
           <Link to="/sklep/skarpetki">
             <NavItemButton>
-              <NavItem className={darkMode && 'darkMode'}>skarpetki</NavItem>
+              <NavItem className={`${darkMode && 'darkMode'} ${activeLink === 'skarpetki' && 'active'}`} onClick={resetSlidesHandler}>
+                skarpetki
+              </NavItem>
             </NavItemButton>
           </Link>
           <Link to="/sklep/rajstopy">
             <NavItemButton>
-              <NavItem className={darkMode && 'darkMode'}>rajstopy i pończoszki</NavItem>
+              <NavItem className={`${darkMode && 'darkMode'} ${activeLink === 'rajstopy' && 'active'}`} onClick={resetSlidesHandler}>
+                rajstopy i pończoszki
+              </NavItem>
             </NavItemButton>
           </Link>
           <Link to="/sklep/inne">
             <NavItemButton>
-              <NavItem className={darkMode && 'darkMode'}>inne</NavItem>
+              <NavItem className={`${darkMode && 'darkMode'} ${activeLink === 'inne' && 'active'}`} onClick={resetSlidesHandler}>
+                inne
+              </NavItem>
             </NavItemButton>
           </Link>
         </NavWrapper>

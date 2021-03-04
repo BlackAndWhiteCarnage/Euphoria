@@ -5,8 +5,7 @@ import HamburgerMenu from 'assets/icons/HamburgerMenu.svg';
 import DarkHamburgerMenu from 'assets/icons/DarkHamburgerMenu.svg';
 import Cart from 'assets/icons/Cart.svg';
 import DarkCart from 'assets/icons/DarkCart.svg';
-import Back from 'assets/icons/Back.svg';
-import DarkBack from 'assets/icons/DarkBack.svg';
+import Home from 'assets/icons/Home.svg';
 import DarkMode from 'assets/icons/DarkMode.svg';
 import DarkDarkMode from 'assets/icons/DarkDarkMode.svg';
 
@@ -24,7 +23,7 @@ const Hamburger = ({ darkMode, path, setDarkMode }) => {
         <>
           <CartImg src={darkMode ? DarkCart : Cart} />
           <Link to="/">
-            <BackImg src={darkMode ? DarkBack : Back} />
+            <BackImg src={Home} />
           </Link>
         </>
       )}

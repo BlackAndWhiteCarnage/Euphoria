@@ -1,6 +1,7 @@
 import React from 'react';
 import Square from 'assets/icons/Square.svg';
 import darkSquare from 'assets/icons/DarkSquare.svg';
+import styled from 'styled-components';
 import {
   Wrapper,
   ProductsWrapper,
@@ -10,12 +11,16 @@ import {
   ProductImgWrapper,
   Product,
   ButtonsWrapper,
-  Button,
   SquareTopRight,
   SquareBottomLeft,
   StyledLink,
   ImageLink,
 } from './Shop.styles';
+import Button from 'components/Button/Button';
+
+const StyledButton = styled(Button)`
+  margin-bottom: 1rem;
+`;
 
 const Shop = ({ darkMode, data, setItem, getURL }) => {
   return (
@@ -32,9 +37,9 @@ const Shop = ({ darkMode, data, setItem, getURL }) => {
                 </ImageLink>
                 <ProductName className={darkMode && 'darkMode'}>{item.name}</ProductName>
                 <ButtonsWrapper>
-                  <Button className={darkMode && 'darkMode'}>Dodaj do koszyka</Button>
+                  <StyledButton className={darkMode && 'darkMode'} text={'dodaj do koszyka'} />
                   <StyledLink to={`/${getURL()}/${item.id}`} onClick={() => setItem(item)}>
-                    <Button className={darkMode && 'darkMode'}>Przejdź</Button>
+                    <Button className={darkMode && 'darkMode'} text={'sprawdź'} />
                   </StyledLink>
                 </ButtonsWrapper>
               </Product>

@@ -240,4 +240,5 @@ export const SquareBottomRight = styled.img`
 
 export const StyledLink = styled(Link)`
   width: 100%;
+  height: auto;
 `;

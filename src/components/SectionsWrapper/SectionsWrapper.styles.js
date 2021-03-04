@@ -124,6 +124,11 @@ export const NavItem = styled.li`
     transition: 1.5s ease;
     color: ${({ theme }) => theme.colors.primaryDark};
   }
+  &.active {
+    color: ${({ theme }) => theme.colors.primaryRed};
+    letter-spacing: 0.1rem;
+    border-bottom: 1px solid #b80202;
+  }
   &:hover {
     transition: 0.5s ease;
     letter-spacing: 0.1rem;

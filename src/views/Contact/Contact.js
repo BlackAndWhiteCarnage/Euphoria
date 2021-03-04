@@ -9,7 +9,7 @@ import {
   TextArea,
   InfoAndButton,
   Info,
-  Button,
+  // Button,
   SocialMediaWrapper,
   SocialMediaInfo,
   SocialMediaIconsWrapper,
@@ -21,6 +21,7 @@ import Email from 'assets/icons/Email.svg';
 import DarkEmail from 'assets/icons/DarkEmail.svg';
 import WhatsApp from 'assets/icons/WhatsApp.svg';
 import DarkWhatsApp from 'assets/icons/DarkWhatsApp.svg';
+import Button from 'components/Button/Button';
 
 const Contact = ({ darkMode, setSlide }) => {
   const [element, view] = useInView({ threshold: 1 });
@@ -41,7 +42,7 @@ const Contact = ({ darkMode, setSlide }) => {
         <TextArea id="Message" className={darkMode && 'darkMode'} />
         <InfoAndButton>
           <Info className={darkMode && 'darkMode'}>Informacje podane w polach służą jedynie do kontaktu z potencjalnym klientem</Info>
-          <Button className={darkMode && 'darkMode'}>Wyślij</Button>
+          <Button className={darkMode && 'darkMode'} text={'wyślij'} />
         </InfoAndButton>
       </Form>
       <SocialMediaWrapper>

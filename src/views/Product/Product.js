@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import {
-  Button,
+  // Button,
   ButtonsWrapper,
   Cost,
   CostAndInfoWrapper,
@@ -22,6 +23,7 @@ import {
 } from './Product.styles';
 import Back from 'assets/icons/Back.svg';
 import DarkBack from 'assets/icons/DarkBack.svg';
+import Button from 'components/Button/Button';
 
 const Product = ({ item, darkMode, previousPathHandler }) => {
   const [bigImage, setBigImage] = useState(false);
@@ -36,9 +38,9 @@ const Product = ({ item, darkMode, previousPathHandler }) => {
         <BackIcon src={darkMode ? DarkBack : Back} onClick={previousPathHandler} />
         <ProductNameDesktop>{item.name}</ProductNameDesktop>
         <ButtonsWrapperDesktop>
-          <Button className={darkMode && 'darkMode'}>Dodatki</Button>
-          <Button className={darkMode && 'darkMode'}>Zdjęcie Poglądowe</Button>
-          <Button className={darkMode && 'darkMode'}>Dodaj do koszyka</Button>
+          <StyledButton className={darkMode && 'darkMode'} text={'dodatki'} />
+          <StyledButton className={darkMode && 'darkMode'} text={'zdjęcie poglądowe'} />
+          <StyledButton className={darkMode && 'darkMode'} text={'dodaj do koszyka'} />
         </ButtonsWrapperDesktop>
         <CostsInfoWrapperDesktop>
           <Cost>
@@ -80,14 +82,18 @@ const Product = ({ item, darkMode, previousPathHandler }) => {
             </CostsInfoWrapper>
           </CostAndInfoWrapper>
           <ButtonsWrapper>
-            <Button className={darkMode && 'darkMode'}>Dodatki</Button>
-            <Button className={darkMode && 'darkMode'}>Zdjęcie Poglądowe</Button>
-            <Button className={darkMode && 'darkMode'}>Dodaj do koszyka</Button>
+            <StyledButton className={darkMode && 'darkMode'} text={'dodatki'} />
+            <StyledButton className={darkMode && 'darkMode'} text={'zdjęcie poglądowe'} />
+            <StyledButton className={darkMode && 'darkMode'} text={'dodaj do koszyka'} />
           </ButtonsWrapper>
         </ProductWrapper2>
       </ProductWrapper>
     </Wrapper>
   );
 };
+
+const StyledButton = styled(Button)`
+  margin: 0 0.5rem 0.5rem 0;
+`;
 
 export default Product;
