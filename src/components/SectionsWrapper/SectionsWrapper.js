@@ -49,10 +49,6 @@ const SectionsWrapper = ({ darkMode, setDarkMode, slide, setSlide, path, URL }) 
     }
   }, [URL]);
 
-  const resetSlidesHandler = () => {
-    setSlide(0);
-  };
-
   return (
     <Switch>
       <Wrapper>
@@ -87,30 +83,22 @@ const SectionsWrapper = ({ darkMode, setDarkMode, slide, setSlide, path, URL }) 
         <NavWrapper>
           <Link to="/sklep/majteczki">
             <NavItemButton>
-              <NavItem className={`${darkMode && 'darkMode'} ${activeLink === 'majteczki' && 'active'}`} onClick={resetSlidesHandler}>
-                majteczki
-              </NavItem>
+              <NavItem className={`${darkMode && 'darkMode'} ${activeLink === 'majteczki' && 'active'}`}>majteczki</NavItem>
             </NavItemButton>
           </Link>
           <Link to="/sklep/skarpetki">
             <NavItemButton>
-              <NavItem className={`${darkMode && 'darkMode'} ${activeLink === 'skarpetki' && 'active'}`} onClick={resetSlidesHandler}>
-                skarpetki
-              </NavItem>
+              <NavItem className={`${darkMode && 'darkMode'} ${activeLink === 'skarpetki' && 'active'}`}>skarpetki</NavItem>
             </NavItemButton>
           </Link>
           <Link to="/sklep/rajstopy">
             <NavItemButton>
-              <NavItem className={`${darkMode && 'darkMode'} ${activeLink === 'rajstopy' && 'active'}`} onClick={resetSlidesHandler}>
-                rajstopy i pończoszki
-              </NavItem>
+              <NavItem className={`${darkMode && 'darkMode'} ${activeLink === 'rajstopy' && 'active'}`}>rajstopy i pończoszki</NavItem>
             </NavItemButton>
           </Link>
           <Link to="/sklep/inne">
             <NavItemButton>
-              <NavItem className={`${darkMode && 'darkMode'} ${activeLink === 'inne' && 'active'}`} onClick={resetSlidesHandler}>
-                inne
-              </NavItem>
+              <NavItem className={`${darkMode && 'darkMode'} ${activeLink === 'inne' && 'active'}`}>inne</NavItem>
             </NavItemButton>
           </Link>
         </NavWrapper>

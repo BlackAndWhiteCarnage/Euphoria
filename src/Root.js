@@ -44,6 +44,7 @@ const Root = () => {
         ? tights
         : URL.indexOf('inne') > -1 && other
     );
+    setSlide(0);
   }, [URL]);
 
   const getURL = () => {
