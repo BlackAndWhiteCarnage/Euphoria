@@ -22,6 +22,8 @@ import {
   BackIcon,
   BigProductImageWrapper,
   BigProductImage,
+  AllExtras,
+  ExtrasItem,
 } from './Product.styles';
 import Back from 'assets/icons/Back.svg';
 import DarkBack from 'assets/icons/DarkBack.svg';
@@ -30,6 +32,7 @@ import Button from 'components/Button/Button';
 const Product = ({ item, darkMode, previousPathHandler }) => {
   const [bigImage, setBigImage] = useState(false);
   const [bigProductImage, setBigProductImage] = useState(false);
+  const [showExtras, setShowExtras] = useState(false);
 
   const setBigImageHandler = () => {
     setBigImage(!bigImage);
@@ -46,7 +49,7 @@ const Product = ({ item, darkMode, previousPathHandler }) => {
         <BackIcon src={darkMode ? DarkBack : Back} onClick={previousPathHandler} />
         <ProductNameDesktop>{item.name}</ProductNameDesktop>
         <ButtonsWrapperDesktop>
-          <StyledButton className={darkMode && 'darkMode'} text={'dodatki'} />
+          <StyledButton className={darkMode && 'darkMode'} text={'dodatki'} onClick={() => setShowExtras(!showExtras)} />
           <StyledButton className={darkMode && 'darkMode'} text={'zdjęcie poglądowe'} onClick={() => setBigProductImage(!bigProductImage)} />
           <StyledButton className={darkMode && 'darkMode'} text={'dodaj do koszyka'} />
         </ButtonsWrapperDesktop>
@@ -71,6 +74,21 @@ const Product = ({ item, darkMode, previousPathHandler }) => {
               zapakowane w woreczek strunowy. Uprzedzam iż czas wysyłki niestety może się troszeczkę wydłużyć. Kolejność noszenia majteczek ustalana
               jest adekwatnie do osób które zapłaciły pierwsze. Jeśli jesteś ciekaw, spytaj poprzez formularz kontaktowy o terminy wysyłek.
               <ExtrasInfoDesktop>Kupując majciochy masz do wyboru dwa bonusy, sprawdź poniżej jakie!</ExtrasInfoDesktop>
+              {showExtras && (
+                <AllExtras onClick={() => setShowExtras(!showExtras)}>
+                  <ExtrasItem>noszenie dwa dni</ExtrasItem>
+                  <ExtrasItem>piss na majteczki</ExtrasItem>
+                  <ExtrasItem>scat w majteczkach</ExtrasItem>
+                  <ExtrasItem>orgazm</ExtrasItem>
+                  <ExtrasItem>zapach moich ulubionych perfum</ExtrasItem>
+                  <ExtrasItem>5 sexy zdjęć w tych majciochach</ExtrasItem>
+                  <ExtrasItem>krótkie nagranie z noszenia (ok. 20/30 sekund)</ExtrasItem>
+                  <ExtrasItem>naplucie na majteczki</ExtrasItem>
+                  <ExtrasItem>majteczki z ciasnej dziórki</ExtrasItem>
+                  <ExtrasItem>uprawianie sportu</ExtrasItem>
+                  <ExtrasItem>menstruacja</ExtrasItem>
+                </AllExtras>
+              )}
             </Description>
           </ImageAndDescWrapper>
         </ProductWrapper1>
@@ -90,7 +108,7 @@ const Product = ({ item, darkMode, previousPathHandler }) => {
             </CostsInfoWrapper>
           </CostAndInfoWrapper>
           <ButtonsWrapper>
-            <StyledButton className={darkMode && 'darkMode'} text={'dodatki'} />
+            <StyledButton className={darkMode && 'darkMode'} text={'dodatki'} onClick={() => setShowExtras(!showExtras)} />
             <StyledButton className={darkMode && 'darkMode'} text={'zdjęcie poglądowe'} onClick={() => setBigProductImage(!bigProductImage)} />
             <StyledButton className={darkMode && 'darkMode'} text={'dodaj do koszyka'} />
           </ButtonsWrapper>

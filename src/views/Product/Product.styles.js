@@ -203,6 +203,28 @@ export const ExtrasInfo = styled.p`
   }
 `;
 
+export const AllExtras = styled.ul`
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+`;
+
+export const ExtrasItem = styled.li`
+  font-size: ${({ theme }) => theme.fontSize.m};
+  list-style: none;
+  @media screen and (max-width: 680px) {
+    font-size: ${({ theme }) => theme.fontSize.s};
+  }
+`;
+
 export const ExtrasInfoDesktop = styled.p`
   font-size: ${({ theme }) => theme.fontSize.s};
   font-family: 'Montserrat';
@@ -315,13 +337,17 @@ export const BigProductImageWrapper = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 300;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
 `;
 
 export const BigProductImage = styled.img`
   width: 60%;
   height: 80%;
   object-fit: cover;
+  @media screen and (max-width: 680px) {
+    width: 90%;
+    height: 40%;
+  }
 `;
 
 export const Button = styled.button`
