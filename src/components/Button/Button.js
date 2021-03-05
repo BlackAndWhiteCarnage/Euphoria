@@ -1,8 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Button = ({ text, className }) => {
-  return <StyledButton className={className}>{text}</StyledButton>;
+const Button = ({ text, className, onClick }) => {
+  return (
+    <StyledButton className={className} onClick={onClick}>
+      {text}
+    </StyledButton>
+  );
 };
 
 const StyledButton = styled.button`

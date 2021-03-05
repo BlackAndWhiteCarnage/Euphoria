@@ -307,6 +307,23 @@ export const ButtonsWrapperDesktop = styled.div`
   }
 `;
 
+export const BigProductImageWrapper = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+  background: rgba(0, 0, 0, 0.5);
+`;
+
+export const BigProductImage = styled.img`
+  width: 60%;
+  height: 80%;
+  object-fit: cover;
+`;
+
 export const Button = styled.button`
   position: relative;
   width: 100%;

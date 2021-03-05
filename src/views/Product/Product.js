@@ -20,6 +20,8 @@ import {
   ProductWrapper,
   ProductNameDesktop,
   BackIcon,
+  BigProductImageWrapper,
+  BigProductImage,
 } from './Product.styles';
 import Back from 'assets/icons/Back.svg';
 import DarkBack from 'assets/icons/DarkBack.svg';
@@ -27,6 +29,7 @@ import Button from 'components/Button/Button';
 
 const Product = ({ item, darkMode, previousPathHandler }) => {
   const [bigImage, setBigImage] = useState(false);
+  const [bigProductImage, setBigProductImage] = useState(false);
 
   const setBigImageHandler = () => {
     setBigImage(!bigImage);
@@ -34,12 +37,17 @@ const Product = ({ item, darkMode, previousPathHandler }) => {
 
   return (
     <Wrapper className={darkMode && 'darkMode'}>
+      {bigProductImage && (
+        <BigProductImageWrapper onClick={() => setBigProductImage(!bigProductImage)}>
+          <BigProductImage src={item.productImage} />
+        </BigProductImageWrapper>
+      )}
       <ProductWrapper>
         <BackIcon src={darkMode ? DarkBack : Back} onClick={previousPathHandler} />
         <ProductNameDesktop>{item.name}</ProductNameDesktop>
         <ButtonsWrapperDesktop>
           <StyledButton className={darkMode && 'darkMode'} text={'dodatki'} />
-          <StyledButton className={darkMode && 'darkMode'} text={'zdjęcie poglądowe'} />
+          <StyledButton className={darkMode && 'darkMode'} text={'zdjęcie poglądowe'} onClick={() => setBigProductImage(!bigProductImage)} />
           <StyledButton className={darkMode && 'darkMode'} text={'dodaj do koszyka'} />
         </ButtonsWrapperDesktop>
         <CostsInfoWrapperDesktop>
@@ -83,7 +91,7 @@ const Product = ({ item, darkMode, previousPathHandler }) => {
           </CostAndInfoWrapper>
           <ButtonsWrapper>
             <StyledButton className={darkMode && 'darkMode'} text={'dodatki'} />
-            <StyledButton className={darkMode && 'darkMode'} text={'zdjęcie poglądowe'} />
+            <StyledButton className={darkMode && 'darkMode'} text={'zdjęcie poglądowe'} onClick={() => setBigProductImage(!bigProductImage)} />
             <StyledButton className={darkMode && 'darkMode'} text={'dodaj do koszyka'} />
           </ButtonsWrapper>
         </ProductWrapper2>
