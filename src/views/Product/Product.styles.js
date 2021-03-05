@@ -215,11 +215,16 @@ export const AllExtras = styled.ul`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  cursor: pointer;
+  &.darkMode {
+    background: rgba(255, 255, 255, 0.8);
+  }
 `;
 
 export const ExtrasItem = styled.li`
   font-size: ${({ theme }) => theme.fontSize.m};
   list-style: none;
+  font-weight: bold;
   @media screen and (max-width: 680px) {
     font-size: ${({ theme }) => theme.fontSize.s};
   }
@@ -338,6 +343,7 @@ export const BigProductImageWrapper = styled.div`
   justify-content: center;
   z-index: 300;
   background: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
 `;
 
 export const BigProductImage = styled.img`

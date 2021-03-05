@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import {
-  // Button,
   ButtonsWrapper,
   Cost,
   CostAndInfoWrapper,
@@ -75,7 +74,7 @@ const Product = ({ item, darkMode, previousPathHandler }) => {
               jest adekwatnie do osób które zapłaciły pierwsze. Jeśli jesteś ciekaw, spytaj poprzez formularz kontaktowy o terminy wysyłek.
               <ExtrasInfoDesktop>Kupując majciochy masz do wyboru dwa bonusy, sprawdź poniżej jakie!</ExtrasInfoDesktop>
               {showExtras && (
-                <AllExtras onClick={() => setShowExtras(!showExtras)}>
+                <AllExtras onClick={() => setShowExtras(!showExtras)} className={darkMode && 'darkMode'}>
                   <ExtrasItem>noszenie dwa dni</ExtrasItem>
                   <ExtrasItem>piss na majteczki</ExtrasItem>
                   <ExtrasItem>scat w majteczkach</ExtrasItem>

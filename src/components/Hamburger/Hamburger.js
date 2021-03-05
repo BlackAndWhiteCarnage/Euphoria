@@ -21,7 +21,9 @@ const Hamburger = ({ darkMode, path, setDarkMode }) => {
       <HamburgerImg src={darkMode ? DarkHamburgerMenu : HamburgerMenu} onClick={toggleHandler} />
       {path && (
         <>
-          <CartImg src={darkMode ? DarkCart : Cart} />
+          <Link to="/koszyk">
+            <CartImg src={darkMode ? DarkCart : Cart} />
+          </Link>
           <Link to="/">
             <BackImg src={Home} />
           </Link>

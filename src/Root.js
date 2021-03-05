@@ -7,6 +7,7 @@ import AreWeBuying from 'views/AreWeBuying/AreWeBuying';
 import Contact from 'views/Contact/Contact';
 import Shop from 'views/Shop/Shop';
 import Product from 'views/Product/Product';
+import Cart from 'views/Cart/Cart';
 import { GlobalStyle } from 'components/GlobalStyles/GlobalStyles';
 import { ISlideConfig, PageSlides, SlideParallaxType } from 'react-page-slides';
 import { Switch, Route, useLocation, useHistory } from 'react-router-dom';
@@ -135,6 +136,7 @@ const Root = () => {
               <Product item={item} darkMode={darkMode} previousPathHandler={previousPathHandler} />
             </Route>
           )}
+          <Route path="/koszyk" exact component={() => <Cart />} />
         </>
       </Switch>
     </>
