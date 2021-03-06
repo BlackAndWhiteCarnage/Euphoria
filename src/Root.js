@@ -136,7 +136,7 @@ const Root = () => {
               <Product item={item} darkMode={darkMode} previousPathHandler={previousPathHandler} />
             </Route>
           )}
-          <Route path="/koszyk" exact component={() => <Cart darkMode={darkMode} />} />
+          <Route path="/koszyk" exact component={() => <Cart darkMode={darkMode} previousPathHandler={previousPathHandler} />} />
         </>
       </Switch>
     </>

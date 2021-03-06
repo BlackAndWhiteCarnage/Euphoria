@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export const HamburgerImg = styled.img`
   width: 2.5rem;
   height: 2.5rem;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 50%;
   transform: translate(-50%);
@@ -18,7 +18,7 @@ export const HamburgerImg = styled.img`
 export const BackImg = styled.img`
   width: 2.5rem;
   height: 2.5rem;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 20%;
   margin-bottom: 2rem;
@@ -31,7 +31,7 @@ export const BackImg = styled.img`
 export const CartImg = styled.img`
   width: 2.5rem;
   height: 2.5rem;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 20%;
   margin-bottom: 2rem;

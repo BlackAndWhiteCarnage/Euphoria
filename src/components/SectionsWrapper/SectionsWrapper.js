@@ -53,11 +53,9 @@ const SectionsWrapper = ({ darkMode, setDarkMode, slide, setSlide, path, URL }) 
     <Switch>
       <Wrapper>
         <CartAndDarkModeButtonWrapper>
-          {path && (
-            <Link to="/koszyk">
-              <CartIcon src={darkMode ? DarkCart : Cart} />
-            </Link>
-          )}
+          <Link to="/koszyk">
+            <CartIcon src={darkMode ? DarkCart : Cart} />
+          </Link>
           <DarkModeButton onClick={() => setDarkMode(!darkMode)} className={path && 'path'}>
             <DarkModeIcon src={darkMode ? DarkDarkMode : DarkMode} />
           </DarkModeButton>

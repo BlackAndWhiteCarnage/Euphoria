@@ -19,16 +19,12 @@ const Hamburger = ({ darkMode, path, setDarkMode }) => {
   return (
     <>
       <HamburgerImg src={darkMode ? DarkHamburgerMenu : HamburgerMenu} onClick={toggleHandler} />
-      {path && (
-        <>
-          <Link to="/koszyk">
-            <CartImg src={darkMode ? DarkCart : Cart} />
-          </Link>
-          <Link to="/">
-            <BackImg src={Home} />
-          </Link>
-        </>
-      )}
+      <Link to="/koszyk">
+        <CartImg src={darkMode ? DarkCart : Cart} />
+      </Link>
+      <Link to="/">
+        <BackImg src={Home} />
+      </Link>
       <Modal className={toggle && `showModal ${darkMode && 'darkMode'}`}>
         <List>
           <StyledLink to="/sklep/majteczki">
