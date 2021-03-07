@@ -24,8 +24,6 @@ const Root = () => {
   const [item, setItem] = useState();
   const [cart, setCart] = useState([]);
 
-  console.log(cart);
-
   const location = useLocation();
 
   let history = useHistory();
@@ -83,6 +81,23 @@ const Root = () => {
     }
   }, [data]);
 
+  useEffect(() => {
+    getTasks();
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(cart));
+  }, [cart]);
+
+  const getTasks = () => {
+    if (localStorage.getItem('tasks') === null) {
+      localStorage.setItem('tasks', JSON.stringify([]));
+    } else {
+      let taskLocal = JSON.parse(localStorage.getItem('tasks'));
+      setCart(taskLocal);
+    }
+  };
+
   const slides: ISlideConfig[] = [
     {
       content: <Home darkMode={darkMode} setDarkMode={setDarkMode} setSlide={setSlide} />,
@@ -139,7 +154,7 @@ const Root = () => {
           />
           {item && (
             <Route path={`/${getURL()}/${item.id}`} exact>
-              <Product item={item} darkMode={darkMode} previousPathHandler={previousPathHandler} />
+              <Product item={item} darkMode={darkMode} previousPathHandler={previousPathHandler} setCart={setCart} cart={cart} />
             </Route>
           )}
           <Route

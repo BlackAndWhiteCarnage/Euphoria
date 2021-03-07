@@ -28,13 +28,18 @@ import Back from 'assets/icons/Back.svg';
 import DarkBack from 'assets/icons/DarkBack.svg';
 import Button from 'components/Button/Button';
 
-const Product = ({ item, darkMode, previousPathHandler }) => {
+const Product = ({ item, darkMode, previousPathHandler, cart, setCart }) => {
   const [bigImage, setBigImage] = useState(false);
   const [bigProductImage, setBigProductImage] = useState(false);
   const [showExtras, setShowExtras] = useState(false);
 
   const setBigImageHandler = () => {
     setBigImage(!bigImage);
+  };
+
+  const addToCartHandler = (item) => {
+    cart.push(item);
+    setCart([...cart]);
   };
 
   return (
@@ -50,7 +55,7 @@ const Product = ({ item, darkMode, previousPathHandler }) => {
         <ButtonsWrapperDesktop>
           <StyledButton className={darkMode && 'darkMode'} text={'dodatki'} onClick={() => setShowExtras(!showExtras)} />
           <StyledButton className={darkMode && 'darkMode'} text={'zdjęcie poglądowe'} onClick={() => setBigProductImage(!bigProductImage)} />
-          <StyledButton className={darkMode && 'darkMode'} text={'dodaj do koszyka'} />
+          <StyledButton className={darkMode && 'darkMode'} text={'dodaj do koszyka'} onClick={() => addToCartHandler(item)} />
         </ButtonsWrapperDesktop>
         <CostsInfoWrapperDesktop>
           <Cost>

@@ -121,7 +121,9 @@ export const CartLink = styled(Link)`
     left: 15%;
   }
   &.showDark {
+    width: 6rem;
     background: rgba(255, 255, 255, 0.5);
+    left: 15%;
   }
   p {
     font-family: 'Montserrat';

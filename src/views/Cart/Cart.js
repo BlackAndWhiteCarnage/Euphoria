@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Label,
   TextArea,
@@ -40,6 +40,18 @@ const Cart = ({ darkMode, previousPathHandler, cart, setCart }) => {
     setCart(cartCopy);
   };
 
+  let cartValues = cart.map((item) => {
+    return item.cost;
+  });
+
+  let summary = () => {
+    if (cartValues.length !== 0) {
+      return cartValues.reduce((a, b) => a + b).toFixed(2);
+    } else {
+      return '0';
+    }
+  };
+
   return (
     <Wrapper className={darkMode && 'darkMode'}>
       <CartWrapper>
@@ -52,30 +64,30 @@ const Cart = ({ darkMode, previousPathHandler, cart, setCart }) => {
           </ParamsWrapper>
           <Items>
             {cart.length !== 0 ? (
-              cart.map(
-                (item, index) => (
-                  `${console.log(item)}`,
-                  (
-                    <Item className={darkMode && 'darkMode'} key={item.id}>
-                      <p>{item.name}</p>
-                      <Price>
-                        <span>{item.cost}</span> zł
-                      </Price>
-                      {toggle === index && (
-                        <ImageWrapper onClick={() => setToggle(toggle !== index && index)}>
-                          <Image src={item.mainImages[0]} />
-                        </ImageWrapper>
-                      )}
-                      <ImagePreviewIcon src={darkMode ? ImagePreview : DarkImagePreview} onClick={() => setToggle(toggle !== index && index)} />
-                      <DeleteIcon src={Delete} onClick={() => deleteItemHandler(index)} />
-                    </Item>
-                  )
-                )
-              )
+              cart.map((item, index) => (
+                <Item className={darkMode && 'darkMode'} key={item.id}>
+                  <p>{item.name}</p>
+                  <Price>
+                    <span>{item.cost}</span> zł
+                  </Price>
+                  {toggle === index && (
+                    <ImageWrapper onClick={() => setToggle(toggle !== index && index)}>
+                      <Image src={item.mainImages[0]} />
+                    </ImageWrapper>
+                  )}
+                  <ImagePreviewIcon src={darkMode ? ImagePreview : DarkImagePreview} onClick={() => setToggle(toggle !== index && index)} />
+                  <DeleteIcon src={Delete} onClick={() => deleteItemHandler(index)} />
+                </Item>
+              ))
             ) : (
               <NoItemsInfo>koszyk jest pusty</NoItemsInfo>
             )}
           </Items>
+          <ParamsWrapper>
+            <p>
+              Razem <span>{summary()}</span> zł
+            </p>
+          </ParamsWrapper>
         </ItemsWrapper>
         <Form>
           <Header>Formularz zakupowy</Header>

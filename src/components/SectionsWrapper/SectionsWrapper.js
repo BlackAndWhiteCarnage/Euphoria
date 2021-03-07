@@ -37,8 +37,6 @@ import Home from 'assets/icons/Home.svg';
 const SectionsWrapper = ({ darkMode, setDarkMode, slide, setSlide, path, URL, cart }) => {
   const [activeLink, setActiveLink] = useState();
 
-  console.log(cart.length);
-
   useEffect(() => {
     if (URL.indexOf('majteczki') > -1) {
       setActiveLink('majteczki');

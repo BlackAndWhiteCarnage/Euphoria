@@ -67,9 +67,16 @@ export const ParamsWrapper = styled.div`
   height: 10%;
   font-size: ${({ theme }) => theme.fontSize.s};
   font-weight: bold;
+  span {
+    color: ${({ theme }) => theme.colors.primaryRed};
+    font-size: ${({ theme }) => theme.fontSize.m};
+  }
   @media screen and (min-width: 680px) {
     font-size: ${({ theme }) => theme.fontSize.m};
     width: 95%;
+    span {
+      font-size: ${({ theme }) => theme.fontSize.l};
+    }
   }
 `;
 export const Items = styled.div`
@@ -122,7 +129,7 @@ export const Price = styled.p`
   width: 20%;
   margin-left: 1rem;
   span {
-    font-size: ${({ theme }) => theme.fontSize.l};
+    font-size: ${({ theme }) => theme.fontSize.m};
     color: ${({ theme }) => theme.colors.primaryRed};
   }
 `;
