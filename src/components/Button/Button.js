@@ -10,6 +10,7 @@ const Button = ({ text, className, onClick }) => {
 };
 
 const StyledButton = styled.button`
+  display: block;
   position: relative;
   width: 100%;
   min-height: 5rem;
@@ -23,6 +24,9 @@ const StyledButton = styled.button`
   overflow: hidden;
   z-index: 3;
   margin: ${(props) => props.style && '0.5rem'};
+  &.toggle {
+    display: none;
+  }
   ::before {
     content: '';
     position: absolute;

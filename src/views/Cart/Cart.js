@@ -17,13 +17,28 @@ import {
   ItemsWrapper,
   ParamsWrapper,
   BackIcon,
+  DeleteIcon,
+  NoItemsInfo,
+  ImagePreviewIcon,
+  Image,
+  ImageWrapper,
 } from './Cart.styles';
 import Info from 'assets/icons/Info.svg';
 import DarkInfo from 'assets/icons/DarkInfo.svg';
 import Back from 'assets/icons/Back.svg';
+import Delete from 'assets/icons/Delete.svg';
+import ImagePreview from 'assets/icons/ImagePreview.svg';
+import DarkImagePreview from 'assets/icons/DarkImagePreview.svg';
 
-const Cart = ({ darkMode, previousPathHandler }) => {
+const Cart = ({ darkMode, previousPathHandler, cart, setCart }) => {
   const [showInfo, setShowInfo] = useState(false);
+  const [cartCopy, setCartCopy] = useState([...cart]);
+  const [toggle, setToggle] = useState();
+
+  const deleteItemHandler = (index) => {
+    cartCopy.splice(index, 1);
+    setCart(cartCopy);
+  };
 
   return (
     <Wrapper className={darkMode && 'darkMode'}>
@@ -36,16 +51,34 @@ const Cart = ({ darkMode, previousPathHandler }) => {
             <p>Cena</p>
           </ParamsWrapper>
           <Items>
-            <Item className={darkMode && 'darkMode'}>
-              <p>Bordowe Śliskie Stringi</p>
-              <Price>
-                <span>50</span> zł
-              </Price>
-            </Item>
+            {cart.length !== 0 ? (
+              cart.map(
+                (item, index) => (
+                  `${console.log(item)}`,
+                  (
+                    <Item className={darkMode && 'darkMode'} key={item.id}>
+                      <p>{item.name}</p>
+                      <Price>
+                        <span>{item.cost}</span> zł
+                      </Price>
+                      {toggle === index && (
+                        <ImageWrapper onClick={() => setToggle(toggle !== index && index)}>
+                          <Image src={item.mainImages[0]} />
+                        </ImageWrapper>
+                      )}
+                      <ImagePreviewIcon src={darkMode ? ImagePreview : DarkImagePreview} onClick={() => setToggle(toggle !== index && index)} />
+                      <DeleteIcon src={Delete} onClick={() => deleteItemHandler(index)} />
+                    </Item>
+                  )
+                )
+              )
+            ) : (
+              <NoItemsInfo>koszyk jest pusty</NoItemsInfo>
+            )}
           </Items>
         </ItemsWrapper>
         <Form>
-          <Header>Formularz kontaktowy</Header>
+          <Header>Formularz zakupowy</Header>
           <Label>Pseudonim</Label>
           <Input className={darkMode && 'darkMode'} />
           <Label>Adres e-mail</Label>

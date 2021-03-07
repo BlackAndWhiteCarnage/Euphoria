@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Square from 'assets/icons/Square.svg';
 import darkSquare from 'assets/icons/DarkSquare.svg';
 import styled from 'styled-components';
@@ -15,14 +15,16 @@ import {
   SquareBottomLeft,
   StyledLink,
   ImageLink,
+  StyledButton,
 } from './Shop.styles';
 import Button from 'components/Button/Button';
 
-const StyledButton = styled(Button)`
-  margin-bottom: 1rem;
-`;
+const Shop = ({ darkMode, data, setItem, getURL, setCart, cart }) => {
+  const addToCartHandler = (item) => {
+    cart.push(item);
+    setCart([...cart]);
+  };
 
-const Shop = ({ darkMode, data, setItem, getURL }) => {
   return (
     <Wrapper className={darkMode && 'darkMode'}>
       <ProductsWrapper>
@@ -37,7 +39,7 @@ const Shop = ({ darkMode, data, setItem, getURL }) => {
                 </ImageLink>
                 <ProductName className={darkMode && 'darkMode'}>{item.name}</ProductName>
                 <ButtonsWrapper>
-                  <StyledButton className={darkMode && 'darkMode'} text={'dodaj do koszyka'} />
+                  <StyledButton className={darkMode && 'darkMode'} text={'dodaj do koszyka'} onClick={() => addToCartHandler(item)} />
                   <StyledLink to={`/${getURL()}/${item.id}`} onClick={() => setItem(item)}>
                     <Button className={darkMode && 'darkMode'} text={'sprawdź'} />
                   </StyledLink>

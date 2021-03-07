@@ -299,7 +299,7 @@ export const BackIcon = styled.img`
   z-index: 200;
   transition: 0.5s ease;
   &:hover {
-    transform: scale(1.4);
+    transform: scale(1.4) rotate(-360deg);
     transition: 0.5s ease;
   }
   @media screen and (min-width: 680px) {
@@ -353,78 +353,5 @@ export const BigProductImage = styled.img`
   @media screen and (max-width: 680px) {
     width: 90%;
     height: 40%;
-  }
-`;
-
-export const Button = styled.button`
-  position: relative;
-  width: 100%;
-  height: 4rem;
-  border: 1px solid #e7e7e7;
-  background: none;
-  font-family: 'Montserrat';
-  font-size: ${({ theme }) => theme.fontSize.s};
-  color: ${({ theme }) => theme.colors.primaryLight};
-  cursor: pointer;
-  transition: 1.5s ease;
-  &.darkMode {
-    color: ${({ theme }) => theme.colors.primaryDark};
-    border: 1px solid #2d2d2d;
-    transition: 1.5s ease;
-    &::before {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      content: '';
-      width: 100%;
-      height: 0%;
-      background: #2d2d2d;
-      z-index: -1;
-      transition: 0.5s ease;
-    }
-    &:hover {
-      color: ${({ theme }) => theme.colors.primaryLight};
-      transition: 1.5s ease;
-      &::before {
-        position: absolute;
-        left: 0;
-        top: 0;
-        content: '';
-        width: 100%;
-        height: 100%;
-        background: #2d2d2d;
-        z-index: -1;
-        transition: 0.5s ease;
-      }
-    }
-  }
-  &::before {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    content: '';
-    width: 100%;
-    height: 0%;
-    background: #e7e7e7;
-    z-index: -1;
-    transition: 0.5s ease;
-  }
-  &:hover {
-    color: ${({ theme }) => theme.colors.primaryDark};
-    transition: 1.5s ease;
-    &::before {
-      position: absolute;
-      left: 0;
-      top: 0;
-      content: '';
-      width: 100%;
-      height: 100%;
-      background: #e7e7e7;
-      z-index: -1;
-      transition: 0.5s ease;
-    }
-  }
-  @media screen and (min-width: 680px) {
-    width: 30%;
   }
 `;

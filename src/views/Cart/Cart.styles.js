@@ -39,6 +39,11 @@ export const BackIcon = styled.img`
   width: 2.5rem;
   height: 2.5rem;
   z-index: 800;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.4) rotate(-360deg);
+    transition: 0.5s ease;
+  }
   @media screen and (max-width: 680px) {
     top: 1.5rem;
   }
@@ -68,6 +73,7 @@ export const ParamsWrapper = styled.div`
   }
 `;
 export const Items = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -78,6 +84,7 @@ export const Items = styled.div`
   }
 `;
 export const Item = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -86,6 +93,9 @@ export const Item = styled.div`
   font-size: ${({ theme }) => theme.fontSize.s};
   margin-top: 1rem;
   cursor: pointer;
+  p {
+    width: 70%;
+  }
   &:last-child {
     border: none;
   }
@@ -109,6 +119,8 @@ export const Item = styled.div`
 `;
 export const Price = styled.p`
   font-weight: bold;
+  width: 20%;
+  margin-left: 1rem;
   span {
     font-size: ${({ theme }) => theme.fontSize.l};
     color: ${({ theme }) => theme.colors.primaryRed};
@@ -146,7 +158,6 @@ export const InfoWrapper = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.7);
-
   color: ${({ theme }) => theme.colors.primaryLight};
   z-index: 10;
   border-radius: 20px;
@@ -253,4 +264,40 @@ export const InfoIcon = styled.img`
   bottom: 0;
   z-index: 100;
   cursor: pointer;
+`;
+export const DeleteIcon = styled.img`
+  width: 2.5rem;
+  height: 2.5rem;
+`;
+export const NoItemsInfo = styled.p`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: normal;
+  font-size: ${({ theme }) => theme.fontSize.l};
+  color: ${({ theme }) => theme.colors.primaryLight};
+`;
+export const ImagePreviewIcon = styled.img`
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 2.5rem;
+`;
+export const Image = styled.img`
+  width: 30%;
+  height: auto;
+`;
+export const ImageWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 900;
+  background: rgba(0, 0, 0, 0.8);
 `;

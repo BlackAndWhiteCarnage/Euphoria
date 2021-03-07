@@ -22,6 +22,9 @@ const Root = () => {
   const [URL, setURL] = useState(window.location.href);
   const [data, setData] = useState();
   const [item, setItem] = useState();
+  const [cart, setCart] = useState([]);
+
+  console.log(cart);
 
   const location = useLocation();
 
@@ -130,13 +133,20 @@ const Root = () => {
         <>
           <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} path="shop" setURL={setURL} URL={URL} />
           <Hamburger darkMode={darkMode} setDarkMode={setDarkMode} path="shop" />
-          <Route path="/sklep" component={() => <Shop data={data} darkMode={darkMode} setItem={setItem} getURL={getURL} />} />
+          <Route
+            path="/sklep"
+            component={() => <Shop data={data} darkMode={darkMode} setItem={setItem} getURL={getURL} setCart={setCart} cart={cart} />}
+          />
           {item && (
             <Route path={`/${getURL()}/${item.id}`} exact>
               <Product item={item} darkMode={darkMode} previousPathHandler={previousPathHandler} />
             </Route>
           )}
-          <Route path="/koszyk" exact component={() => <Cart darkMode={darkMode} previousPathHandler={previousPathHandler} />} />
+          <Route
+            path="/koszyk"
+            exact
+            component={() => <Cart darkMode={darkMode} previousPathHandler={previousPathHandler} cart={cart} setCart={setCart} />}
+          />
         </>
       </Switch>
     </>

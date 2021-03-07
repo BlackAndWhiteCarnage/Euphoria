@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import Button from 'components/Button/Button';
 
 export const Wrapper = styled.section`
   width: 100%;
@@ -32,7 +33,7 @@ export const ProductsWrapper = styled.div`
 
 export const ProductWrapper = styled.div`
   position: relative;
-  width: 25rem;
+  width: 100%;
   min-height: 40rem;
   display: flex;
   flex-direction: column;
@@ -138,79 +139,6 @@ export const ButtonsWrapper = styled.div`
   }
 `;
 
-export const Button = styled.button`
-  position: relative;
-  width: 20rem;
-  height: 3.5rem;
-  border: 1px solid #e7e7e7;
-  background: none;
-  font-family: 'Montserrat';
-  color: ${({ theme }) => theme.colors.primaryLight};
-  font-size: ${({ theme }) => theme.fontSize.m};
-  cursor: pointer;
-  transition: 1.5s ease;
-  &.darkMode {
-    color: ${({ theme }) => theme.colors.primaryDark};
-    border: 1px solid #2d2d2d;
-    transition: 1.5s ease;
-    &::before {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      content: '';
-      width: 100%;
-      height: 100%;
-      background: #2d2d2d;
-      z-index: -1;
-      transition: 0.5s ease;
-    }
-    &:hover {
-      color: ${({ theme }) => theme.colors.primaryLight};
-      transition: 1.5s ease;
-      &::before {
-        position: absolute;
-        left: 0;
-        top: 0;
-        content: '';
-        width: 100%;
-        height: 100%;
-        background: #2d2d2d;
-        z-index: -1;
-        transition: 0.5s ease;
-      }
-    }
-  }
-  &::before {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    content: '';
-    width: 100%;
-    height: 0%;
-    background: #e7e7e7;
-    z-index: -1;
-    transition: 0.5s ease;
-  }
-  &:hover {
-    color: ${({ theme }) => theme.colors.primaryDark};
-    transition: 1.5s ease;
-    &::before {
-      position: absolute;
-      left: 0;
-      top: 0;
-      content: '';
-      width: 100%;
-      height: 100%;
-      background: #e7e7e7;
-      z-index: -1;
-      transition: 0.5s ease;
-    }
-  }
-  @media screen and (min-width: 680px) {
-    width: 100%;
-  }
-`;
-
 export const SquareTopLeft = styled.img`
   position: absolute;
   left: 0;
@@ -241,4 +169,8 @@ export const SquareBottomRight = styled.img`
 export const StyledLink = styled(Link)`
   width: 100%;
   height: auto;
+`;
+
+export const StyledButton = styled(Button)`
+  margin-bottom: 1rem;
 `;

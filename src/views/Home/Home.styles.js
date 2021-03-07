@@ -19,6 +19,7 @@ export const ImageWrapper = styled.div`
   width: 50%;
   height: 50%;
   margin-top: 5rem;
+  pointer-events: none;
   &.darkMode {
     &::before {
       transition: 1.5s ease;
@@ -57,6 +58,8 @@ export const Logo = styled.img`
 export const Image = styled.img`
   width: 100%;
   height: 100%;
+  pointer-events: none;
+
   &.show {
     opacity: 1;
     object-fit: cover;
