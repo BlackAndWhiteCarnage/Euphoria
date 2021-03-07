@@ -31,14 +31,6 @@ export const BackImg = styled.img`
 export const CartImg = styled.img`
   width: 2.5rem;
   height: 2.5rem;
-  position: fixed;
-  bottom: 0;
-  left: 20%;
-  margin-bottom: 2rem;
-  z-index: 10;
-  @media screen and (min-width: 680px) {
-    display: none;
-  }
 `;
 
 export const Modal = styled.div`
@@ -108,4 +100,36 @@ export const DarkModeImg = styled.img`
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
+`;
+export const CartLink = styled(Link)`
+  text-decoration: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  bottom: 0;
+  left: 20%;
+  margin-bottom: 2rem;
+  z-index: 10;
+  border-radius: 10px;
+  padding: 0.5rem;
+  &.show {
+    width: 6rem;
+    background: rgba(0, 0, 0, 0.5);
+    left: 15%;
+  }
+  &.showDark {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  p {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: ${({ theme }) => theme.fontSize.l};
+    color: #009d19;
+  }
+  @media screen and (min-width: 680px) {
+    display: none;
+  }
 `;

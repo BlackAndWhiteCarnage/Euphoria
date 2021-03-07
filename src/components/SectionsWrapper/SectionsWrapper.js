@@ -15,6 +15,8 @@ import {
   NavWrapper,
   ShopSquareIcon,
   CartIcon,
+  StyledLink,
+  CartCount,
   CartAndDarkModeButtonWrapper,
   BackIcon,
 } from './SectionsWrapper.styles';
@@ -32,8 +34,10 @@ import Cart from 'assets/icons/Cart.svg';
 import DarkCart from 'assets/icons/DarkCart.svg';
 import Home from 'assets/icons/Home.svg';
 
-const SectionsWrapper = ({ darkMode, setDarkMode, slide, setSlide, path, URL }) => {
+const SectionsWrapper = ({ darkMode, setDarkMode, slide, setSlide, path, URL, cart }) => {
   const [activeLink, setActiveLink] = useState();
+
+  console.log(cart.length);
 
   useEffect(() => {
     if (URL.indexOf('majteczki') > -1) {
@@ -52,10 +56,11 @@ const SectionsWrapper = ({ darkMode, setDarkMode, slide, setSlide, path, URL }) 
   return (
     <Switch>
       <Wrapper>
-        <CartAndDarkModeButtonWrapper>
-          <Link to="/koszyk">
+        <CartAndDarkModeButtonWrapper className={!path && 'path'}>
+          <StyledLink to="/koszyk" className={cart.length > 0 && `${darkMode && 'showDark'} ${!darkMode && 'show'}`}>
+            <p>{cart.length > 0 && cart.length}</p>
             <CartIcon src={darkMode ? DarkCart : Cart} />
-          </Link>
+          </StyledLink>
           <DarkModeButton onClick={() => setDarkMode(!darkMode)} className={path && 'path'}>
             <DarkModeIcon src={darkMode ? DarkDarkMode : DarkMode} />
           </DarkModeButton>

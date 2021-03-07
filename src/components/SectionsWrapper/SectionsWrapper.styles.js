@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.nav`
   display: none;
@@ -26,8 +27,11 @@ export const CartAndDarkModeButtonWrapper = styled.div`
   border: none;
   pointer-events: all;
   @media screen and (min-width: 860px) {
-    width: 10rem;
-    justify-content: space-around;
+    width: 14rem;
+    justify-content: space-between;
+    &.path {
+      width: 10rem;
+    }
   }
 `;
 
@@ -50,6 +54,28 @@ export const CartIcon = styled.img`
   &:hover {
     transform: scale(1.3);
     transition: 0.3s ease;
+  }
+`;
+export const StyledLink = styled(Link)`
+  width: 6rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 0.5rem;
+  &.show {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  &.showDark {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  p {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: ${({ theme }) => theme.fontSize.l};
+    color: #009d19;
   }
 `;
 
@@ -142,15 +168,9 @@ export const NavItemButton = styled.button`
 `;
 
 export const DarkModeButton = styled.button`
-  position: absolute;
-  right: 0;
-  top: 0;
   background: none;
   border: none;
   pointer-events: all;
-  &.path {
-    position: static;
-  }
 `;
 
 export const DotsWrapper = styled.div`

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ListItem, StyledLink, DarkModeImg, List, Modal, BackImg, CartImg, HamburgerImg } from './Hamburger.styles';
+import { ListItem, StyledLink, DarkModeImg, List, Modal, BackImg, CartImg, CartLink, HamburgerImg } from './Hamburger.styles';
 import HamburgerMenu from 'assets/icons/HamburgerMenu.svg';
 import DarkHamburgerMenu from 'assets/icons/DarkHamburgerMenu.svg';
 import Cart from 'assets/icons/Cart.svg';
@@ -9,7 +9,7 @@ import Home from 'assets/icons/Home.svg';
 import DarkMode from 'assets/icons/DarkMode.svg';
 import DarkDarkMode from 'assets/icons/DarkDarkMode.svg';
 
-const Hamburger = ({ darkMode, path, setDarkMode }) => {
+const Hamburger = ({ darkMode, path, setDarkMode, cart }) => {
   const [toggle, setToggle] = useState(false);
 
   const toggleHandler = () => {
@@ -19,9 +19,10 @@ const Hamburger = ({ darkMode, path, setDarkMode }) => {
   return (
     <>
       <HamburgerImg src={darkMode ? DarkHamburgerMenu : HamburgerMenu} onClick={toggleHandler} />
-      <Link to="/koszyk">
+      <CartLink to="/koszyk" className={cart.length > 0 && `${darkMode && 'showDark'} ${!darkMode && 'show'}`}>
+        <p>{cart.length > 0 && cart.length}</p>
         <CartImg src={darkMode ? DarkCart : Cart} />
-      </Link>
+      </CartLink>
       <Link to="/">
         <BackImg src={Home} />
       </Link>

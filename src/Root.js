@@ -114,8 +114,8 @@ const Root = () => {
       <GlobalStyle darkMode={darkMode} />
       <Switch>
         <Route path="/" exact>
-          <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} slide={slide} setSlide={setSlide} setURL={setURL} URL={URL} />
-          <Hamburger darkMode={darkMode} />
+          <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} slide={slide} setSlide={setSlide} setURL={setURL} URL={URL} cart={cart} />
+          <Hamburger darkMode={darkMode} cart={cart} />
           <PageSlides
             // Fix bug cause firefox blocking scrolling after first scroll only on desktop browser
             enableAutoScroll={
@@ -131,8 +131,8 @@ const Root = () => {
           />
         </Route>
         <>
-          <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} path="shop" setURL={setURL} URL={URL} />
-          <Hamburger darkMode={darkMode} setDarkMode={setDarkMode} path="shop" />
+          <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} path="shop" setURL={setURL} URL={URL} cart={cart} />
+          <Hamburger darkMode={darkMode} setDarkMode={setDarkMode} path="shop" cart={cart} />
           <Route
             path="/sklep"
             component={() => <Shop data={data} darkMode={darkMode} setItem={setItem} getURL={getURL} setCart={setCart} cart={cart} />}
