@@ -62,10 +62,7 @@ const Product = ({ item, darkMode, previousPathHandler, cart, setCart }) => {
             Cena: <span>{item.cost}</span> zł
           </Cost>
           <Cost>
-            Przesyłka: <span>{item.shipping}</span> zł
-          </Cost>
-          <Cost>
-            Razem: <span>{item.cost + item.shipping}</span> zł
+            Przesyłka: <span>darmowa</span>
           </Cost>
         </CostsInfoWrapperDesktop>
         <ProductWrapper1>
@@ -104,17 +101,14 @@ const Product = ({ item, darkMode, previousPathHandler, cart, setCart }) => {
                 Cena: <span>{item.cost}</span> zł
               </Cost>
               <Cost>
-                Przesyłka: <span>{item.shipping}</span> zł
-              </Cost>
-              <Cost>
-                Razem: <span>{item.cost + item.shipping}</span> zł
+                Przesyłka: <span>darmowa</span>
               </Cost>
             </CostsInfoWrapper>
           </CostAndInfoWrapper>
           <ButtonsWrapper>
             <StyledButton className={darkMode && 'darkMode'} text={'dodatki'} onClick={() => setShowExtras(!showExtras)} />
             <StyledButton className={darkMode && 'darkMode'} text={'zdjęcie poglądowe'} onClick={() => setBigProductImage(!bigProductImage)} />
-            <StyledButton className={darkMode && 'darkMode'} text={'dodaj do koszyka'} />
+            <StyledButton className={darkMode && 'darkMode'} text={'dodaj do koszyka'} onClick={() => addToCartHandler(item)} />
           </ButtonsWrapper>
         </ProductWrapper2>
       </ProductWrapper>

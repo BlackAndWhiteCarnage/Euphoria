@@ -118,16 +118,17 @@ export const ProductImage = styled.img`
   height: 100%;
   cursor: pointer;
   transition: 1s ease;
+  border-radius: 0.5rem;
   &.media {
     display: none;
   }
   &.bigImage {
-    width: 30%;
+    width: 40%;
     height: 90%;
     margin: 5rem;
     transition: 1s ease;
     @media screen and (max-width: 680px) {
-      width: 55%;
+      width: auto;
       height: 46%;
       margin: 1rem;
     }
@@ -138,7 +139,7 @@ export const ProductImage = styled.img`
       display: block;
     }
     &:hover {
-      transform: scale(1.05);
+      transform: scale(0.95);
       transition: 0.5s ease;
     }
   }
@@ -350,6 +351,7 @@ export const BigProductImage = styled.img`
   width: 60%;
   height: 80%;
   object-fit: cover;
+  border-radius: 1rem;
   @media screen and (max-width: 680px) {
     width: 90%;
     height: 40%;

@@ -19,6 +19,7 @@ const StyledButton = styled.button`
   font-family: 'Montserrat';
   color: ${({ theme }) => theme.colors.primaryLight};
   font-size: ${({ theme }) => theme.fontSize.m};
+  border-radius: 10rem;
   cursor: pointer;
   transition: 0.5s ease;
   overflow: hidden;

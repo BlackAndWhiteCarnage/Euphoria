@@ -99,6 +99,7 @@ export const Item = styled.div`
   min-height: 3rem;
   font-size: ${({ theme }) => theme.fontSize.s};
   margin-top: 1rem;
+  border-radius: 1rem;
   cursor: pointer;
   p {
     width: 70%;
@@ -116,7 +117,7 @@ export const Item = styled.div`
     font-size: ${({ theme }) => theme.fontSize.m};
     min-height: 8rem;
     width: 95%;
-    border-bottom: 1px solid #b80202;
+    /* border: 1px solid #b80202; */
     transition: 0.5s ease;
     :hover {
       transition: 0.5s ease;
@@ -230,6 +231,7 @@ export const Input = styled.input`
   color: ${({ theme }) => theme.colors.primaryLight};
   padding: 0.5rem;
   font-weight: bold;
+  border-radius: 1rem;
   &.darkMode {
     color: ${({ theme }) => theme.colors.primaryDark};
     border: 1px solid #2d2d2d;
@@ -250,6 +252,7 @@ export const TextArea = styled.textarea`
   font-weight: bold;
   padding: 0.5rem;
   resize: none;
+  border-radius: 1rem;
   &.darkMode {
     color: ${({ theme }) => theme.colors.primaryDark};
     border: 1px solid #2d2d2d;
@@ -276,23 +279,20 @@ export const DeleteIcon = styled.img`
   width: 2.5rem;
   height: 2.5rem;
 `;
-export const NoItemsInfo = styled.p`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  line-height: normal;
-  font-size: ${({ theme }) => theme.fontSize.l};
-  color: ${({ theme }) => theme.colors.primaryLight};
-`;
+
 export const ImagePreviewIcon = styled.img`
   width: 2.5rem;
   height: 2.5rem;
   margin-right: 2.5rem;
 `;
 export const Image = styled.img`
-  width: 30%;
-  height: auto;
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  @media screen and (min-width: 680px) {
+    width: auto;
+    height: 80%;
+  }
 `;
 export const ImageWrapper = styled.div`
   position: fixed;

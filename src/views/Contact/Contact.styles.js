@@ -79,6 +79,7 @@ export const Input = styled.input`
   background: none;
   transition: 1.5s ease;
   padding: 1rem;
+  border-radius: 1rem;
   &.darkMode {
     color: ${({ theme }) => theme.colors.primaryDark};
     border: 1px solid #2d2d2d;
@@ -101,6 +102,7 @@ export const TextArea = styled.textarea`
   resize: none;
   transition: 1.5s ease;
   padding: 1rem;
+  border-radius: 1rem;
   &.darkMode {
     color: ${({ theme }) => theme.colors.primaryDark};
     border: 1px solid #2d2d2d;

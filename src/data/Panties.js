@@ -7,7 +7,6 @@ export const panties = [
   {
     name: 'Bordowe Śliskie Stringi',
     cost: 50,
-    shipping: 11,
     id: '1',
     mainImages: [BordoweŚliskieStringi1, BordoweŚliskieStringi2],
     productImage: BordoweŚliskieStringi3,
@@ -15,7 +14,6 @@ export const panties = [
   {
     name: 'Bordowe Śliskie Stringi',
     cost: 50,
-    shipping: 11,
     id: '2',
     mainImages: [BordoweŚliskieStringi1, BordoweŚliskieStringi2],
     productImage: BordoweŚliskieStringi3,
@@ -23,7 +21,6 @@ export const panties = [
   {
     name: 'Bordowe Śliskie Stringi',
     cost: 50,
-    shipping: 11,
     id: '3',
     mainImages: [BordoweŚliskieStringi1, BordoweŚliskieStringi2],
     productImage: BordoweŚliskieStringi3,
@@ -31,7 +28,6 @@ export const panties = [
   {
     name: 'Bordowe Śliskie Stringi',
     cost: 50,
-    shipping: 11,
     id: '4',
     mainImages: [BordoweŚliskieStringi1, BordoweŚliskieStringi2],
     productImage: BordoweŚliskieStringi3,
@@ -39,7 +35,6 @@ export const panties = [
   {
     name: 'Bordowe Śliskie Stringi',
     cost: 50,
-    shipping: 11,
     id: '5',
     mainImages: [BordoweŚliskieStringi1, BordoweŚliskieStringi2],
     productImage: BordoweŚliskieStringi3,
@@ -47,7 +42,6 @@ export const panties = [
   {
     name: 'Bordowe Śliskie Stringi',
     cost: 50,
-    shipping: 11,
     id: '6',
     mainImages: [BordoweŚliskieStringi1, BordoweŚliskieStringi2],
     productImage: BordoweŚliskieStringi3,
@@ -55,7 +49,6 @@ export const panties = [
   {
     name: 'Bordowe Śliskie Stringi',
     cost: 50,
-    shipping: 11,
     id: '7',
     mainImages: [BordoweŚliskieStringi1, BordoweŚliskieStringi2],
     productImage: BordoweŚliskieStringi3,
@@ -63,7 +56,6 @@ export const panties = [
   {
     name: 'Bordowe Śliskie Stringi',
     cost: 50,
-    shipping: 11,
     id: '8',
     mainImages: [BordoweŚliskieStringi1, BordoweŚliskieStringi2],
     productImage: BordoweŚliskieStringi3,
@@ -71,7 +63,6 @@ export const panties = [
   {
     name: 'Bordowe Śliskie Stringi',
     cost: 50,
-    shipping: 11,
     id: '9',
     mainImages: [BordoweŚliskieStringi1, BordoweŚliskieStringi2],
     productImage: BordoweŚliskieStringi3,
@@ -79,7 +70,6 @@ export const panties = [
   {
     name: 'Bordowe Śliskie Stringi',
     cost: 50,
-    shipping: 11,
     id: '10',
     mainImages: [BordoweŚliskieStringi1, BordoweŚliskieStringi2],
     productImage: BordoweŚliskieStringi3,
@@ -87,7 +77,6 @@ export const panties = [
   {
     name: 'Bordowe Śliskie Stringi',
     cost: 50,
-    shipping: 11,
     id: '11',
     mainImages: [BordoweŚliskieStringi1, BordoweŚliskieStringi2],
     productImage: BordoweŚliskieStringi3,
@@ -95,7 +84,6 @@ export const panties = [
   {
     name: 'Bordowe Śliskie Stringi',
     cost: 50,
-    shipping: 11,
     id: '12',
     mainImages: [BordoweŚliskieStringi1, BordoweŚliskieStringi2],
     productImage: BordoweŚliskieStringi3,

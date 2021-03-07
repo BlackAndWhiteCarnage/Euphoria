@@ -45,8 +45,8 @@ const Shop = ({ darkMode, data, setItem, getURL, setCart, cart }) => {
                   </StyledLink>
                 </ButtonsWrapper>
               </Product>
-              <SquareTopRight src={darkMode ? darkSquare : Square} />
-              <SquareBottomLeft src={darkMode ? darkSquare : Square} />
+              {/* <SquareTopRight src={darkMode ? darkSquare : Square} />
+              <SquareBottomLeft src={darkMode ? darkSquare : Square} /> */}
             </ProductWrapper>
           ))}
       </ProductsWrapper>

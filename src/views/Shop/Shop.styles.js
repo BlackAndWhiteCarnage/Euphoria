@@ -42,6 +42,7 @@ export const ProductWrapper = styled.div`
   margin: 1rem;
   background: rgba(255, 255, 255, 0.05);
   transition: 1s ease;
+  border-radius: 2rem;
   &.darkMode {
     background: rgba(0, 0, 0, 0.05);
     transition: 1s ease;
@@ -92,7 +93,7 @@ export const ImageLink = styled(Link)`
   width: 100%;
   height: 70%;
   overflow: hidden;
-  border-radius: 3px;
+  border-radius: 0.5rem;
 `;
 
 export const NotSelectedInfo = styled.p`
@@ -122,6 +123,7 @@ export const ProductName = styled.h4`
   color: ${({ theme }) => theme.colors.primaryLight};
   font-family: 'Montserrat';
   font-weight: lighter;
+  font-weight: bold;
   &.darkMode {
     color: ${({ theme }) => theme.colors.primaryDark};
   }
@@ -169,6 +171,7 @@ export const SquareBottomRight = styled.img`
 export const StyledLink = styled(Link)`
   width: 100%;
   height: auto;
+  text-decoration: none;
 `;
 
 export const StyledButton = styled(Button)`

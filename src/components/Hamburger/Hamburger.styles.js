@@ -113,23 +113,24 @@ export const CartLink = styled(Link)`
   left: 20%;
   margin-bottom: 2rem;
   z-index: 10;
-  border-radius: 10px;
+  border-radius: 0.5rem;
   padding: 0.5rem;
   &.show {
     width: 6rem;
     background: rgba(0, 0, 0, 0.5);
     left: 15%;
+    color: ${({ theme }) => theme.colors.primaryLight};
   }
   &.showDark {
     width: 6rem;
     background: rgba(255, 255, 255, 0.5);
     left: 15%;
+    color: ${({ theme }) => theme.colors.primaryDark};
   }
   p {
     font-family: 'Montserrat';
     font-weight: bold;
     font-size: ${({ theme }) => theme.fontSize.l};
-    color: #009d19;
   }
   @media screen and (min-width: 680px) {
     display: none;

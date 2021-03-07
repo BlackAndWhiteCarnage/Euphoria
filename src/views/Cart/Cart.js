@@ -18,7 +18,6 @@ import {
   ParamsWrapper,
   BackIcon,
   DeleteIcon,
-  NoItemsInfo,
   ImagePreviewIcon,
   Image,
   ImageWrapper,
@@ -26,7 +25,9 @@ import {
 import Info from 'assets/icons/Info.svg';
 import DarkInfo from 'assets/icons/DarkInfo.svg';
 import Back from 'assets/icons/Back.svg';
+import DarkBack from 'assets/icons/DarkBack.svg';
 import Delete from 'assets/icons/Delete.svg';
+import DarkDelete from 'assets/icons/DarkDelete.svg';
 import ImagePreview from 'assets/icons/ImagePreview.svg';
 import DarkImagePreview from 'assets/icons/DarkImagePreview.svg';
 
@@ -55,7 +56,7 @@ const Cart = ({ darkMode, previousPathHandler, cart, setCart }) => {
   return (
     <Wrapper className={darkMode && 'darkMode'}>
       <CartWrapper>
-        <BackIcon src={Back} onClick={previousPathHandler} />
+        <BackIcon src={darkMode ? DarkBack : Back} onClick={previousPathHandler} />
         <ItemsWrapper>
           <Header>Koszyk</Header>
           <ParamsWrapper>
@@ -63,7 +64,7 @@ const Cart = ({ darkMode, previousPathHandler, cart, setCart }) => {
             <p>Cena</p>
           </ParamsWrapper>
           <Items>
-            {cart.length !== 0 ? (
+            {cart.length !== 0 &&
               cart.map((item, index) => (
                 <Item className={darkMode && 'darkMode'} key={item.id}>
                   <p>{item.name}</p>
@@ -76,17 +77,18 @@ const Cart = ({ darkMode, previousPathHandler, cart, setCart }) => {
                     </ImageWrapper>
                   )}
                   <ImagePreviewIcon src={darkMode ? ImagePreview : DarkImagePreview} onClick={() => setToggle(toggle !== index && index)} />
-                  <DeleteIcon src={Delete} onClick={() => deleteItemHandler(index)} />
+                  <DeleteIcon src={darkMode ? Delete : DarkDelete} onClick={() => deleteItemHandler(index)} />
                 </Item>
-              ))
-            ) : (
-              <NoItemsInfo>koszyk jest pusty</NoItemsInfo>
-            )}
+              ))}
           </Items>
           <ParamsWrapper>
-            <p>
-              Razem <span>{summary()}</span> zł
-            </p>
+            {cart.length !== 0 ? (
+              <p>
+                Razem <span>{summary()}</span> zł
+              </p>
+            ) : (
+              <p>koszyk jest pusty</p>
+            )}
           </ParamsWrapper>
         </ItemsWrapper>
         <Form>

@@ -63,19 +63,22 @@ export const StyledLink = styled(Link)`
   align-items: center;
   justify-content: space-between;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: 0.5rem;
   padding: 0.5rem;
   &.show {
     background: rgba(0, 0, 0, 0.5);
+    color: ${({ theme }) => theme.colors.primaryLight};
+    border: 1px solid white;
   }
   &.showDark {
+    border: 1px solid black;
     background: rgba(255, 255, 255, 0.5);
+    color: ${({ theme }) => theme.colors.primaryDark};
   }
   p {
     font-family: 'Montserrat';
     font-weight: bold;
     font-size: ${({ theme }) => theme.fontSize.l};
-    color: #009d19;
   }
 `;
 
