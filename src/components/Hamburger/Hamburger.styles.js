@@ -2,35 +2,56 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const HamburgerImg = styled.img`
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 4rem;
+  height: 4rem;
   position: fixed;
   bottom: 0;
   left: 50%;
   transform: translate(-50%);
   margin-bottom: 2rem;
+  padding: 0.5rem;
   z-index: 10;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.8);
+  &.darkMode {
+    background: rgba(255, 255, 255, 0.8);
+  }
   @media screen and (min-width: 680px) {
     display: none;
   }
 `;
 
 export const BackImg = styled.img`
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 4rem;
+  height: 4rem;
   position: fixed;
+  padding: 0.5rem;
   bottom: 0;
   right: 20%;
   margin-bottom: 2rem;
   z-index: 10;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  &.darkMode {
+    background: rgba(255, 255, 255, 0.8);
+  }
   @media screen and (min-width: 680px) {
     display: none;
   }
 `;
 
 export const CartImg = styled.img`
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 4rem;
+  height: 4rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.8);
+  &.darkMode {
+    background: rgba(255, 255, 255, 0.8);
+  }
+  &.hideBackground {
+    background: none;
+  }
 `;
 
 export const Modal = styled.div`
@@ -49,13 +70,9 @@ export const Modal = styled.div`
     height: 35rem;
     z-index: 5;
     transition: 0.5s ease;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.8);
     &.darkMode {
-      background: rgba(255, 255, 255, 0.3);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
+      background: rgba(255, 255, 255, 0.8);
     }
   }
   @media screen and (min-width: 680px) {
@@ -101,10 +118,11 @@ export const DarkModeImg = styled.img`
 export const StyledLink = styled(Link)`
   text-decoration: none;
 `;
+
 export const CartLink = styled(Link)`
   text-decoration: none;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 4rem;
+  height: 4rem;
   position: fixed;
   display: flex;
   align-items: center;
@@ -113,17 +131,17 @@ export const CartLink = styled(Link)`
   left: 20%;
   margin-bottom: 2rem;
   z-index: 10;
-  border-radius: 0.5rem;
+  border-radius: 3rem;
   padding: 0.5rem;
   &.show {
     width: 6rem;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.8);
     left: 15%;
     color: ${({ theme }) => theme.colors.primaryLight};
   }
   &.showDark {
     width: 6rem;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.8);
     left: 15%;
     color: ${({ theme }) => theme.colors.primaryDark};
   }

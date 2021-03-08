@@ -66,13 +66,11 @@ export const StyledLink = styled(Link)`
   border-radius: 0.5rem;
   padding: 0.5rem;
   &.show {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.8);
     color: ${({ theme }) => theme.colors.primaryLight};
-    border: 1px solid white;
   }
   &.showDark {
-    border: 1px solid black;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.8);
     color: ${({ theme }) => theme.colors.primaryDark};
   }
   p {

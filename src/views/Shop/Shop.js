@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Square from 'assets/icons/Square.svg';
 import darkSquare from 'assets/icons/DarkSquare.svg';
 import styled from 'styled-components';
@@ -39,7 +39,13 @@ const Shop = ({ darkMode, data, setItem, getURL, setCart, cart }) => {
                 </ImageLink>
                 <ProductName className={darkMode && 'darkMode'}>{item.name}</ProductName>
                 <ButtonsWrapper>
-                  <StyledButton className={darkMode && 'darkMode'} text={'dodaj do koszyka'} onClick={() => addToCartHandler(item)} />
+                  <StyledButton
+                    className={darkMode && 'darkMode'}
+                    text={'dodaj do koszyka'}
+                    cart={cart}
+                    itemID={item.id}
+                    onClick={() => addToCartHandler(item)}
+                  />
                   <StyledLink to={`/${getURL()}/${item.id}`} onClick={() => setItem(item)}>
                     <Button className={darkMode && 'darkMode'} text={'sprawdź'} />
                   </StyledLink>

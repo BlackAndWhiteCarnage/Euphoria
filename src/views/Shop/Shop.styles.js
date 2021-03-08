@@ -18,12 +18,12 @@ export const Wrapper = styled.section`
 
 export const ProductsWrapper = styled.div`
   width: 90%;
-  height: 90%;
+  height: 100%;
   display: flex;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   justify-content: center;
   @media screen and (min-width: 680px) {
     width: 80%;

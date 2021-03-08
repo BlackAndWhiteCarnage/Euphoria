@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
-const Button = ({ text, className, onClick }) => {
+const Button = ({ text, className, onClick, cart, itemID }) => {
+  const checkIDHandler = () => {
+    if (cart !== undefined && cart !== false) {
+      if (cart.find((item) => item.id === itemID)) {
+        return 'added';
+      }
+    }
+  };
+
+  const scrollHandler = (e) => {
+    window.scrollTo(0, e.pageY - window.innerHeight / 2);
+  };
+
   return (
-    <StyledButton className={className} onClick={onClick}>
+    <StyledButton className={`${className} ${checkIDHandler()}`} onClick={onClick} onClickCapture={(e) => scrollHandler(e)}>
       {text}
     </StyledButton>
   );
@@ -24,6 +36,9 @@ const StyledButton = styled.button`
   transition: 0.5s ease;
   overflow: hidden;
   z-index: 3;
+  &.added {
+    background: red;
+  }
   margin: ${(props) => props.style && '0.5rem'};
   &.toggle {
     display: none;
