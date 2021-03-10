@@ -41,14 +41,21 @@ html{
     font-size: 62.5%;
 }
 body{
-    background: #202020;
+    ${(props) => {
+      if (props.darkMode) {
+        return 'background: linear-gradient(#e0e0e0, #b8b8b8, #e0e0e0)';
+      } else {
+        return 'background: linear-gradient(#505050, #000000, #1d1d1d);';
+      }
+    }};
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     h1{
       line-height: normal;
     }
     line-height: 2.2rem;
     @media screen and (max-width: 680px){
       line-height: 1.5rem;
-      overflow: hidden;
     }
 }
     @media screen and (min-width: 680px){

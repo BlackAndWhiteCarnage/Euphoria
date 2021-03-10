@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 const Button = ({ text, className, onClick, cart, itemID }) => {
@@ -10,12 +10,8 @@ const Button = ({ text, className, onClick, cart, itemID }) => {
     }
   };
 
-  const scrollHandler = (e) => {
-    window.scrollTo(0, e.pageY - window.innerHeight / 2);
-  };
-
   return (
-    <StyledButton className={`${className} ${checkIDHandler()}`} onClick={onClick} onClickCapture={(e) => scrollHandler(e)}>
+    <StyledButton className={`${className} ${checkIDHandler()}`} onClick={onClick}>
       {text}
     </StyledButton>
   );

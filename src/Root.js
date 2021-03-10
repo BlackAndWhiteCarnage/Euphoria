@@ -23,6 +23,7 @@ const Root = () => {
   const [data, setData] = useState();
   const [item, setItem] = useState();
   const [cart, setCart] = useState([]);
+  const [cartCopy, setCartCopy] = useState();
 
   const location = useLocation();
 

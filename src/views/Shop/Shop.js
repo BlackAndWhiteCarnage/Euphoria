@@ -11,8 +11,6 @@ import {
   ProductImgWrapper,
   Product,
   ButtonsWrapper,
-  SquareTopRight,
-  SquareBottomLeft,
   StyledLink,
   ImageLink,
   StyledButton,
@@ -20,10 +18,10 @@ import {
 import Button from 'components/Button/Button';
 
 const Shop = ({ darkMode, data, setItem, getURL, setCart, cart }) => {
-  const addToCartHandler = (item) => {
+  const addToCartHandler = React.useCallback((item) => {
     cart.push(item);
     setCart([...cart]);
-  };
+  });
 
   return (
     <Wrapper className={darkMode && 'darkMode'}>
@@ -38,21 +36,7 @@ const Shop = ({ darkMode, data, setItem, getURL, setCart, cart }) => {
                   </ProductImgWrapper>
                 </ImageLink>
                 <ProductName className={darkMode && 'darkMode'}>{item.name}</ProductName>
-                <ButtonsWrapper>
-                  <StyledButton
-                    className={darkMode && 'darkMode'}
-                    text={'dodaj do koszyka'}
-                    cart={cart}
-                    itemID={item.id}
-                    onClick={() => addToCartHandler(item)}
-                  />
-                  <StyledLink to={`/${getURL()}/${item.id}`} onClick={() => setItem(item)}>
-                    <Button className={darkMode && 'darkMode'} text={'sprawdź'} />
-                  </StyledLink>
-                </ButtonsWrapper>
               </Product>
-              {/* <SquareTopRight src={darkMode ? darkSquare : Square} />
-              <SquareBottomLeft src={darkMode ? darkSquare : Square} /> */}
             </ProductWrapper>
           ))}
       </ProductsWrapper>

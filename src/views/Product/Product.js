@@ -55,7 +55,13 @@ const Product = ({ item, darkMode, previousPathHandler, cart, setCart }) => {
         <ButtonsWrapperDesktop>
           <StyledButton className={darkMode && 'darkMode'} text={'dodatki'} onClick={() => setShowExtras(!showExtras)} />
           <StyledButton className={darkMode && 'darkMode'} text={'zdjęcie poglądowe'} onClick={() => setBigProductImage(!bigProductImage)} />
-          <StyledButton className={darkMode && 'darkMode'} text={'dodaj do koszyka'} onClick={() => addToCartHandler(item)} />
+          <StyledButton
+            className={darkMode && 'darkMode'}
+            text={'dodaj do koszyka'}
+            cart={cart}
+            itemID={item.id}
+            onClick={() => addToCartHandler(item)}
+          />
         </ButtonsWrapperDesktop>
         <CostsInfoWrapperDesktop>
           <Cost>

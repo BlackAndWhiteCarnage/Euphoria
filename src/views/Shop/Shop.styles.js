@@ -7,10 +7,6 @@ export const Wrapper = styled.section`
   height: 100vh;
   display: flex;
   justify-content: center;
-  background: linear-gradient(#505050, #000000, #1d1d1d);
-  &.darkMode {
-    background: linear-gradient(#e0e0e0, #b8b8b8, #e0e0e0);
-  }
   @media screen and (min-width: 680px) {
     align-items: center;
   }
@@ -18,16 +14,16 @@ export const Wrapper = styled.section`
 
 export const ProductsWrapper = styled.div`
   width: 90%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  /* overflow-y: scroll; */
   justify-content: center;
+  overflow-y: scroll;
   @media screen and (min-width: 680px) {
     width: 80%;
-    height: 60rem;
+    height: 70%;
   }
 `;
 
@@ -39,7 +35,7 @@ export const ProductWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 1rem;
+  margin: 1.5rem;
   background: rgba(255, 255, 255, 0.05);
   transition: 1s ease;
   border-radius: 2rem;
@@ -49,7 +45,7 @@ export const ProductWrapper = styled.div`
   }
   @media screen and (min-width: 680px) {
     width: 30rem;
-    height: 50rem;
+    height: 45rem;
     &:hover {
       background: rgba(255, 255, 255, 0.2);
       &.darkMode {
@@ -91,7 +87,7 @@ export const ProductImgWrapper = styled.div`
 
 export const ImageLink = styled(Link)`
   width: 100%;
-  height: 70%;
+  height: 100%;
   overflow: hidden;
   border-radius: 0.5rem;
 `;
