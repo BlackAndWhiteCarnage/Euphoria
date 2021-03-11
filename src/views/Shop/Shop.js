@@ -28,7 +28,7 @@ const Shop = ({ darkMode, data, setItem, getURL, setCart, cart }) => {
       <ProductsWrapper>
         {data &&
           data.map((item) => (
-            <ProductWrapper className={darkMode && 'darkMode'} key={item.id}>
+            <ProductWrapper className={darkMode && 'darkMode'} key={item.id} to={`/${getURL()}/${item.id}`} onClick={() => setItem(item)}>
               <Product>
                 <ImageLink to={`/${getURL()}/${item.id}`} onClick={() => setItem(item)}>
                   <ProductImgWrapper>

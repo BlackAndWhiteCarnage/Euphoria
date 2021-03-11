@@ -32,8 +32,30 @@ const StyledButton = styled.button`
   transition: 0.5s ease;
   overflow: hidden;
   z-index: 3;
+  &::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: 0.5s ease;
+  }
   &.added {
-    background: red;
+    &::after {
+      position: absolute;
+      background: #1e6926;
+      left: 50%;
+      top: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translate(-50%, -50%);
+      content: 'dodano';
+      z-index: 800;
+      width: 100%;
+      height: 100%;
+      transition: 0.5s ease;
+    }
   }
   margin: ${(props) => props.style && '0.5rem'};
   &.toggle {

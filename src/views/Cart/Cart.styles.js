@@ -52,9 +52,9 @@ export const Header = styled.h4`
   display: flex;
   align-items: center;
   width: 100%;
-  height: 15%;
-  font-size: ${({ theme }) => theme.fontSize.m};
-  margin: 1rem 0;
+  height: auto;
+  font-size: ${({ theme }) => theme.fontSize.l};
+  margin-top: 2rem;
   @media screen and (min-width: 680px) {
     font-size: ${({ theme }) => theme.fontSize.l};
   }
@@ -65,7 +65,7 @@ export const ParamsWrapper = styled.div`
   justify-content: space-between;
   width: 100%;
   height: 10%;
-  font-size: ${({ theme }) => theme.fontSize.s};
+  font-size: ${({ theme }) => theme.fontSize.m};
   font-weight: bold;
   span {
     color: ${({ theme }) => theme.colors.primaryRed};
@@ -102,7 +102,7 @@ export const Item = styled.div`
   border-radius: 1rem;
   cursor: pointer;
   p {
-    width: 70%;
+    width: 100%;
   }
   &:last-child {
     border: none;
@@ -112,7 +112,6 @@ export const Item = styled.div`
       background: rgba(0, 0, 0, 0.1);
     }
   }
-
   @media screen and (min-width: 680px) {
     font-size: ${({ theme }) => theme.fontSize.m};
     min-height: 8rem;
@@ -127,8 +126,7 @@ export const Item = styled.div`
 `;
 export const Price = styled.p`
   font-weight: bold;
-  width: 20%;
-  margin-left: 1rem;
+  text-align: center;
   span {
     font-size: ${({ theme }) => theme.fontSize.m};
     color: ${({ theme }) => theme.colors.primaryRed};
@@ -136,7 +134,7 @@ export const Price = styled.p`
 `;
 export const ItemsWrapper = styled.div`
   width: 100%;
-  height: 35%;
+  height: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -148,9 +146,10 @@ export const ItemsWrapper = styled.div`
 export const Form = styled.form`
   position: relative;
   width: 100%;
-  height: 65%;
+  height: 55%;
   display: flex;
   flex-direction: column;
+  margin-top: 1rem;
   h4 {
     color: ${({ theme }) => theme.colors.primaryRed};
   }
@@ -215,16 +214,16 @@ export const InfoText = styled.p`
 `;
 export const Label = styled.label`
   width: 100%;
-  font-size: ${({ theme }) => theme.fontSize.s};
-  margin-bottom: 0.5rem;
-  margin-top: 1rem;
+  font-weight: bold;
+  font-size: ${({ theme }) => theme.fontSize.m};
+  margin: 1rem 0;
   @media screen and (min-width: 680px) {
     font-size: ${({ theme }) => theme.fontSize.m};
   }
 `;
 export const Input = styled.input`
   width: 100%;
-  min-height: 2.5rem;
+  min-height: 3rem;
   font-size: ${({ theme }) => theme.fontSize.s};
   border: 1px solid white;
   background: none;
@@ -263,7 +262,7 @@ export const TextArea = styled.textarea`
   }
 `;
 export const StyledButton = styled(Button)`
-  width: 30%;
+  width: 50%;
   margin-top: 1rem;
 `;
 export const InfoIcon = styled.img`

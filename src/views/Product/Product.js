@@ -49,6 +49,21 @@ const Product = ({ item, darkMode, previousPathHandler, cart, setCart }) => {
           <BigProductImage src={item.productImage} />
         </BigProductImageWrapper>
       )}
+      {showExtras && (
+        <AllExtras onClick={() => setShowExtras(!showExtras)} className={darkMode && 'darkMode'}>
+          <ExtrasItem>noszenie dwa dni</ExtrasItem>
+          <ExtrasItem>piss na majteczki</ExtrasItem>
+          <ExtrasItem>scat w majteczkach</ExtrasItem>
+          <ExtrasItem>orgazm</ExtrasItem>
+          <ExtrasItem>zapach moich ulubionych perfum</ExtrasItem>
+          <ExtrasItem>5 sexy zdjęć w tych majciochach</ExtrasItem>
+          <ExtrasItem>krótkie nagranie z noszenia (ok. 20/30 sekund)</ExtrasItem>
+          <ExtrasItem>naplucie na majteczki</ExtrasItem>
+          <ExtrasItem>majteczki z ciasnej dziórki</ExtrasItem>
+          <ExtrasItem>uprawianie sportu</ExtrasItem>
+          <ExtrasItem>menstruacja</ExtrasItem>
+        </AllExtras>
+      )}
       <ProductWrapper>
         <BackIcon src={darkMode ? DarkBack : Back} onClick={previousPathHandler} />
         <ProductNameDesktop>{item.name}</ProductNameDesktop>
@@ -80,28 +95,13 @@ const Product = ({ item, darkMode, previousPathHandler, cart, setCart }) => {
               Liczy się dla mnie zadowolenie moich klientów majteczki będą noszone dzień przed wysyłką, aby pozostały świeże i pachnące zostaną
               zapakowane w woreczek strunowy. Uprzedzam iż czas wysyłki niestety może się troszeczkę wydłużyć. Kolejność noszenia majteczek ustalana
               jest adekwatnie do osób które zapłaciły pierwsze. Jeśli jesteś ciekaw, spytaj poprzez formularz kontaktowy o terminy wysyłek.
-              <ExtrasInfoDesktop>Kupując majciochy masz do wyboru dwa bonusy, sprawdź poniżej jakie!</ExtrasInfoDesktop>
-              {showExtras && (
-                <AllExtras onClick={() => setShowExtras(!showExtras)} className={darkMode && 'darkMode'}>
-                  <ExtrasItem>noszenie dwa dni</ExtrasItem>
-                  <ExtrasItem>piss na majteczki</ExtrasItem>
-                  <ExtrasItem>scat w majteczkach</ExtrasItem>
-                  <ExtrasItem>orgazm</ExtrasItem>
-                  <ExtrasItem>zapach moich ulubionych perfum</ExtrasItem>
-                  <ExtrasItem>5 sexy zdjęć w tych majciochach</ExtrasItem>
-                  <ExtrasItem>krótkie nagranie z noszenia (ok. 20/30 sekund)</ExtrasItem>
-                  <ExtrasItem>naplucie na majteczki</ExtrasItem>
-                  <ExtrasItem>majteczki z ciasnej dziórki</ExtrasItem>
-                  <ExtrasItem>uprawianie sportu</ExtrasItem>
-                  <ExtrasItem>menstruacja</ExtrasItem>
-                </AllExtras>
-              )}
+              <ExtrasInfoDesktop>Kupując majciochy masz do wyboru dwa dodatki, sprawdź koniecznie jakie!</ExtrasInfoDesktop>
             </Description>
           </ImageAndDescWrapper>
         </ProductWrapper1>
         <ProductWrapper2>
           <CostAndInfoWrapper>
-            <ExtrasInfo>Kupując majciochy masz do wyboru dwa bonusy, sprawdź poniżej jakie!</ExtrasInfo>
+            <ExtrasInfo>Kupując majciochy masz do wyboru dwa dodatki, sprawdź koniecznie jakie!</ExtrasInfo>
             <CostsInfoWrapper>
               <Cost>
                 Cena: <span>{item.cost}</span> zł
@@ -114,7 +114,13 @@ const Product = ({ item, darkMode, previousPathHandler, cart, setCart }) => {
           <ButtonsWrapper>
             <StyledButton className={darkMode && 'darkMode'} text={'dodatki'} onClick={() => setShowExtras(!showExtras)} />
             <StyledButton className={darkMode && 'darkMode'} text={'zdjęcie poglądowe'} onClick={() => setBigProductImage(!bigProductImage)} />
-            <StyledButton className={darkMode && 'darkMode'} text={'dodaj do koszyka'} onClick={() => addToCartHandler(item)} />
+            <StyledButton
+              className={darkMode && 'darkMode'}
+              text={'dodaj do koszyka'}
+              cart={cart}
+              itemID={item.id}
+              onClick={() => addToCartHandler(item)}
+            />
           </ButtonsWrapper>
         </ProductWrapper2>
       </ProductWrapper>

@@ -21,7 +21,7 @@ export const HamburgerImg = styled.img`
   }
 `;
 
-export const BackImg = styled.img`
+export const HomeImg = styled.img`
   width: 4rem;
   height: 4rem;
   position: fixed;
@@ -55,7 +55,7 @@ export const CartImg = styled.img`
 `;
 
 export const Modal = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: -100vh;
   height: 35rem;
   width: 100%;
@@ -64,7 +64,6 @@ export const Modal = styled.div`
   display: flex;
   justify-content: center;
   &.showModal {
-    position: absolute;
     bottom: 0;
     width: 100%;
     height: 35rem;

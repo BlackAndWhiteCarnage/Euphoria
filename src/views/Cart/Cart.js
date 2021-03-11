@@ -59,10 +59,6 @@ const Cart = ({ darkMode, previousPathHandler, cart, setCart }) => {
         <BackIcon src={darkMode ? DarkBack : Back} onClick={previousPathHandler} />
         <ItemsWrapper>
           <Header>Koszyk</Header>
-          <ParamsWrapper>
-            <p>Przedmiot</p>
-            <p>Cena</p>
-          </ParamsWrapper>
           <Items>
             {cart.length !== 0 &&
               cart.map((item, index) => (
@@ -92,7 +88,7 @@ const Cart = ({ darkMode, previousPathHandler, cart, setCart }) => {
           </ParamsWrapper>
         </ItemsWrapper>
         <Form>
-          <Header>Formularz zakupowy</Header>
+          {/* <Header>Formularz zakupowy</Header> */}
           <Label>Pseudonim</Label>
           <Input className={darkMode && 'darkMode'} />
           <Label>Adres e-mail</Label>

@@ -13,6 +13,7 @@ export const Wrapper = styled.section`
 `;
 
 export const ProductsWrapper = styled.div`
+  position: relative;
   width: 90%;
   height: 100vh;
   display: flex;
@@ -27,7 +28,7 @@ export const ProductsWrapper = styled.div`
   }
 `;
 
-export const ProductWrapper = styled.div`
+export const ProductWrapper = styled(Link)`
   position: relative;
   width: 100%;
   min-height: 40rem;
@@ -39,6 +40,7 @@ export const ProductWrapper = styled.div`
   background: rgba(255, 255, 255, 0.05);
   transition: 1s ease;
   border-radius: 2rem;
+  text-decoration: none;
   &.darkMode {
     background: rgba(0, 0, 0, 0.05);
     transition: 1s ease;
@@ -87,9 +89,9 @@ export const ProductImgWrapper = styled.div`
 
 export const ImageLink = styled(Link)`
   width: 100%;
-  height: 100%;
+  height: 95%;
   overflow: hidden;
-  border-radius: 0.5rem;
+  border-radius: 2rem;
 `;
 
 export const NotSelectedInfo = styled.p`
@@ -114,7 +116,7 @@ export const ProductName = styled.h4`
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  margin: 1rem;
+  margin: 2.5rem 0 1rem 0;
   font-size: ${({ theme }) => theme.fontSize.m};
   color: ${({ theme }) => theme.colors.primaryLight};
   font-family: 'Montserrat';

@@ -204,12 +204,10 @@ export const ExtrasInfo = styled.p`
   }
 `;
 
-export const AllExtras = styled.ul`
+export const AllExtras = styled.ol`
   position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.8);
   z-index: 300;
   display: flex;
@@ -223,8 +221,8 @@ export const AllExtras = styled.ul`
 `;
 
 export const ExtrasItem = styled.li`
-  font-size: ${({ theme }) => theme.fontSize.m};
-  list-style: none;
+  font-family: 'Montserrat';
+  font-size: ${({ theme }) => theme.fontSize.l};
   font-weight: bold;
   @media screen and (max-width: 680px) {
     font-size: ${({ theme }) => theme.fontSize.s};
@@ -336,7 +334,7 @@ export const ButtonsWrapperDesktop = styled.div`
 `;
 
 export const BigProductImageWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   display: flex;
@@ -351,7 +349,7 @@ export const BigProductImage = styled.img`
   width: 60%;
   height: 80%;
   object-fit: cover;
-  border-radius: 1rem;
+  border-radius: 2rem;
   @media screen and (max-width: 680px) {
     width: 90%;
     height: 40%;
