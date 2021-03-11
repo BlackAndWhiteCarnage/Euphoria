@@ -66,11 +66,11 @@ export const StyledLink = styled(Link)`
   border-radius: 0.5rem;
   padding: 0.5rem;
   &.show {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.5);
     color: ${({ theme }) => theme.colors.primaryLight};
   }
   &.showDark {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.5);
     color: ${({ theme }) => theme.colors.primaryDark};
   }
   p {
@@ -153,12 +153,10 @@ export const NavItem = styled.li`
   }
   &.active {
     color: ${({ theme }) => theme.colors.primaryRed};
-    letter-spacing: 0.1rem;
-    border-bottom: 1px solid #b80202;
+    transform: scale(1.3);
   }
   &:hover {
     transition: 0.5s ease;
-    letter-spacing: 0.1rem;
     color: ${({ theme }) => theme.colors.primaryRed};
   }
 `;

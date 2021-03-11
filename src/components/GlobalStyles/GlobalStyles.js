@@ -9,9 +9,9 @@ export const GlobalStyle = createGlobalStyle`
 *:focus-visible{
     ${(props) => {
       if (props.darkMode) {
-        return '-webkit-box-shadow: 0px 0px 20px 5px rgba(0,0,0,1); box-shadow: 0px 0px 20px 5px rgba(0,0,0,1);';
+        return '-webkit-box-shadow: 0px 0px 20px 5px rgba(0,0,0,.5); box-shadow: 0px 0px 20px 5px rgba(0,0,0,.5);';
       } else {
-        return '-webkit-box-shadow: 0px 0px 20px 5px rgba(255,255,255,1); box-shadow: 0px 0px 20px 5px rgba(255,255,255,1);';
+        return '-webkit-box-shadow: 0px 0px 20px 5px rgba(255,255,255,.5); box-shadow: 0px 0px 20px 5px rgba(255,255,255,.5);';
       }
     }}
     outline: none;
@@ -43,9 +43,9 @@ html{
 body{
     ${(props) => {
       if (props.darkMode) {
-        return 'background: linear-gradient(#e0e0e0, #b8b8b8, #e0e0e0)';
+        return 'background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(232,232,232,1) 49%, rgba(208,208,208,1) 98%);';
       } else {
-        return 'background: linear-gradient(#505050, #000000, #1d1d1d);';
+        return 'background: linear-gradient(#1d1d1d, #000000, #505050);';
       }
     }};
     background-repeat: no-repeat;

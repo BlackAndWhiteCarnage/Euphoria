@@ -43,14 +43,15 @@ const StyledButton = styled.button`
   &.added {
     &::after {
       position: absolute;
-      background: #1e6926;
+      background: #298d33;
       left: 50%;
       top: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       transform: translate(-50%, -50%);
-      content: 'dodano';
+      font-weight: bold;
+      content: 'dodano!';
       z-index: 800;
       width: 100%;
       height: 100%;

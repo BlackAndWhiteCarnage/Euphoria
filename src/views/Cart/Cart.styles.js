@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   background: linear-gradient(#1d1d1d, #000000, #505050);
   &.darkMode {
     color: ${({ theme }) => theme.colors.primaryDark};
-    background: linear-gradient(#d3d3d3, #ececec, #f3f3f3);
+    background: linear-gradient(0deg, rgba(194, 194, 194, 1) 0%, rgba(255, 255, 255, 1) 36%, rgba(255, 255, 255, 1) 63%, rgba(189, 189, 189, 1) 100%);
   }
   @media screen and (min-width: 680px) {
     align-items: center;
@@ -164,7 +164,7 @@ export const InfoWrapper = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.9);
   color: ${({ theme }) => theme.colors.primaryLight};
   z-index: 10;
   border-radius: 20px;
@@ -181,13 +181,14 @@ export const InfoWrapper = styled.div`
   cursor: pointer;
   &.darkMode {
     color: ${({ theme }) => theme.colors.primaryDark};
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.9);
   }
   &.showInfo {
     pointer-events: all;
     opacity: 1;
     width: 120%;
     height: 120%;
+    z-index: 800;
     transition: 1s ease;
     @media screen and (max-width: 680px) {
       width: 110%;
@@ -271,7 +272,7 @@ export const InfoIcon = styled.img`
   height: 2.5rem;
   right: 0;
   bottom: 0;
-  z-index: 100;
+  z-index: 900;
   cursor: pointer;
 `;
 export const DeleteIcon = styled.img`

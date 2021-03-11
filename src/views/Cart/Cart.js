@@ -88,7 +88,6 @@ const Cart = ({ darkMode, previousPathHandler, cart, setCart }) => {
           </ParamsWrapper>
         </ItemsWrapper>
         <Form>
-          {/* <Header>Formularz zakupowy</Header> */}
           <Label>Pseudonim</Label>
           <Input className={darkMode && 'darkMode'} />
           <Label>Adres e-mail</Label>

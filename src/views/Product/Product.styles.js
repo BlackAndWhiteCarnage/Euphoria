@@ -118,7 +118,7 @@ export const ProductImage = styled.img`
   height: 100%;
   cursor: pointer;
   transition: 1s ease;
-  border-radius: 0.5rem;
+  border-radius: 2rem;
   &.media {
     display: none;
   }
@@ -204,7 +204,7 @@ export const ExtrasInfo = styled.p`
   }
 `;
 
-export const AllExtras = styled.ol`
+export const AllExtras = styled.ul`
   position: fixed;
   width: 100%;
   height: 100%;
@@ -214,6 +214,7 @@ export const AllExtras = styled.ol`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  list-style: none;
   cursor: pointer;
   &.darkMode {
     background: rgba(255, 255, 255, 0.8);

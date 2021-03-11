@@ -8,7 +8,7 @@ export const HamburgerImg = styled.img`
   bottom: 0;
   left: 50%;
   transform: translate(-50%);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   padding: 0.5rem;
   z-index: 10;
   border-radius: 50%;
@@ -28,7 +28,7 @@ export const HomeImg = styled.img`
   padding: 0.5rem;
   bottom: 0;
   right: 20%;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   z-index: 10;
   background: rgba(0, 0, 0, 0.8);
   border-radius: 50%;
@@ -128,7 +128,7 @@ export const CartLink = styled(Link)`
   justify-content: space-between;
   bottom: 0;
   left: 20%;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   z-index: 10;
   border-radius: 3rem;
   padding: 0.5rem;

@@ -50,6 +50,7 @@ export const ProductWrapper = styled(Link)`
     height: 45rem;
     &:hover {
       background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.03);
       &.darkMode {
         background: rgba(0, 0, 0, 0.2);
       }

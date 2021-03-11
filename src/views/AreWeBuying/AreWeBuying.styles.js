@@ -91,8 +91,7 @@ export const IconWrapper = styled.div`
   height: 3rem;
   border: 1px solid #e7e7e7;
   transition: 1.5s ease;
-  border-radius: 1rem;
-
+  border-radius: 0.5rem;
   &.darkMode {
     transition: 1.5s ease;
     border: 1px solid #2d2d2d;
