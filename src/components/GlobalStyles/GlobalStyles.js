@@ -39,8 +39,23 @@ export const GlobalStyle = createGlobalStyle`
 }
 html{
     font-size: 62.5%;
+    height: -webkit-fill-available;
+
+}
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
 }
 body{
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
     ${(props) => {
       if (props.darkMode) {
         return 'background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(232,232,232,1) 49%, rgba(208,208,208,1) 98%);';

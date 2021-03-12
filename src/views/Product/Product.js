@@ -65,7 +65,6 @@ const Product = ({ item, darkMode, previousPathHandler, cart, setCart }) => {
         </AllExtras>
       )}
       <ProductWrapper>
-        <BackIcon src={darkMode ? DarkBack : Back} onClick={previousPathHandler} />
         <ProductNameDesktop>{item.name}</ProductNameDesktop>
         <ButtonsWrapperDesktop>
           <StyledButton className={darkMode && 'darkMode'} text={'dodatki'} onClick={() => setShowExtras(!showExtras)} />

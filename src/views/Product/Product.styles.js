@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  position: fixed;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -113,6 +114,7 @@ export const ImageAndDescWrapper = styled.div`
 `;
 
 export const ProductImage = styled.img`
+  position: relative;
   object-fit: cover;
   width: 48%;
   height: 100%;
@@ -123,8 +125,8 @@ export const ProductImage = styled.img`
     display: none;
   }
   &.bigImage {
-    width: 40%;
-    height: 90%;
+    width: 30%;
+    height: 60%;
     margin: 5rem;
     transition: 1s ease;
     @media screen and (max-width: 680px) {
@@ -187,10 +189,9 @@ export const ProductWrapper2 = styled.div`
 
 export const CostAndInfoWrapper = styled.div`
   width: 48%;
-  height: 100%;
+  height: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 `;
 
 export const ExtrasInfo = styled.p`
@@ -207,7 +208,7 @@ export const ExtrasInfo = styled.p`
 export const AllExtras = styled.ul`
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.8);
   z-index: 300;
   display: flex;
@@ -263,7 +264,7 @@ export const CostsInfoWrapper = styled.div`
 export const CostsInfoWrapperDesktop = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 35rem;
+  width: 30rem;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -337,7 +338,7 @@ export const ButtonsWrapperDesktop = styled.div`
 export const BigProductImageWrapper = styled.div`
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -347,8 +348,8 @@ export const BigProductImageWrapper = styled.div`
 `;
 
 export const BigProductImage = styled.img`
-  width: 60%;
-  height: 80%;
+  width: auto;
+  height: 60%;
   object-fit: cover;
   border-radius: 2rem;
   @media screen and (max-width: 680px) {

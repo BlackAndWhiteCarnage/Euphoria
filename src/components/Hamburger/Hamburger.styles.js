@@ -60,7 +60,7 @@ export const Modal = styled.div`
   height: 35rem;
   width: 100%;
   transition: 1s ease;
-  z-index: 5;
+  z-index: 9999;
   display: flex;
   justify-content: center;
   &.showModal {

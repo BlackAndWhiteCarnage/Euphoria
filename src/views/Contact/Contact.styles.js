@@ -71,13 +71,13 @@ export const Label = styled.label`
 export const Input = styled.input`
   font-weight: bold;
   width: 100%;
-  height: 2.5rem;
+  min-height: 3rem;
   color: ${({ theme }) => theme.colors.primaryLight};
   font-size: ${({ theme }) => theme.fontSize.m};
   font-family: 'Montserrat';
   border: 1px solid #e7e7e7;
   background: none;
-  transition: 1.5s ease;
+  transition: 0.5s ease;
   padding: 1rem;
   border-radius: 1rem;
   &.darkMode {
@@ -91,25 +91,25 @@ export const Input = styled.input`
 `;
 
 export const TextArea = styled.textarea`
-  font-weight: bold;
   width: 100%;
-  height: 10rem;
+  min-height: 10rem;
+  font-size: ${({ theme }) => theme.fontSize.s};
   color: ${({ theme }) => theme.colors.primaryLight};
-  font-size: ${({ theme }) => theme.fontSize.m};
-  font-family: 'Montserrat';
-  border: 1px solid #e7e7e7;
+  border: 1px solid white;
   background: none;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  padding: 0.5rem;
   resize: none;
-  transition: 1.5s ease;
-  padding: 1rem;
   border-radius: 1rem;
+  transition: 0.5s ease;
   &.darkMode {
     color: ${({ theme }) => theme.colors.primaryDark};
     border: 1px solid #2d2d2d;
-    transition: 1.5s ease;
   }
   @media screen and (min-width: 680px) {
-    height: 15rem;
+    height: 20rem;
+    font-size: ${({ theme }) => theme.fontSize.m};
   }
 `;
 

@@ -12,13 +12,13 @@ import DarkDarkMode from 'assets/icons/DarkDarkMode.svg';
 const Hamburger = ({ darkMode, path, setDarkMode, cart }) => {
   const [toggle, setToggle] = useState(false);
 
-  const toggleHandler = () => {
+  const toggleModalHandler = () => {
     setToggle(!toggle);
   };
 
   return (
     <>
-      <HamburgerImg src={darkMode ? DarkHamburgerMenu : HamburgerMenu} onClick={toggleHandler} className={darkMode && 'darkMode'} />
+      <HamburgerImg src={darkMode ? DarkHamburgerMenu : HamburgerMenu} onClick={toggleModalHandler} className={darkMode && 'darkMode'} />
       <CartLink to="/koszyk" className={cart.length > 0 && `${darkMode && 'showDark'} ${!darkMode && 'show'}`}>
         <p>{cart.length > 0 && cart.length}</p>
         <CartImg
@@ -33,22 +33,22 @@ const Hamburger = ({ darkMode, path, setDarkMode, cart }) => {
       <Modal className={toggle && `showModal ${darkMode && 'darkMode'}`}>
         <List>
           <StyledLink to="/sklep/majteczki">
-            <ListItem className={darkMode && 'darkMode'} onClick={toggleHandler}>
+            <ListItem className={darkMode && 'darkMode'} onClick={toggleModalHandler}>
               majteczki
             </ListItem>
           </StyledLink>
           <StyledLink to="/sklep/skarpetki">
-            <ListItem className={darkMode && 'darkMode'} onClick={toggleHandler}>
+            <ListItem className={darkMode && 'darkMode'} onClick={toggleModalHandler}>
               skarpetki
             </ListItem>
           </StyledLink>
           <StyledLink to="/sklep/rajstopy">
-            <ListItem className={darkMode && 'darkMode'} onClick={toggleHandler}>
+            <ListItem className={darkMode && 'darkMode'} onClick={toggleModalHandler}>
               rajstopy i pończochy
             </ListItem>
           </StyledLink>
           <StyledLink to="/sklep/inne">
-            <ListItem className={darkMode && 'darkMode'} onClick={toggleHandler}>
+            <ListItem className={darkMode && 'darkMode'} onClick={toggleModalHandler}>
               inne
             </ListItem>
           </StyledLink>

@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import Button from 'components/Button/Button';
+import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.div`
+  position: fixed;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -24,11 +26,12 @@ export const CartWrapper = styled.div`
   height: 90%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   @media screen and (min-width: 680px) {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 70%;
+    width: 60%;
     height: 60%;
   }
 `;
@@ -45,23 +48,21 @@ export const BackIcon = styled.img`
     transition: 0.5s ease;
   }
   @media screen and (max-width: 680px) {
-    top: 1.5rem;
+    top: 1rem;
   }
 `;
 export const Header = styled.h4`
-  display: flex;
-  align-items: center;
   width: 100%;
-  height: auto;
   font-size: ${({ theme }) => theme.fontSize.l};
-  margin-top: 2rem;
+  margin-bottom: 2.5rem;
   @media screen and (min-width: 680px) {
+    margin: 0;
     font-size: ${({ theme }) => theme.fontSize.l};
   }
 `;
 export const ParamsWrapper = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   width: 100%;
   height: 10%;
@@ -73,10 +74,14 @@ export const ParamsWrapper = styled.div`
   }
   @media screen and (min-width: 680px) {
     font-size: ${({ theme }) => theme.fontSize.m};
-    width: 95%;
+    width: 100%;
     span {
       font-size: ${({ theme }) => theme.fontSize.l};
     }
+  }
+  @media screen and (max-height: 580px) {
+    flex-direction: column;
+    align-items: flex-start;
   }
 `;
 export const Items = styled.div`
@@ -97,9 +102,10 @@ export const Item = styled.div`
   justify-content: space-between;
   width: 100%;
   min-height: 3rem;
-  font-size: ${({ theme }) => theme.fontSize.s};
-  margin-top: 1rem;
+  font-size: ${({ theme }) => theme.fontSize.m};
+  margin-top: 2.5rem;
   border-radius: 1rem;
+  padding-right: 1rem;
   cursor: pointer;
   p {
     width: 100%;
@@ -115,7 +121,7 @@ export const Item = styled.div`
   @media screen and (min-width: 680px) {
     font-size: ${({ theme }) => theme.fontSize.m};
     min-height: 8rem;
-    width: 95%;
+    width: 100%;
     /* border: 1px solid #b80202; */
     transition: 0.5s ease;
     :hover {
@@ -134,13 +140,16 @@ export const Price = styled.p`
 `;
 export const ItemsWrapper = styled.div`
   width: 100%;
-  height: 40%;
+  height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 2.5rem 0;
+
   @media screen and (min-width: 680px) {
     width: 45%;
     height: 100%;
+    margin: 0;
   }
 `;
 export const Form = styled.form`
@@ -166,7 +175,7 @@ export const InfoWrapper = styled.div`
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.9);
   color: ${({ theme }) => theme.colors.primaryLight};
-  z-index: 10;
+  z-index: 1;
   border-radius: 20px;
   width: 0%;
   height: 0%;
@@ -230,6 +239,7 @@ export const Input = styled.input`
   background: none;
   color: ${({ theme }) => theme.colors.primaryLight};
   padding: 0.5rem;
+  transition: 0.5s ease;
   font-weight: bold;
   border-radius: 1rem;
   &.darkMode {
@@ -240,10 +250,20 @@ export const Input = styled.input`
     min-height: 3.5rem;
     font-size: ${({ theme }) => theme.fontSize.m};
   }
+  @media screen and (max-width: 680px) {
+    &:focus {
+      height: 4rem;
+      position: fixed;
+      top: 10%;
+      width: 90%;
+      z-index: 99999;
+      background: black;
+    }
+  }
 `;
 export const TextArea = styled.textarea`
   width: 100%;
-  height: 100%;
+  min-height: 10rem;
   font-size: ${({ theme }) => theme.fontSize.s};
   color: ${({ theme }) => theme.colors.primaryLight};
   border: 1px solid white;
@@ -253,9 +273,19 @@ export const TextArea = styled.textarea`
   padding: 0.5rem;
   resize: none;
   border-radius: 1rem;
+  transition: 0.5s ease;
   &.darkMode {
     color: ${({ theme }) => theme.colors.primaryDark};
     border: 1px solid #2d2d2d;
+  }
+  @media screen and (max-width: 680px) {
+    &:focus {
+      position: fixed;
+      top: 10%;
+      width: 90%;
+      z-index: 99999;
+      background: black;
+    }
   }
   @media screen and (min-width: 680px) {
     height: 20rem;
@@ -263,8 +293,19 @@ export const TextArea = styled.textarea`
   }
 `;
 export const StyledButton = styled(Button)`
-  width: 50%;
+  width: 80%;
   margin-top: 1rem;
+  @media screen and (min-width: 680px) {
+    width: 50%;
+  }
+`;
+export const StyledLink = styled(Link)`
+  width: 100%;
+  text-decoration: none;
+`;
+export const MediaButton = styled(Button)`
+  width: 100%;
+  margin-top: 5rem;
 `;
 export const InfoIcon = styled.img`
   position: absolute;
@@ -272,8 +313,22 @@ export const InfoIcon = styled.img`
   height: 2.5rem;
   right: 0;
   bottom: 0;
-  z-index: 900;
   cursor: pointer;
+  z-index: 2;
+  animation: Pulse 2s ease infinite;
+  border-radius: 50%;
+  @keyframes Pulse {
+    0% {
+      transform: scale(1.3);
+    }
+    50% {
+      transform: scale(1);
+      box-shadow: 0px 0px 15px 5px #b80202;
+    }
+    100% {
+      transform: scale(1.3);
+    }
+  }
 `;
 export const DeleteIcon = styled.img`
   width: 2.5rem;
@@ -286,22 +341,22 @@ export const ImagePreviewIcon = styled.img`
   margin-right: 2.5rem;
 `;
 export const Image = styled.img`
-  width: 90%;
-  height: 90%;
+  width: 80%;
+  height: 60%;
   object-fit: cover;
+  border-radius: 2rem;
   @media screen and (min-width: 680px) {
     width: auto;
-    height: 80%;
+    height: 60%;
   }
 `;
 export const ImageWrapper = styled.div`
   position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;

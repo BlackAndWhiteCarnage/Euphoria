@@ -21,7 +21,10 @@ import {
   ImagePreviewIcon,
   Image,
   ImageWrapper,
+  MediaButton,
+  StyledLink,
 } from './Cart.styles';
+import { Link } from 'react-router-dom';
 import Info from 'assets/icons/Info.svg';
 import DarkInfo from 'assets/icons/DarkInfo.svg';
 import Back from 'assets/icons/Back.svg';
@@ -53,10 +56,11 @@ const Cart = ({ darkMode, previousPathHandler, cart, setCart }) => {
     }
   };
 
+  const mediaQuery = window.matchMedia('(min-width: 680px)');
+
   return (
     <Wrapper className={darkMode && 'darkMode'}>
       <CartWrapper>
-        <BackIcon src={darkMode ? DarkBack : Back} onClick={previousPathHandler} />
         <ItemsWrapper>
           <Header>Koszyk</Header>
           <Items>
@@ -79,33 +83,45 @@ const Cart = ({ darkMode, previousPathHandler, cart, setCart }) => {
           </Items>
           <ParamsWrapper>
             {cart.length !== 0 ? (
-              <p>
-                Razem <span>{summary()}</span> zł
-              </p>
+              <>
+                <p>
+                  Razem <span>{summary()}</span> zł
+                </p>
+                <p>
+                  Dostawa: <span>darmowa</span>
+                </p>
+              </>
             ) : (
-              <p>koszyk jest pusty</p>
+              <span>koszyk jest pusty</span>
             )}
           </ParamsWrapper>
+          {!mediaQuery.matches && (
+            <StyledLink to="/zamówienie">
+              <MediaButton text={'zamawiam'} />
+            </StyledLink>
+          )}
         </ItemsWrapper>
-        <Form>
-          <Label>Pseudonim</Label>
-          <Input className={darkMode && 'darkMode'} />
-          <Label>Adres e-mail</Label>
-          <Input className={darkMode && 'darkMode'} />
-          <Label>Wiadomość</Label>
-          <TextArea className={darkMode && 'darkMode'} />
-          <StyledButton text={'spytaj o dostępność'} className={darkMode && 'darkMode'} />
-          <InfoIcon src={darkMode ? DarkInfo : Info} onClick={() => setShowInfo(!showInfo)} />
-          <InfoWrapper className={`${showInfo && 'showInfo'} ${darkMode && ' darkMode'}`} onClick={() => setShowInfo(!showInfo)}>
-            <InfoText className={showInfo && 'showInfo'}>
-              Podając dane nie musisz wpisywać swojego prawdziwego imienia a informację które dostanę będą wykorzystane jedynie w celach
-              kontaktowo/wysyłkowych. Nie martw się dostanę zawartość Twojego koszyka na maila i sprawdzę czy podane produkty są wciąż dostępne. Jeśli
-              nie czujesz się komfortowo wypełniając formularz możesz wysłać jedynie wiadomość lub skontaktować się ze mną poprzez którąś z poniższych
-              opcji. Gdy tylko zobaczę Twoją wiadomość na pewno odpiszę i ustalimy szczególy.
-            </InfoText>
-            <InfoText className={showInfo && 'showInfo'}>Ps. Nie zapomnij dodać informacji o dodatkach jakie wybierasz!</InfoText>
-          </InfoWrapper>
-        </Form>
+        {mediaQuery.matches && (
+          <Form>
+            <Label>Pseudonim</Label>
+            <Input className={darkMode && 'darkMode'} />
+            <Label>Adres e-mail</Label>
+            <Input className={darkMode && 'darkMode'} />
+            <Label>Wiadomość</Label>
+            <TextArea className={darkMode && 'darkMode'} />
+            <StyledButton text={'spytaj o dostępność'} className={darkMode && 'darkMode'} />
+            <InfoIcon src={darkMode ? DarkInfo : Info} onClick={() => setShowInfo(!showInfo)} />
+            <InfoWrapper className={`${showInfo && 'showInfo'} ${darkMode && ' darkMode'}`} onClick={() => setShowInfo(!showInfo)}>
+              <InfoText className={showInfo && 'showInfo'}>
+                Podając dane nie musisz wpisywać swojego prawdziwego imienia a informację które dostanę będą wykorzystane jedynie w celach
+                kontaktowo/wysyłkowych. Nie martw się dostanę zawartość Twojego koszyka na maila i sprawdzę czy podane produkty są wciąż dostępne.
+                Jeśli nie czujesz się komfortowo wypełniając formularz możesz wysłać jedynie wiadomość lub skontaktować się ze mną poprzez którąś z
+                poniższych opcji. Gdy tylko zobaczę Twoją wiadomość na pewno odpiszę i ustalimy szczególy.
+              </InfoText>
+              <InfoText className={showInfo && 'showInfo'}>Ps. Nie zapomnij dodać informacji o dodatkach jakie wybierasz!</InfoText>
+            </InfoWrapper>
+          </Form>
+        )}
       </CartWrapper>
     </Wrapper>
   );

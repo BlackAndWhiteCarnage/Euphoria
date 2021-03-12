@@ -43,7 +43,7 @@ const StyledButton = styled.button`
   &.added {
     &::after {
       position: absolute;
-      background: #298d33;
+      background: #ff9900;
       left: 50%;
       top: 50%;
       display: flex;

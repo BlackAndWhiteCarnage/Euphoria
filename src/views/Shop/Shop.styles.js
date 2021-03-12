@@ -116,7 +116,6 @@ export const ProductName = styled.h4`
   height: auto;
   white-space: nowrap;
   text-overflow: ellipsis;
-  overflow: hidden;
   margin: 2.5rem 0 1rem 0;
   font-size: ${({ theme }) => theme.fontSize.m};
   color: ${({ theme }) => theme.colors.primaryLight};

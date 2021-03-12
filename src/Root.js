@@ -8,6 +8,7 @@ import Contact from 'views/Contact/Contact';
 import Shop from 'views/Shop/Shop';
 import Product from 'views/Product/Product';
 import Cart from 'views/Cart/Cart';
+import BuyingForm from 'views/BuyingForm/BuyingForm';
 import { GlobalStyle } from 'components/GlobalStyles/GlobalStyles';
 import { ISlideConfig, PageSlides, SlideParallaxType } from 'react-page-slides';
 import { Switch, Route, useLocation, useHistory } from 'react-router-dom';
@@ -23,7 +24,6 @@ const Root = () => {
   const [data, setData] = useState();
   const [item, setItem] = useState();
   const [cart, setCart] = useState([]);
-  const [cartCopy, setCartCopy] = useState();
 
   const location = useLocation();
 
@@ -162,6 +162,11 @@ const Root = () => {
             path="/koszyk"
             exact
             component={() => <Cart darkMode={darkMode} previousPathHandler={previousPathHandler} cart={cart} setCart={setCart} />}
+          />
+          <Route
+            path="/zamówienie"
+            exact
+            component={() => <BuyingForm darkMode={darkMode} previousPathHandler={previousPathHandler} cart={cart} setCart={setCart} />}
           />
         </>
       </Switch>

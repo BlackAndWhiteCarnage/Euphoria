@@ -87,8 +87,8 @@ export const StepContent = styled.p`
 
 export const IconWrapper = styled.div`
   position: relative;
-  min-width: 3rem;
-  height: 3rem;
+  min-width: 4rem;
+  height: 4rem;
   border: 1px solid #e7e7e7;
   transition: 1.5s ease;
   border-radius: 0.5rem;
