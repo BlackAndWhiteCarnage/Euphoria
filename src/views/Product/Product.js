@@ -24,9 +24,8 @@ import {
   AllExtras,
   ExtrasItem,
 } from './Product.styles';
-import Back from 'assets/icons/Back.svg';
-import DarkBack from 'assets/icons/DarkBack.svg';
 import Button from 'components/Button/Button';
+import { pageAnimation } from 'components/Animations/Animations';
 
 const Product = ({ item, darkMode, previousPathHandler, cart, setCart }) => {
   const [bigImage, setBigImage] = useState(false);
@@ -43,7 +42,7 @@ const Product = ({ item, darkMode, previousPathHandler, cart, setCart }) => {
   };
 
   return (
-    <Wrapper className={darkMode && 'darkMode'}>
+    <Wrapper className={darkMode && 'darkMode'} exit="exit" variants={pageAnimation} initial="hidden" animate="show">
       {bigProductImage && (
         <BigProductImageWrapper onClick={() => setBigProductImage(!bigProductImage)}>
           <BigProductImage src={item.productImage} />
@@ -51,24 +50,18 @@ const Product = ({ item, darkMode, previousPathHandler, cart, setCart }) => {
       )}
       {showExtras && (
         <AllExtras onClick={() => setShowExtras(!showExtras)} className={darkMode && 'darkMode'}>
-          <ExtrasItem>noszenie dwa dni</ExtrasItem>
-          <ExtrasItem>piss na majteczki</ExtrasItem>
-          <ExtrasItem>scat w majteczkach</ExtrasItem>
-          <ExtrasItem>orgazm</ExtrasItem>
-          <ExtrasItem>zapach moich ulubionych perfum</ExtrasItem>
-          <ExtrasItem>5 sexy zdjęć w tych majciochach</ExtrasItem>
-          <ExtrasItem>krótkie nagranie z noszenia (ok. 20/30 sekund)</ExtrasItem>
-          <ExtrasItem>naplucie na majteczki</ExtrasItem>
-          <ExtrasItem>majteczki z ciasnej dziórki</ExtrasItem>
-          <ExtrasItem>uprawianie sportu</ExtrasItem>
-          <ExtrasItem>menstruacja</ExtrasItem>
+          {item.extras.map((extrasItem) => (
+            <ExtrasItem className={darkMode && 'darkMode'}>{extrasItem}</ExtrasItem>
+          ))}
         </AllExtras>
       )}
       <ProductWrapper>
         <ProductNameDesktop>{item.name}</ProductNameDesktop>
         <ButtonsWrapperDesktop>
-          <StyledButton className={darkMode && 'darkMode'} text={'dodatki'} onClick={() => setShowExtras(!showExtras)} />
-          <StyledButton className={darkMode && 'darkMode'} text={'zdjęcie poglądowe'} onClick={() => setBigProductImage(!bigProductImage)} />
+          {item.extras && <StyledButton className={darkMode && 'darkMode'} text={'dodatki'} onClick={() => setShowExtras(!showExtras)} />}
+          {item.productImage && (
+            <StyledButton className={darkMode && 'darkMode'} text={'zdjęcie poglądowe'} onClick={() => setBigProductImage(!bigProductImage)} />
+          )}
           <StyledButton
             className={darkMode && 'darkMode'}
             text={'dodaj do koszyka'}
@@ -111,8 +104,10 @@ const Product = ({ item, darkMode, previousPathHandler, cart, setCart }) => {
             </CostsInfoWrapper>
           </CostAndInfoWrapper>
           <ButtonsWrapper>
-            <StyledButton className={darkMode && 'darkMode'} text={'dodatki'} onClick={() => setShowExtras(!showExtras)} />
-            <StyledButton className={darkMode && 'darkMode'} text={'zdjęcie poglądowe'} onClick={() => setBigProductImage(!bigProductImage)} />
+            {item.extras && <StyledButton className={darkMode && 'darkMode'} text={'dodatki'} onClick={() => setShowExtras(!showExtras)} />}
+            {item.productImage && (
+              <StyledButton className={darkMode && 'darkMode'} text={'zdjęcie poglądowe'} onClick={() => setBigProductImage(!bigProductImage)} />
+            )}
             <StyledButton
               className={darkMode && 'darkMode'}
               text={'dodaj do koszyka'}

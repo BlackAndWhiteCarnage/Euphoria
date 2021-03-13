@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(motion.div)`
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -212,7 +213,8 @@ export const AllExtras = styled.ul`
   background: rgba(0, 0, 0, 0.8);
   z-index: 300;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
   list-style: none;
@@ -220,14 +222,30 @@ export const AllExtras = styled.ul`
   &.darkMode {
     background: rgba(255, 255, 255, 0.8);
   }
+  @media screen and (min-width: 680px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 65vh;
+  }
 `;
 
 export const ExtrasItem = styled.li`
   font-family: 'Montserrat';
   font-size: ${({ theme }) => theme.fontSize.l};
   font-weight: bold;
+  padding: 0.5rem;
+  border: 1px solid white;
+  &.darkMode {
+    border: 1px solid black;
+  }
   @media screen and (max-width: 680px) {
     font-size: ${({ theme }) => theme.fontSize.s};
+  }
+  @media screen and (min-width: 680px) {
+    margin: 2.5rem;
+    border: 1px solid white;
+    padding: 1rem;
   }
 `;
 
@@ -314,7 +332,7 @@ export const ButtonsWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   @media screen and (min-width: 680px) {
     display: none;
   }

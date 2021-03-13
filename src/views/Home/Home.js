@@ -14,6 +14,7 @@ import HomeImg1 from 'assets/images/HomeImg1.jpg';
 import HomeImg2 from 'assets/images/HomeImg2.jpg';
 import HomeImg3 from 'assets/images/HomeImg3.jpg';
 import { Wrapper, ImageWrapper, Image, Logo, AllIconsWrapper, IconsWrapper, Icon, DarkModeIcon } from './Home.styles';
+import { pageAnimation } from 'components/Animations/Animations';
 
 const images = [HomeImg1, HomeImg2, HomeImg3];
 
@@ -36,7 +37,7 @@ const Home = ({ darkMode, setDarkMode, setSlide }) => {
   }, 4000);
 
   return (
-    <Wrapper ref={element}>
+    <Wrapper ref={element} exit="exit" variants={pageAnimation} initial="hidden" animate="show">
       <ImageWrapper className={darkMode && 'darkMode'}>
         {images.map((item, index) => (
           <Image className={index === current ? 'show' : 'hide'} src={imageToRender} />

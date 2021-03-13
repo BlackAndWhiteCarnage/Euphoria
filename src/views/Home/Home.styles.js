@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const Wrapper = styled.section`
+export const Wrapper = styled(motion.section)`
   width: 100%;
   height: 100vh;
   display: flex;

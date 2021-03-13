@@ -2,18 +2,13 @@ import React, { useState } from 'react';
 import { Wrapper, Form, Label, Input, TextArea, StyledButton, InfoIcon, InfoWrapper, InfoText } from './BuyingForm.styles';
 import Info from 'assets/icons/Info.svg';
 import DarkInfo from 'assets/icons/DarkInfo.svg';
-import Back from 'assets/icons/Back.svg';
-import DarkBack from 'assets/icons/DarkBack.svg';
-import Delete from 'assets/icons/Delete.svg';
-import DarkDelete from 'assets/icons/DarkDelete.svg';
-import ImagePreview from 'assets/icons/ImagePreview.svg';
-import DarkImagePreview from 'assets/icons/DarkImagePreview.svg';
+import { pageAnimation } from 'components/Animations/Animations';
 
 const BuyingForm = ({ darkMode }) => {
   const [showInfo, setShowInfo] = useState(false);
 
   return (
-    <Wrapper className={darkMode && 'darkMode'}>
+    <Wrapper className={darkMode && 'darkMode'} exit="exit" variants={pageAnimation} initial="hidden" animate="show">
       <Form>
         <Label>Pseudonim</Label>
         <Input className={darkMode && 'darkMode'} />

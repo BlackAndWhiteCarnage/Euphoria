@@ -145,7 +145,6 @@ export const ItemsWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   margin: 2.5rem 0;
-
   @media screen and (min-width: 680px) {
     width: 45%;
     height: 100%;
@@ -158,7 +157,6 @@ export const Form = styled.form`
   height: 55%;
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
   h4 {
     color: ${({ theme }) => theme.colors.primaryRed};
   }
@@ -294,7 +292,6 @@ export const TextArea = styled.textarea`
 `;
 export const StyledButton = styled(Button)`
   width: 80%;
-  margin-top: 1rem;
   @media screen and (min-width: 680px) {
     width: 50%;
   }

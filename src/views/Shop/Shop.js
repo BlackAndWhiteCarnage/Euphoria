@@ -15,7 +15,7 @@ import {
   ImageLink,
   StyledButton,
 } from './Shop.styles';
-import Button from 'components/Button/Button';
+import { pageAnimation } from 'components/Animations/Animations';
 
 const Shop = ({ darkMode, data, setItem, getURL, setCart, cart }) => {
   const addToCartHandler = React.useCallback((item) => {
@@ -24,7 +24,7 @@ const Shop = ({ darkMode, data, setItem, getURL, setCart, cart }) => {
   });
 
   return (
-    <Wrapper className={darkMode && 'darkMode'}>
+    <Wrapper className={darkMode && 'darkMode'} exit="exit" variants={pageAnimation} initial="hidden" animate="show">
       <ProductsWrapper>
         {data &&
           data.map((item) => (

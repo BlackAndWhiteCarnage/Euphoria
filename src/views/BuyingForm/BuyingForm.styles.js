@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import Button from 'components/Button/Button';
+import { motion } from 'framer-motion';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(motion.div)`
   position: fixed;
   width: 100%;
   height: 100vh;

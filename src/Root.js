@@ -16,6 +16,7 @@ import { panties } from 'data/Panties';
 import { socks } from 'data/Socks';
 import { tights } from 'data/TightsAndStockings';
 import { other } from 'data/Other';
+import { AnimatePresence } from 'framer-motion';
 
 const Root = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -128,48 +129,50 @@ const Root = () => {
   return (
     <>
       <GlobalStyle darkMode={darkMode} />
-      <Switch>
-        <Route path="/" exact>
-          <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} slide={slide} setSlide={setSlide} setURL={setURL} URL={URL} cart={cart} />
-          <Hamburger darkMode={darkMode} cart={cart} />
-          <PageSlides
-            // Fix bug cause firefox blocking scrolling after first scroll only on desktop browser
-            enableAutoScroll={
-              navigator.userAgent.toLowerCase().indexOf('firefox') > -1 && window.matchMedia('(min-width: 680px)').matches ? false : true
-            }
-            transitionSpeed={1000}
-            slides={slides}
-            currentSlideIndex={slide}
-            parallax={{
-              offset: 1,
-              type: SlideParallaxType.cover,
-            }}
-          />
-        </Route>
-        <>
-          <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} path="shop" setURL={setURL} URL={URL} cart={cart} />
-          <Hamburger darkMode={darkMode} setDarkMode={setDarkMode} path="shop" cart={cart} />
-          <Route
-            path="/sklep"
-            component={() => <Shop data={data} darkMode={darkMode} setItem={setItem} getURL={getURL} setCart={setCart} cart={cart} />}
-          />
-          {item && (
-            <Route path={`/${getURL()}/${item.id}`} exact>
-              <Product item={item} darkMode={darkMode} previousPathHandler={previousPathHandler} setCart={setCart} cart={cart} />
-            </Route>
-          )}
-          <Route
-            path="/koszyk"
-            exact
-            component={() => <Cart darkMode={darkMode} previousPathHandler={previousPathHandler} cart={cart} setCart={setCart} />}
-          />
-          <Route
-            path="/zamówienie"
-            exact
-            component={() => <BuyingForm darkMode={darkMode} previousPathHandler={previousPathHandler} cart={cart} setCart={setCart} />}
-          />
-        </>
-      </Switch>
+      <AnimatePresence exitBeforeEnter>
+        <Switch location={location} key={location.pathname}>
+          <Route path="/" exact>
+            <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} slide={slide} setSlide={setSlide} setURL={setURL} URL={URL} cart={cart} />
+            <Hamburger darkMode={darkMode} cart={cart} />
+            <PageSlides
+              // Fix bug cause firefox blocking scrolling after first scroll only on desktop browser
+              enableAutoScroll={
+                navigator.userAgent.toLowerCase().indexOf('firefox') > -1 && window.matchMedia('(min-width: 680px)').matches ? false : true
+              }
+              transitionSpeed={1000}
+              slides={slides}
+              currentSlideIndex={slide}
+              parallax={{
+                offset: 1,
+                type: SlideParallaxType.cover,
+              }}
+            />
+          </Route>
+          <>
+            <SectionsWrapper darkMode={darkMode} setDarkMode={setDarkMode} path="shop" setURL={setURL} URL={URL} cart={cart} />
+            <Hamburger darkMode={darkMode} setDarkMode={setDarkMode} path="shop" cart={cart} />
+            <Route
+              path="/sklep"
+              component={() => <Shop data={data} darkMode={darkMode} setItem={setItem} getURL={getURL} setCart={setCart} cart={cart} />}
+            />
+            {item && (
+              <Route path={`/${getURL()}/${item.id}`} exact>
+                <Product item={item} darkMode={darkMode} previousPathHandler={previousPathHandler} setCart={setCart} cart={cart} />
+              </Route>
+            )}
+            <Route
+              path="/koszyk"
+              exact
+              component={() => <Cart darkMode={darkMode} previousPathHandler={previousPathHandler} cart={cart} setCart={setCart} />}
+            />
+            <Route
+              path="/zamówienie"
+              exact
+              component={() => <BuyingForm darkMode={darkMode} previousPathHandler={previousPathHandler} cart={cart} setCart={setCart} />}
+            />
+          </>
+        </Switch>
+      </AnimatePresence>
     </>
   );
 };
